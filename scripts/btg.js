@@ -4,6 +4,7 @@ class GameObject {
     this.description = spec.description == undefined ? 'description' : spec.description;
     this.path = spec.path == undefined ? 'path' : spec.path;
     this.url = spec.url == undefined ? 'url' : spec.url;
+    this.isPCOnly = spec.isPCOnly == undefined ? false : spec.isPCOnly;
   }
 }
 
