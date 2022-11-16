@@ -45,7 +45,7 @@
         </p>
         <games>
           <game :title="'Open the game ' + game.name + ' in a new window.'" v-for="game in games"
-            @click="window.open(game.url, '_blank')" :class="{pconly: game.isPCOnly}"
+            @click="window.open(game.url, '_blank')"
             :style="{backgroundImage: 'linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,0) 40px), url(' + game.url + '/images/' + game.path + '_og.png'}">
             <img :src="game.url + '/images/' + game.path + '_og.png'"
               :alt="'This is an image of the game elements and the title for the game ' + game.name +'.'" />
