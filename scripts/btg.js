@@ -46,6 +46,7 @@ var app = new Vue({
   el: '#app',
   data: {
     games: Games,
+    year: new Date().getFullYear(),
     r: document.querySelector(':root'),
     // modes: Modes,
     // currentMode: Modes[1],
