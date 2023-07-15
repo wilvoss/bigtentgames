@@ -15,16 +15,16 @@ var Games = [
     url: 'https://likeme.games',
   }),
   new GameObject({
-    name: 'CommOddities!',
-    description: 'Buy, sell, embrace or avoid corruption!',
-    path: 'commoddities',
-    url: 'https://commoddities.games',
-  }),
-  new GameObject({
     name: "Drop 'n Stop!",
     description: 'The puck stops here.',
     path: 'dropnstop',
     url: 'https://dropnstop.games',
+  }),
+  new GameObject({
+    name: 'CommOddities!',
+    description: 'Buy, sell, embrace or avoid corruption!',
+    path: 'commoddities',
+    url: 'https://commoddities.games',
   }),
   new GameObject({
     name: 'Path',
