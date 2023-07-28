@@ -12,6 +12,7 @@ body {
   margin: 0px;
   width: 100%;
   height: 100%;
+  line-height: 150%;
   overflow: hidden;
   color: var(--appForeground);
   user-select: none;
@@ -44,9 +45,18 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 80px 0px 0px 0px;
+  margin: 60px 0px 0px 0px;
   line-height: 100%;
   font-weight: normal;
+}
+
+a,
+a:visited,
+a:focus,
+a:active {
+  color: var(--appForeground);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 stage {
@@ -91,7 +101,7 @@ logo img {
   opacity: 0;
 }
 
-P {
+p {
   padding: 0px 40px;
   text-align: center;
 }
@@ -105,6 +115,7 @@ games {
   align-items: center;
   column-gap: 20px;
   row-gap: 20px;
+  margin: 40px 0px 80px;
 }
 
 game {
@@ -141,7 +152,23 @@ button {
   line-height: 100%;
 }
 
+.walloftext p {
+  display: block;
+  width: calc(100% - 20px);
+  text-align: left;
+}
+
 @media only screen and (max-width: 500px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 20px 0px 0px 0px;
+    line-height: 100%;
+    font-weight: normal;
+  }
+
   logo {
     margin-top: 0;
     height: 30%;
@@ -153,6 +180,7 @@ button {
     align-items: center;
     column-gap: 0;
     row-gap: 0;
+    margin: 10px 0px 20px;
   }
   game {
     flex-basis: 100%;
