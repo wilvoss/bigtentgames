@@ -285,7 +285,7 @@ content {
   width: calc(100% - 4 * var(--defaultGap));
   height: 100%;
   max-height: calc(100% - var(--navHeight) - var(--footerHeight) - 4 * var(--defaultGap));
-  overflow: scroll;
+  overflow: auto;
   background-color: hsla(var(--appBackgroundWeakest), 0.85);
   background-size: cover;
   background-position: 0px -100px;
@@ -293,6 +293,16 @@ content {
   padding: calc(2 * var(--defaultGap));
   border-radius: var(--borderRadius);
   box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
+}
+
+content::-webkit-scrollbar {
+  display: none;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  touch-action: auto;
+  scroll-behavior: smooth;
 }
 
 section.collapsed {
@@ -306,7 +316,6 @@ sectionToggle {
   display: block;
   color: hsl(var(--bannerHS), 21%);
   padding-top: 30px;
-  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transform: translateY(-50px);
 }
@@ -322,18 +331,10 @@ section h2 {
   border-top: 1px solid hsla(var(--appForeground), 0.1);
 }
 
-section intro h2 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
 section intro {
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-section intro {
   margin-bottom: var(--defaultGap);
 }
 
@@ -347,11 +348,15 @@ section intro h1 span {
   color: hsl(var(--appForegroundWeakest));
 }
 
-section intro h2 {
+section intro h2,
+section h3 {
+  padding-top: 0;
   margin-top: calc(var(--defaultGap) / 3);
-  font-size: 1.2em;
   border: none;
   color: hsl(var(--appForegroundWeakest));
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 1px;
 }
 
 section intro p {
@@ -396,6 +401,16 @@ screenshots {
   padding: var(--defaultGap) calc(2 * var(--defaultGap)) 0;
 }
 
+screenshots::-webkit-scrollbar {
+  display: none;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  touch-action: auto;
+  scroll-behavior: smooth;
+}
+
 screenshots screenshot {
   cursor: pointer;
   /* flex-basis: 300px; */
@@ -435,11 +450,11 @@ games {
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 games selector {
-  width: calc(50% - 20px);
+  width: calc(50% - 10px);
 }
 
 games selector button {
@@ -480,12 +495,6 @@ content footer {
 footer a {
   color: hsl(var(--appBackground));
   text-decoration: none;
-}
-
-@media only screen and (max-width: 827px) {
-  content {
-    /* border-radius: 0; */
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -540,9 +549,6 @@ footer a {
     border-radius: 0;
     box-shadow: none;
     max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
-
-    /* margin: 0 0; */
-    /* width: calc(100% - 2 * var(--defaultGap)); */
   }
 
   section intro img {

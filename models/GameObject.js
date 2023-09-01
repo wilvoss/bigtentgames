@@ -17,6 +17,7 @@ class GameObject {
     this.bannerText = spec.bannerText === undefined ? 'beta' : spec.bannerText;
     this.bannerType = spec.bannerType === undefined ? 'beta' : spec.bannerType;
     this.screenshots = spec.screenshots === undefined ? [] : spec.screenshots;
+    this.isMobileFirst = spec.isMobileFirst === undefined ? true : spec.isMobileFirst;
   }
 }
 
@@ -503,6 +504,7 @@ var Games = [
   new GameObject({
     name: "Drop 'n Stop!",
     description: 'The puck stops here.',
+    about: 'Fast and fun, the object of this game is to test your reaction time. Hold the drop button and release when the puck hits the dropzone.',
     path: 'dropnstop',
     url: 'https://dropnstop.games',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
@@ -511,10 +513,11 @@ var Games = [
   new GameObject({
     name: 'CommOddities!',
     description: 'Buy, sell, embrace or avoid corruption!',
+    about: 'If you ever played "Dope Wars" on a Palm Pilot back in the day, then you have an idea how this game plays. Basically you have 365 "days" to buy/sell for as much profit as possible. Your moral compass will be tested!',
     path: 'commoddities',
     url: 'https://commoddities.games',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '7.png'],
-    backgroundColor: 'hsl(157.86, 100%, 50.59%)',
+    backgroundColor: 'hsl(157.86, 100%, 40.59%)',
   }),
   new GameObject({
     name: 'Path',
@@ -526,5 +529,6 @@ var Games = [
     screenshots: ['1.png', '2.png', '3.png'],
     bannerText: 'alpha',
     bannerType: 'alpha',
+    isMobileFirst: false,
   }),
 ];

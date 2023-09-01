@@ -109,6 +109,7 @@
             </section>
             <section>
               <h2>How to install</h2>
+              <h3 v-if="!getCurrentGameComputed.isMobileFirst">Best on desktop</h3>
               <p>{{getCurrentGameComputed.name}} can be installed on almost any device as if it was an application.
                 Most operating systems will help you install this game when you first visit the website with a simple
                 banner notification. In iOS, open the Share menu from your browser and then choose Save to your
@@ -120,7 +121,7 @@
             </section>
             <sectionToggle v-if="getCurrentGameComputed.versionHistory != '' && !expandVersionHistory"
               @click="ToggleExpandVersionHistory">
-              ...click to see more version history
+              ...click to see more history
             </sectionToggle>
           </article>
           <footer>&copy; {{year}} Big Tent Games</footer>
