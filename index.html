@@ -1,50 +1,118 @@
 <!DOCTYPE html>
-<html itemtype="http://schema.org/Website" lang="en">
+<html lang="en">
+
   <head>
     <meta charset="utf-8" />
     <meta content="x-content-type-options=nosniff" />
+    <meta name="apple-mobile-web-app-title" content="Like Me?" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" id="themeColor" content="#f0f0f0" />
 
-    <title>Big Tent Games</title>
+    <title>Like Me? li History</title>
 
-    <meta name="apple-mobile-web-app-title" content="Big Tent Games" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="keywords" content="Like Me?, Big Tent Games, Games, Free, FullyFree" />
+    <meta name="description" content="What in this whole world is like me?" />
 
-    <meta name="keywords" content="Big Tent Games, Casual, Video, Games, Casual Games, Casual Gaming, Video Games, Gaming." />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png?3841" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?3841" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:title" content="Big Tent Games" />
-    <meta property="og:site_name" content="Big Tent Games" />
-    <meta property="og:description" content="Casual and not so casual games created by the minds at Big Tent Games." />
-    <meta property="og:type" content="photo" />
-    <meta property="og:url" content="https://bigtentgames.com" />
-    <meta property="og:image" content="https://bigtentgames.com/images/btg_og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-
+    <link rel="stylesheet" href="styles/normalize.css" media="screen" />
     <link rel="stylesheet" href="styles/btg.css" media="screen" />
   </head>
 
   <body>
-    <app id="app">
-      <stage v-cloak>
-        <logo>
-          <img alt="This is an image of the Big Tent Games logo which features a striped, open umbrella whose pole is connected to the second 't' in Big Tent Game." title="Big Tent Games logo." src="images/big_tent_logo.svg" />
-        </logo>
-        <games>
-          <game :title="'Open the game ' + game.name + ' in a new window.'" v-for="game in games" @click="window.open(game.url, '_blank')" :style="{backgroundImage: 'url(' + game.url + '/images/' + game.path + '_og.png'}">
-            <img :src="game.url + '/images/' + game.path + '_og.png'" :alt="'This is an image of the game elements and the title for the game ' + game.name +'.'" />
-          </game>
-        </games>
-        <footer>
-          <p>&copy; {{year}} Wil Voss | <a href="/privacy.html">Privacy policy</a></p>
-        </footer>
+    <app
+      :style="{backgroundColor: getCurrentGameComputed.backgroundColor === '' ? 'hsl(var(--bannerHS), 45%)' : getCurrentGameComputed.backgroundColor}"
+      id="app">
+      <onionskin :class="{show: showOnionskin}" @click="ToggleShowOnionSkin">
+        <img :src="onionSkinImageSrc" />
+      </onionskin>
+      <stage>
+        <nav>
+          <selector :class="{on: game.isSelected, banner: game.useBanner}" v-for="game in games"
+            @click="ChangeHashToGamePath(game)" v-if="game.showInNav">
+            <button :style="{backgroundImage: 'url(' + game.url + '/images/icon512.png)'}">
+              <banner :class="[game.bannerType]">{{game.bannerText}}</banner><img
+                :src="game.url + '/images/icon512.png'"
+                :alt="'This is an image of the game elements and the title for the game ' + game.name +'.'" />
+            </button>
+          </selector>
+        </nav>
+        <content>
+          <article v-if="getCurrentGameComputed.path === 'home'">
+            <section>
+              <intro>
+                <header>
+                  <h1>Welcome!</h1>
+                  <p>This is Big Tent Games, the small gaming company that creates and publishes casual video games
+                    for gamers of all types! Most of the games we create are designed for mobile devices first, but all
+                    of them work on regular computers too. Let's go!</p>
+                </header>
+              </intro>
+              <h2>Available games</h2>
+              <games>
+                <selector v-for="game in games" v-if="game.showAsGame" :class="{banner: game.useBanner}">
+                  <button :title="'Open the game ' + game.name + ' in a new window.'"
+                    @click="ChangeHashToGamePath(game)"
+                    :style="{backgroundImage: 'url(/images/' + game.path + '/' + game.path + '_og.png)'}">
+                    <banner :class="[game.bannerType]">{{game.bannerText}}</banner>
+                    <img :src="'/images/' + game.path + '/' + game.path + '_og.png'"
+                      :alt="'This is an image of the game elements and the title for the game ' + game.name +'.'" />
+                  </button>
+                </selector>
+              </games>
+            </section>
+          </article>
+          <article v-if="getCurrentGameComputed.path !== 'home'">
+            <section>
+              <intro>
+                <header>
+                  <h1>{{getCurrentGameComputed.name}} <span>{{ getCurrentGameComputed.bannerText !== 'free!' ?
+                      '(' + getCurrentGameComputed.bannerText + ')' : 'v' + getCurrentGameComputed.version}}</span>
+                  </h1>
+                  <h2>{{getCurrentGameComputed.description}}
+                  </h2>
+                  <button class="dark" :style="{backgroundColor: getCurrentGameComputed.backgroundColor}"
+                    @click="window.open(getCurrentGameComputed.url, '_blank')">{{getCurrentGameComputed.price === '$0.00' ? 'Play for free!' : getCurrentGameComputed.price}}</button>
+                  <button class="light"
+                    @click="window.open(getCurrentGameComputed.url, '_blank')">{{getCurrentGameComputed.price === '$0.00' ? 'Play for free!' : getCurrentGameComputed.price}}</button>
+
+                </header>
+              </intro>
+            </section>
+            <section v-if="getCurrentGameComputed.about != ''" v-html="getCurrentGameComputed.about"></section>
+
+            <section v-if="getCurrentGameComputed.screenshots.length >0">
+              <screenshots>
+                <screenshot @click="ZoomImage('images/' + getCurrentGameComputed.path + '/' + screenshot)"
+                  v-for="screenshot in getCurrentGameComputed.screenshots">
+                  <img :src="'images/' + getCurrentGameComputed.path + '/' + screenshot" />
+                </screenshot>
+              </screenshots>
+            </section>
+            <section>
+              <h2>How to install</h2>
+              <p>{{getCurrentGameComputed.name}} can be installed it on almost any device as if it was an application.
+                Most operating systems will help you install this game when you first visit the web site with the simple
+                click of a button. iOS currently require you to "Share" the website while visiting it in the Safari web
+                browser and then "Save to your Home Screen."
+              <p>
+            </section>
+            <section v-if="getCurrentGameComputed.versionHistory != ''" v-html="getCurrentGameComputed.versionHistory">
+            </section>
+          </article>
+        </content>
+        <footer>&copy; {{year}} Big Tent Games</footer>
       </stage>
     </app>
+    <script src="helpers/console-enhancer.js" type="text/javascript"></script>
     <script id="vue-framework" src="helpers/vue.min.js" type="text/javascript"></script>
+    <script src="models/GameObject.js" type="text/javascript"></script>
     <script src="scripts/btg.js" type="text/javascript"></script>
   </body>
+
 </html>

@@ -1,38 +1,5 @@
-class GameObject {
-  constructor(spec) {
-    this.name = spec.name == undefined ? 'name' : spec.name;
-    this.description = spec.description == undefined ? 'description' : spec.description;
-    this.path = spec.path == undefined ? 'path' : spec.path;
-    this.url = spec.url == undefined ? 'url' : spec.url;
-  }
-}
-
-var Games = [
-  new GameObject({
-    name: 'Like Me?',
-    description: 'A game of likenesses.',
-    path: 'likeme',
-    url: 'https://likeme.games',
-  }),
-  new GameObject({
-    name: "Drop 'n Stop!",
-    description: 'The puck stops here.',
-    path: 'dropnstop',
-    url: 'https://dropnstop.games',
-  }),
-  new GameObject({
-    name: 'CommOddities!',
-    description: 'Buy, sell, embrace or avoid corruption!',
-    path: 'commoddities',
-    url: 'https://commoddities.games',
-  }),
-  new GameObject({
-    name: 'Path',
-    description: 'Paths are the means to an end.',
-    path: 'path',
-    url: 'https://path.bigtentgames.com',
-  }),
-];
+/// <reference path="../helpers/console-enhancer.js" />
+/// <reference path="../models/GameObject.js" />
 
 // if (!UseDebug) {
 Vue.config.devtools = false;
@@ -47,13 +14,91 @@ var app = new Vue({
   data: {
     games: Games,
     year: new Date().getFullYear(),
+    showOnionskin: false,
+    onionSkinImageSrc: '',
+    currentHash: '',
     r: document.querySelector(':root'),
-    // modes: Modes,
-    // currentMode: Modes[1],
   },
-  methods: {},
+  methods: {
+    ChangeHashToGamePath(_game) {
+      log('ChangeHashToGamePath(_game) called');
+      window.location.hash = _game.path;
+    },
 
-  mounted() {},
+    SelectGame(_path) {
+      log('SelectGame(_path) called');
+      this.games.forEach((_game) => {
+        _game.isSelected = _game.path === _path;
+      });
+      this.ResetScrollPositions();
+    },
 
-  computed: {},
+    GetCurrentGame() {
+      log('GetCurrentGame() called');
+      let _game = null;
+      this.games.forEach((g) => {
+        if (g.isSelected) {
+          _game = g;
+        }
+      });
+      if (_game === null) {
+        _game = this.games[0];
+        this.SelectGame(_game.path);
+      }
+      return _game;
+    },
+
+    GetCurrentGameByPathName(_path) {
+      log('GetCurrentGameByPathName(_path) called');
+      return this.games.filter((obj) => obj.path === _path);
+    },
+
+    ToggleShowOnionSkin() {
+      log('ToggleShowOnionSkin() called');
+      this.showOnionskin = !this.showOnionskin;
+    },
+
+    ZoomImage(_screenshot) {
+      log('ZoomImage(_screenshot) called');
+      this.onionSkinImageSrc = _screenshot;
+      this.ToggleShowOnionSkin();
+    },
+
+    ResetScrollPositions() {
+      log('ResetScrollPositions() called');
+      if (document.getElementsByTagName('content')[0] != undefined) {
+        document.getElementsByTagName('content')[0].scrollTo(0, 0);
+      }
+      if (document.getElementsByTagName('screenshots')[0] != undefined) {
+        document.getElementsByTagName('screenshots')[0].scrollTo(0, 0);
+      }
+    },
+
+    HandleHashChangeEvent() {
+      log('HandleHashChangeEvent() called');
+      this.currentHash = window.location.hash.replace('#', '');
+      log(window.location.hash);
+      if (this.currentHash === '') {
+        window.location.hash = 'home';
+      } else {
+        this.SelectGame(this.currentHash);
+      }
+    },
+
+    InitializeApp() {
+      announce('InitializeApp() called');
+      this.HandleHashChangeEvent();
+    },
+  },
+
+  mounted() {
+    window.addEventListener('hashchange', this.HandleHashChangeEvent);
+    this.InitializeApp();
+  },
+
+  computed: {
+    getCurrentGameComputed: function () {
+      return this.GetCurrentGame();
+    },
+  },
 });
