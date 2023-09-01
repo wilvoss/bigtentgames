@@ -4,22 +4,36 @@
   <head>
     <meta charset="utf-8" />
     <meta content="x-content-type-options=nosniff" />
-    <meta name="apple-mobile-web-app-title" content="Like Me?" />
+    <meta name="apple-mobile-web-app-title" content="Big Tent Games" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta name="theme-color" id="themeColor" content="#f0f0f0" />
+    <meta name="theme-color" id="themeColor" content="#111111" />
 
-    <title>Like Me? li History</title>
+    <title>Big Tent Games</title>
 
-    <meta name="keywords" content="Like Me?, Big Tent Games, Games, Free, FullyFree" />
-    <meta name="description" content="What in this whole world is like me?" />
+    <meta name="description" content="This is Big Tent Games, the small gaming company that dreams big and creates fun, casual
+                    video games for gamers of all types! Most of the games we create are designed for mobile devices
+                    first, but all of them work on regular computers too. Let's go!" />
+    <meta name="keywords"
+      content="Big Tent Games, Casual, Video, Games, Casual Games, Casual Gaming, Video Games, Gaming." />
 
-    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png?3841" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?3841" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:title" content="Big Tent Games" />
+    <meta property="og:site_name" content="Big Tent Games" />
+    <meta property="og:description" content="Casual and not so casual games created by the minds at Big Tent Games." />
+    <meta property="og:type" content="photo" />
+    <meta property="og:url" content="https://bigtentgames.com" />
+    <meta property="og:image" content="https://bigtentgames.com/images/btg_og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
+    <link id="appleicon" rel="apple-touch-icon" sizes="180x180" href="images/icon180.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="images/icon512.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-alt.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-b-16x16.png" />
     <link rel="stylesheet" href="styles/normalize.css" media="screen" />
     <link rel="stylesheet" href="styles/btg.css" media="screen" />
   </head>
@@ -48,9 +62,9 @@
               <intro>
                 <header>
                   <h1>Welcome!</h1>
-                  <p>This is Big Tent Games, the small gaming company that creates and publishes casual video games
-                    for gamers of all types! Most of the games we create are designed for mobile devices first, but all
-                    of them work on regular computers too. Let's go!</p>
+                  <p>This is Big Tent Games, the small gaming company that dreams big and creates fun, casual
+                    video games for gamers of all types! Most of the games we create are designed for mobile devices
+                    first, but all of them work on regular computers too. Let's go!</p>
                 </header>
               </intro>
               <h2>Available games</h2>
@@ -96,15 +110,16 @@
             </section>
             <section>
               <h2>How to install</h2>
-              <p>{{getCurrentGameComputed.name}} can be installed it on almost any device as if it was an application.
-                Most operating systems will help you install this game when you first visit the web site with the simple
-                click of a button. iOS currently require you to "Share" the website while visiting it in the Safari web
-                browser and then "Save to your Home Screen."
+              <p>{{getCurrentGameComputed.name}} can be installed on almost any device as if it was an application.
+                Most operating systems will help you install this game when you first visit the website with a simple
+                banner notification. In iOS, open the Share menu from your browser and then choose Save to your
+                Home Screen.
               <p>
             </section>
             <section v-if="getCurrentGameComputed.versionHistory != ''" v-html="getCurrentGameComputed.versionHistory">
             </section>
           </article>
+          <footer>&copy; {{year}} Big Tent Games</footer>
         </content>
         <footer>&copy; {{year}} Big Tent Games</footer>
       </stage>

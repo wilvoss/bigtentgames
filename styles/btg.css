@@ -407,7 +407,8 @@ credit {
 
 games {
   width: 100%;
-  margin-top: var(--defaultGap);
+  margin-top: calc(2 * var(--defaultGap));
+  margin-bottom: calc(2 * var(--defaultGap));
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -446,6 +447,13 @@ footer {
   color: hsla(var(--appBackgroundWeakest), 0.9);
   position: absolute;
   bottom: 0px;
+}
+
+content footer {
+  display: none;
+  height: auto;
+  color: hsla(var(--appForeground), 0.9);
+  position: relative;
 }
 
 footer a {
@@ -510,6 +518,8 @@ footer a {
   content {
     border-radius: 0;
     box-shadow: none;
+    max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
+
     /* margin: 0 0; */
     /* width: calc(100% - 2 * var(--defaultGap)); */
   }
@@ -519,6 +529,8 @@ footer a {
   }
 
   games {
+    margin-top: var(--defaultGap);
+    margin-bottom: var(--defaultGap);
     justify-content: center;
     align-items: center;
     column-gap: 0;
@@ -531,9 +543,15 @@ footer a {
   }
 
   footer {
-    background: hsla(var(--appBackgroundWeakest), 1);
-    color: hsl(var(--appForegroundWeakest));
-    box-shadow: 0px -4px 4px hsla(var(--appForegroundStrongest), 0.1);
+    display: none;
+  }
+
+  content footer {
+    padding: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: hsla(var(--appForeground), 0.7);
   }
 }
 
@@ -558,7 +576,7 @@ footer a {
 
   content {
     padding-top: var(--defaultGap);
-    max-height: calc(100% - var(--navHeight) - var(--footerHeight) - 3 * var(--defaultGap));
+    max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
     background-color: transparent;
     box-shadow: none;
   }
@@ -578,11 +596,5 @@ footer a {
 
   selector button banner {
     box-shadow: 0px 2px 2px hsla(var(--bodyBackground), 0.2);
-  }
-
-  footer {
-    background: hsla(var(--appBackgroundWeakest), 1);
-    color: hsl(var(--appForegroundWeakest));
-    box-shadow: none;
   }
 }
