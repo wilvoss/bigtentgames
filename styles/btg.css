@@ -295,6 +295,27 @@ content {
   box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
 }
 
+section.collapsed {
+  max-height: 318px;
+  overflow: hidden;
+  margin-bottom: calc(2 * var(--defaultGap));
+}
+
+sectionToggle {
+  cursor: pointer;
+  display: block;
+  color: hsl(var(--bannerHS), 21%);
+  padding-top: 30px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transform: translateY(-50px);
+}
+
+section.expanded {
+  max-height: 112000px;
+  overflow: hidden;
+}
+
 section h2 {
   margin-top: var(--defaultGap);
   padding-top: var(--defaultGap);
@@ -592,6 +613,10 @@ footer a {
 
   section intro button.dark {
     display: none;
+  }
+
+  sectionToggle {
+    color: hsla(0, 0%, 91%, 0.8);
   }
 
   selector button banner {

@@ -17,6 +17,7 @@ var app = new Vue({
     showOnionskin: false,
     onionSkinImageSrc: '',
     currentHash: '',
+    expandVersionHistory: false,
     r: document.querySelector(':root'),
   },
   methods: {
@@ -53,6 +54,11 @@ var app = new Vue({
       return this.games.filter((obj) => obj.path === _path);
     },
 
+    ToggleExpandVersionHistory() {
+      log('ToggleExpandVersionHistory() called');
+      this.expandVersionHistory = !this.expandVersionHistory;
+    },
+
     ToggleShowOnionSkin() {
       log('ToggleShowOnionSkin() called');
       this.showOnionskin = !this.showOnionskin;
@@ -72,6 +78,7 @@ var app = new Vue({
       if (document.getElementsByTagName('screenshots')[0] != undefined) {
         document.getElementsByTagName('screenshots')[0].scrollTo(0, 0);
       }
+      this.expandVersionHistory = false;
     },
 
     HandleHashChangeEvent() {

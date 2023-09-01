@@ -99,7 +99,6 @@
               </intro>
             </section>
             <section v-if="getCurrentGameComputed.about != ''" v-html="getCurrentGameComputed.about"></section>
-
             <section v-if="getCurrentGameComputed.screenshots.length >0">
               <screenshots>
                 <screenshot @click="ZoomImage('images/' + getCurrentGameComputed.path + '/' + screenshot)"
@@ -116,8 +115,13 @@
                 Home Screen.
               <p>
             </section>
-            <section v-if="getCurrentGameComputed.versionHistory != ''" v-html="getCurrentGameComputed.versionHistory">
+            <section :class="{expanded: expandVersionHistory, collapsed: !expandVersionHistory}"
+              v-if="getCurrentGameComputed.versionHistory != ''" v-html="getCurrentGameComputed.versionHistory">
             </section>
+            <sectionToggle v-if="getCurrentGameComputed.versionHistory != '' && !expandVersionHistory"
+              @click="ToggleExpandVersionHistory">
+              ...click to see more version history
+            </sectionToggle>
           </article>
           <footer>&copy; {{year}} Big Tent Games</footer>
         </content>
