@@ -83,7 +83,22 @@ var app = new Vue({
 
     HandleHashChangeEvent() {
       log('HandleHashChangeEvent() called');
-      this.currentHash = window.location.hash.replace('#', '');
+      let hash = window.location.hash.split('?');
+
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('showVersionHistory')) {
+        let url = new URL(window.location.href);
+        url.searchParams.delete('showVersionHistory');
+        window.history.replaceState({}, document.title, url);
+        window.setTimeout(function () {
+          app.expandVersionHistory = true;
+        }, 1);
+        window.setTimeout(function () {
+          document.getElementById('versionHistory').scrollIntoView();
+        }, 100);
+      }
+
+      this.currentHash = hash[0].replace('#', '');
       log(window.location.hash);
       if (this.currentHash === '') {
         window.location.hash = 'home';

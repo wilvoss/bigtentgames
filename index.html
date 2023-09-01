@@ -39,7 +39,7 @@
   </head>
 
   <body>
-    <app
+    <app v-cloak
       :style="{backgroundColor: getCurrentGameComputed.backgroundColor === '' ? 'hsl(var(--bannerHS), 45%)' : getCurrentGameComputed.backgroundColor}"
       id="app">
       <onionskin :class="{show: showOnionskin}" @click="ToggleShowOnionSkin">
@@ -62,9 +62,9 @@
               <intro>
                 <header>
                   <h1>Welcome!</h1>
-                  <p>This is Big Tent Games, the small gaming company that dreams big and creates fun, casual
-                    video games for gamers of all types! Most of the games we create are designed for mobile devices
-                    first, but all of them work on regular computers too. Let's go!</p>
+                  <p>This is Big Tent Games, the small gaming company that dreams big and creates fun, casual video
+                    games for gamers of all types! Most of the games we create are designed for mobile devices first,
+                    but all of them work on regular computers too. Let's go!</p>
                 </header>
               </intro>
               <h2>Available games</h2>
@@ -85,16 +85,15 @@
             <section>
               <intro>
                 <header>
-                  <h1>{{getCurrentGameComputed.name}} <span>{{ getCurrentGameComputed.bannerText !== 'free!' ?
-                      '(' + getCurrentGameComputed.bannerText + ')' : 'v' + getCurrentGameComputed.version}}</span>
+                  <h1>
+                    {{getCurrentGameComputed.name}}
+                    <span>{{ getCurrentGameComputed.bannerText !== 'free!' ? '(' + getCurrentGameComputed.bannerText + ')' : 'v' + getCurrentGameComputed.version}}</span>
                   </h1>
-                  <h2>{{getCurrentGameComputed.description}}
-                  </h2>
+                  <h2>{{getCurrentGameComputed.description}}</h2>
                   <button class="dark" :style="{backgroundColor: getCurrentGameComputed.backgroundColor}"
                     @click="window.open(getCurrentGameComputed.url, '_blank')">{{getCurrentGameComputed.price === '$0.00' ? 'Play for free!' : getCurrentGameComputed.price}}</button>
                   <button class="light"
                     @click="window.open(getCurrentGameComputed.url, '_blank')">{{getCurrentGameComputed.price === '$0.00' ? 'Play for free!' : getCurrentGameComputed.price}}</button>
-
                 </header>
               </intro>
             </section>
@@ -110,19 +109,19 @@
             <section>
               <h2>How to install</h2>
               <h3 v-if="!getCurrentGameComputed.isMobileFirst">Best on desktop</h3>
-              <p>{{getCurrentGameComputed.name}} can be installed on almost any device as if it was an application.
-                Most operating systems will help you install this game when you first visit the website with a simple
-                banner notification. In iOS, open the Share menu from your browser and then choose Save to your
-                Home Screen.
-              <p>
+              <p>{{getCurrentGameComputed.name}} can be installed on almost any device as if it was an application. Most
+                operating systems will help you install this game when you first visit the website with a simple banner
+                notification. In iOS, open the Share menu from your browser and then choose Save to your Home Screen.
+              </p>
+
+              <p></p>
             </section>
-            <section :class="{expanded: expandVersionHistory, collapsed: !expandVersionHistory}"
+
+            <section id="versionHistory" :class="{expanded: expandVersionHistory, collapsed: !expandVersionHistory}"
               v-if="getCurrentGameComputed.versionHistory != ''" v-html="getCurrentGameComputed.versionHistory">
             </section>
             <sectionToggle v-if="getCurrentGameComputed.versionHistory != '' && !expandVersionHistory"
-              @click="ToggleExpandVersionHistory">
-              ...click to see more history
-            </sectionToggle>
+              @click="ToggleExpandVersionHistory"> ...click to see more history </sectionToggle>
           </article>
           <footer>&copy; {{year}} Big Tent Games</footer>
         </content>

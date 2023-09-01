@@ -45,6 +45,11 @@ var Games = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.040</li>' +
+      '               <ul>' +
+      '                 <li>link to version history works</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.036</li>' +
       '               <ul>' +
       '                 <li>bug fixes and small tweaks</li>' +
