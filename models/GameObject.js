@@ -45,6 +45,16 @@ var Games = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.069</li>' +
+      '               <ul>' +
+      '                 <li>fixed enter/space check board bug</li>' +
+      '               </ul>' +
+      '' +
+      '               <li>4.2.068</li>' +
+      '               <ul>' +
+      '                 <li>all scores can be shared now</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.040</li>' +
       '               <ul>' +
       '                 <li>link to version history works</li>' +
