@@ -33,7 +33,7 @@ var Games = [
   }),
   new GameObject({
     name: 'Like Me?',
-    description: 'A game of matching likenesses.',
+    description: 'A game of matching likenesses',
     path: 'likeme',
     url: 'https://likeme.games',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
@@ -508,7 +508,7 @@ var Games = [
   }),
   new GameObject({
     name: "Drop 'n Stop!",
-    description: 'The puck stops here.',
+    description: 'The puck stops here',
     about: 'Fast and fun, the object of this game is to test your reaction time. Hold the drop button and release when the puck hits the dropzone.',
     path: 'dropnstop',
     url: 'https://dropnstop.games',
@@ -517,7 +517,7 @@ var Games = [
   }),
   new GameObject({
     name: 'CommOddities!',
-    description: 'Buy, sell, embrace or avoid corruption!',
+    description: 'Not everything is an easy sell',
     about: 'If you ever played "Dope Wars" on a Palm Pilot back in the day, then you have an idea how this game plays. Basically you have 365 "days" to buy/sell for as much profit as possible. Your moral compass will be tested!',
     path: 'commoddities',
     url: 'https://commoddities.games',
@@ -526,7 +526,7 @@ var Games = [
   }),
   new GameObject({
     name: 'Path',
-    description: 'Paths are the means to an end.',
+    description: 'Paths are the means to an end',
     about: 'Not ready for mobile play at all. Proof of concept at best. Play at your own risk :).',
     path: 'path',
     url: 'https://path.bigtentgames.com',

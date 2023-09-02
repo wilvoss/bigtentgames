@@ -1,11 +1,13 @@
 @font-face {
-  font-family: 'Archivo';
+  font-family: 'Display';
   src: url('../fonts/ArchivoNarrow-VariableFont_wght.ttf');
+  font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Archivo Italic';
-  src: url('../fonts/ArchivoNarrow-Italic-VariableFont_wght.ttf');
+  font-family: 'Text';
+  src: url('../fonts/ArchivoNarrow-VariableFont_wght.ttf');
+  font-weight: 400;
 }
 
 :root {
@@ -43,8 +45,7 @@ body {
   line-height: 150%;
   overflow: hidden;
   color: hsl(var(--appForeground));
-  font-family: 'Archivo', Arial, Helvetica, sans-serif;
-  font-weight: 100;
+  font-family: 'Text', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -71,8 +72,15 @@ h4,
 h5 {
   margin-bottom: 0;
   margin-top: calc(var(--defaultGap) / 2);
-  ight: 100%;
-  font-weight: normal;
+  line-height: 100%;
+  font-weight: 400;
+  font-family: "Text";
+}
+
+h1 {
+  font-family: "Display";
+  font-size: normal;
+
 }
 
 a,
@@ -84,6 +92,7 @@ a:active {
 }
 
 button {
+  font-family: "Display";
   cursor: pointer;
   border: none;
   background: none;
@@ -231,7 +240,7 @@ selector button banner {
   transform: translate(-29px, -18px);
   text-transform: capitalize;
   box-shadow: 0 2px 2px hsla(var(--appForeground), 0.2);
-  font-weight: 600;
+  font-family: "Display";
   transition: 200ms ease-in-out all;
 }
 
@@ -338,18 +347,17 @@ section intro {
   margin-bottom: var(--defaultGap);
 }
 
-section intro h1 {
-  font-weight: 700;
-}
-
 section intro h1 span {
-  font-weight: 500;
+  font-weight: 400;
+  font-family: "Text";
   font-size: 0.5em;
   color: hsl(var(--appForegroundWeakest));
 }
 
 section intro h2,
 section h3 {
+  font-family: "Text";
+  font-weight: 400;
   padding-top: 0;
   margin-top: calc(var(--defaultGap) / 3);
   border: none;
@@ -379,7 +387,6 @@ section intro button {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   color: hsl(var(--appBackgroundWeakest));
   padding: 0 20px;
-  font-weight: 600;
   margin: calc(2 * var(--defaultGap)) 0 var(--defaultGap) 0;
   transform: translateX(-3px);
 }
@@ -517,6 +524,7 @@ footer a {
   footer {
     justify-content: center;
   }
+
   nav {
     align-items: end;
   }
@@ -596,7 +604,7 @@ footer a {
     --appForegroundStrongest: 0, 0%, 100%;
   }
 
-  section intro h1,
+  section intro h1 span,
   section intro h2 {
     color: hsla(var(--appForeground), 0.7);
   }
