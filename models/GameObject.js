@@ -45,6 +45,11 @@ var Games = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.077</li>' +
+      '               <ul>' +
+      '                 <li>share delay removed on mobile</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.076</li>' +
       '               <ul>' +
       '                 <li>bug fixes</li>' +

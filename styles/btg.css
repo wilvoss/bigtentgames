@@ -431,6 +431,7 @@ screenshots screenshot img {
   overflow: hidden;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: var(--defaultGap);
+  border: 1px solid white;
 }
 
 logo:hover {
@@ -530,7 +531,7 @@ footer a {
   }
 
   nav selector {
-    width: 70px;
+    width: 80px;
     display: none;
     opacity: 1;
   }
