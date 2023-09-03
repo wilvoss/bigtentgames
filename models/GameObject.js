@@ -37,7 +37,7 @@ var Games = [
     path: 'likeme',
     url: 'https://likeme.games',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
-    version: '4.2.036',
+    version: '4.2.069',
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
     bannerText: 'free!',
@@ -45,6 +45,11 @@ var Games = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.074</li>' +
+      '               <ul>' +
+      '                 <li>scores retain context after refresh</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.069</li>' +
       '               <ul>' +
       '                 <li>fixed enter/space check board bug</li>' +
