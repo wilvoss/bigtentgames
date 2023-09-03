@@ -1,4 +1,4 @@
-class GameObject {
+class PageObject {
   constructor(spec) {
     this.name = spec.name == undefined ? 'name' : spec.name;
     this.description = spec.description == undefined ? 'description' : spec.description;
@@ -21,8 +21,8 @@ class GameObject {
   }
 }
 
-var Games = [
-  new GameObject({
+var Pages = [
+  new PageObject({
     name: 'Home',
     description: 'Home page.',
     path: 'home',
@@ -31,13 +31,24 @@ var Games = [
     useBanner: false,
     // contentBackgroundColor: 'rgba(100, 100, 100, 0.8)',
   }),
-  new GameObject({
+  new PageObject({
+    name: 'Privacy Policy',
+    description: 'Privacy Policy page.',
+    path: 'privacy',
+    url: '',
+    showAsGame: false,
+    useBanner: false,
+    showInNav: false,
+    backgroundColor: 'hsl(var(--bannerHS), 25%)',
+    // contentBackgroundColor: 'rgba(100, 100, 100, 0.8)',
+  }),
+  new PageObject({
     name: 'Like Me?',
     description: 'A game of matching likenesses',
     path: 'likeme',
     url: 'https://likeme.games',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
-    version: '4.2.069',
+    version: '4.2.077',
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
     bannerText: 'free!',
@@ -531,7 +542,7 @@ var Games = [
       '               </ul>' +
       '             </ul>',
   }),
-  new GameObject({
+  new PageObject({
     name: "Drop 'n Stop!",
     description: 'The puck stops here',
     about: 'Fast and fun, the object of this game is to test your reaction time. Hold the drop button and release when the puck hits the dropzone.',
@@ -540,7 +551,7 @@ var Games = [
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
     backgroundColor: 'rgb(49, 121, 76)',
   }),
-  new GameObject({
+  new PageObject({
     name: 'CommOddities!',
     description: 'Not everything is an easy sell',
     about: 'If you ever played "Dope Wars" on a Palm Pilot back in the day, then you have an idea how this game plays. Basically you have 365 "days" to buy/sell for as much profit as possible. Your moral compass will be tested!',
@@ -549,7 +560,7 @@ var Games = [
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '7.png'],
     backgroundColor: 'hsl(157.86, 100%, 40.59%)',
   }),
-  new GameObject({
+  new PageObject({
     name: 'Path',
     description: 'Paths are the means to an end',
     about: 'Not ready for mobile play at all. Proof of concept at best. Play at your own risk :).',

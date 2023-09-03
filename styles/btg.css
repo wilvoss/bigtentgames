@@ -27,7 +27,7 @@
 
   --navHeight: 150px;
   --maxWidth: 1024px;
-  --footerHeight: 40px;
+  --footerHeight: 60px;
   --defaultGap: 1em;
   --borderRadius: 6px;
   --targetX: 50%;
@@ -500,14 +500,22 @@ content footer {
   position: relative;
 }
 
-footer a {
-  color: hsl(var(--appBackground));
+footer a, footer a:visited, footer a:active {
+  color: hsl(var(--appBackgroundWeakest));
   text-decoration: none;
+}
+
+footer a::before {
+  content: ' | ';
+  display: inline-block;
+  padding-right: var(--defaultGap);
 }
 
 @media only screen and (max-width: 500px) {
   :root {
     --navHeight: 100px;
+    --footerHeight: 40px;
+
     --defaultGap: 1em;
   }
 
@@ -582,11 +590,17 @@ footer a {
     display: none;
   }
 
+
+  footer a, footer a:visited, footer a:active {
+    color: hsl(var(--appForegroundWeakest));
+    text-decoration: none;
+  }
+
   content footer {
-    padding: 0;
-    display: block;
+    padding: var(--defaultGap) 0 0;
+    display: flex;
     width: 100%;
-    text-align: center;
+    justify-content: start;
     color: hsla(var(--appForeground), 0.7);
   }
 }

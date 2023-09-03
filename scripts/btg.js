@@ -1,5 +1,5 @@
 /// <reference path="../helpers/console-enhancer.js" />
-/// <reference path="../models/GameObject.js" />
+/// <reference path="../models/PageObject.js" />
 
 // if (!UseDebug) {
 Vue.config.devtools = false;
@@ -7,12 +7,12 @@ Vue.config.debug = false;
 Vue.config.silent = true;
 // }
 
-Vue.config.ignoredElements = ['app', 'page', 'navbar', 'settings', 'splash', 'splashwrap', 'message', 'notifications', 'speedControls', 'state', 'bank', 'commodity', 'detail', 'gameover', 'listheader', 'listings', 'category', 'name', 'units', 'currentPrice', 'description', 'market', 'currentValue', 'contractSize', 'goldbacking', 'contractUnit'];
+Vue.config.ignoredElements = ['app', 'page', 'navbar', 'settings', 'splash', 'splashwrap', 'message', 'notifications', 'speedControls', 'state', 'bank', 'commodity', 'detail', 'pageover', 'listheader', 'listings', 'category', 'name', 'units', 'currentPrice', 'description', 'market', 'currentValue', 'contractSize', 'goldbacking', 'contractUnit'];
 
 var app = new Vue({
   el: '#app',
   data: {
-    games: Games,
+    pages: Pages,
     year: new Date().getFullYear(),
     showOnionskin: false,
     onionSkinImageSrc: '',
@@ -21,37 +21,37 @@ var app = new Vue({
     r: document.querySelector(':root'),
   },
   methods: {
-    ChangeHashToGamePath(_game) {
-      log('ChangeHashToGamePath(_game) called');
-      window.location.hash = _game.path;
+    ChangeHashToPagePath(_path) {
+      log('ChangeHashToPagePath(_path) called');
+      window.location.hash = _path;
     },
 
-    SelectGame(_path) {
-      log('SelectGame(_path) called');
-      this.games.forEach((_game) => {
-        _game.isSelected = _game.path === _path;
+    SelectPage(_path) {
+      log('SelectPage(_path) called');
+      this.pages.forEach((_page) => {
+        _page.isSelected = _page.path === _path;
       });
       this.ResetScrollPositions();
     },
 
-    GetCurrentGame() {
-      log('GetCurrentGame() called');
-      let _game = null;
-      this.games.forEach((g) => {
+    GetCurrentPage() {
+      log('GetCurrentPage() called');
+      let _page = null;
+      this.pages.forEach((g) => {
         if (g.isSelected) {
-          _game = g;
+          _page = g;
         }
       });
-      if (_game === null) {
-        _game = this.games[0];
-        this.SelectGame(_game.path);
+      if (_page === null) {
+        _page = this.pages[0];
+        this.SelectPage(_page.path);
       }
-      return _game;
+      return _page;
     },
 
-    GetCurrentGameByPathName(_path) {
-      log('GetCurrentGameByPathName(_path) called');
-      return this.games.filter((obj) => obj.path === _path);
+    GetCurrentPageByPathName(_path) {
+      log('GetCurrentPageByPathName(_path) called');
+      return this.pages.filter((obj) => obj.path === _path);
     },
 
     ToggleExpandVersionHistory() {
@@ -103,7 +103,7 @@ var app = new Vue({
       if (this.currentHash === '') {
         window.location.hash = 'home';
       } else {
-        this.SelectGame(this.currentHash);
+        this.SelectPage(this.currentHash);
       }
     },
 
@@ -119,8 +119,12 @@ var app = new Vue({
   },
 
   computed: {
-    getCurrentGameComputed: function () {
-      return this.GetCurrentGame();
+    getCurrentPageComputed: function () {
+      return this.GetCurrentPage();
+    },
+
+    getPrivacyPageComputed: function () {
+      return this.GetCurrentPageByPathName('privacy');
     },
   },
 });
