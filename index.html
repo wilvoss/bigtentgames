@@ -50,23 +50,29 @@
               <intro>
                 <header>
                   <h1>Welcome!</h1>
-                  <p>This is Big Tent Games, a gaming company that dreams big and creates fun video games for everyone! Most of the games here are designed for mobile devices first, but all of them work on regular computers too. Let's go!</p>
+                  <p>This is Big Tent Games, a gaming company that dreams big and runs small while creating fun video games for everyone! Most of the games here are designed for mobile devices first, but all of them work on regular computers too. Let's go!</p>
                 </header>
               </intro>
               <h2>Available games</h2>
               <games>
                 <selector v-for="page in pages" v-if="page.showAsGame" :class="{banner: page.useBanner}">
-                  <button :title="'Open the page ' + page.name + ' in a new window.'" @click="ChangeHashToPagePath(page.path)" :style="{backgroundImage: 'url(/images/' + page.path + '/' + page.path + '_og.png)'}">
+                  <button :title="'Open the page for the game ' + page.name + '.'" @click="ChangeHashToPagePath(page.path)" :style="{backgroundImage: 'url(/images/' + page.path + '/' + page.path + '_og.png)'}">
                     <banner :class="[page.bannerType]">{{page.bannerText}}</banner>
                     <img :src="'/images/' + page.path + '/' + page.path + '_og.png'" :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" />
                   </button>
                 </selector>
               </games>
               <h2>About</h2>
-              <p>Big Tent Games is the brainchild of Wil Voss, game player, game designer, product designer, UX designer, coder, and prototyper. The big dream is to create and publish pages here that are so captivating and addictive that folks play not just one page once but multiple pages all of the time!</p>
+              <p>Big Tent Games is the brainchild of Wil Voss, game player, game designer, product designer, UX designer, coder, and prototyper. The big dream is to create and publish games here that are so captivating and addictive that folks play not just one game once but multiple games all of the time!</p>
               <p>If any of the games here intrigue, excite, confound, or confuse you, <a href="mailto:bigtentgames@icloud.com">please let us know</a>!</p>
-              <h2>Contact</h2>
-              <p><a href="mailto:bigtentgames@icloud.com">bigtentgames@icloud.com</a></p>
+              <h2>Community</h2>
+              <p>
+                Join on us on Discord:
+                <a href="https://discord.gg/gaBqXQDf" target="_blank">Big Tent Games</a>
+              </p>
+              <h2>How can you help?</h2>
+              <p>Currently, Big Tent Games doesn't earn money on any of these games. The games are free and we don't use any 3rd party (or 1st party) trackers on any of our games or this site. Any donation you make goes towards creating and improving these games.</p>
+              <button class="action" @click="window.open('https://www.buymeacoffee.com/wilvoss')">Buy me a coffee!</button>
             </section>
           </article>
           <article v-if="getCurrentPageComputed.showAsGame">
@@ -95,10 +101,13 @@
               <h2>How to install</h2>
               <h3 v-if="!getCurrentPageComputed.isMobileFirst">Best on desktop</h3>
               <p>{{getCurrentPageComputed.name}} can be installed on almost any device as if it was an application. Most operating systems will help you install this page when you first visit the website with a simple banner notification. In iOS, open the Share menu from your browser and then choose Save to your Home Screen.</p>
-
-              <p></p>
             </section>
-
+            <section v-if="getCurrentPageComputed.socialLinks.length>0">
+              <h2>Community</h2>
+              <ul>
+                <li :class="[link.class]" v-for="link in getCurrentPageComputed.socialLinks"><a :href="link.url" target="_blank">{{link.name}}</a></li>
+              </ul>
+            </section>
             <section id="versionHistory" :class="{expanded: expandVersionHistory, collapsed: !expandVersionHistory}" v-if="getCurrentPageComputed.versionHistory != ''" v-html="getCurrentPageComputed.versionHistory"></section>
             <sectionToggle v-if="getCurrentPageComputed.versionHistory != '' && !expandVersionHistory" @click="ToggleExpandVersionHistory"> ...click to see more history </sectionToggle>
           </article>
@@ -125,9 +134,9 @@
               <p>This is Wil speaking now, the owner of Big Tent Games. I am just trying to make video games people will enjoy and maybe even pay for. I am not a big evil corporation, I don't have lawyers and I really don't want to hurt my users in any way, shape, or form.</p>
             </section>
           </article>
-          <footer>&copy; {{year}} Big Tent Games <a v-if="getCurrentPageComputed.path !== 'privacy'" href="#privacy">Privacy Policy</a></footer>
+          <footer>&copy; {{year}} Big Tent Games <a v-if="getCurrentPageComputed.path !== 'privacy'" href="#privacy">Privacy Policy</a><a href="mailto:bigtentgames@icloud.com">Contact</a></footer>
         </content>
-        <footer>&copy; {{year}} Big Tent Games <a v-if="getCurrentPageComputed.path !== 'privacy'" href="#privacy">Privacy Policy</a></footer>
+        <footer>&copy; {{year}} Big Tent Games <a v-if="getCurrentPageComputed.path !== 'privacy'" href="#privacy">Privacy Policy</a><a href="mailto:bigtentgames@icloud.com">Contact</a></footer>
       </stage>
     </app>
     <script src="helpers/console-enhancer.js" type="text/javascript"></script>

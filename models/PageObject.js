@@ -18,6 +18,7 @@ class PageObject {
     this.bannerType = spec.bannerType === undefined ? 'beta' : spec.bannerType;
     this.screenshots = spec.screenshots === undefined ? [] : spec.screenshots;
     this.isMobileFirst = spec.isMobileFirst === undefined ? true : spec.isMobileFirst;
+    this.socialLinks = spec.socialLinks === undefined ? [] : spec.socialLinks;
   }
 }
 
@@ -46,6 +47,7 @@ var Pages = [
     name: 'Like Me?',
     description: 'A game of matching likenesses',
     path: 'likeme',
+    // socialLinks: [{ class: 'discord', name: 'Discord', url: 'https://discord.gg/CuZK8QpK' }],
     url: 'https://likeme.games',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
     version: '4.2.077',

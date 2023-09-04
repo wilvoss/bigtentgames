@@ -80,7 +80,15 @@ h5 {
 h1 {
   font-family: "Display";
   font-size: normal;
+}
 
+p {
+  padding: 0;
+  margin: var(--defaultGap) 0;
+}
+
+p:last-of-type {
+  margin: var(--defaultGap) 0 0;
 }
 
 a,
@@ -89,6 +97,7 @@ a:focus,
 a:active {
   color: hsl(var(--appForeground));
   text-decoration: none;
+  border-bottom: 1px solid hsl(var(--bannerHS), 70%);
 }
 
 button {
@@ -273,12 +282,13 @@ selector.banner button banner {
 }
 
 nav selector.on {
-  pointer-events: none;
+  /* pointer-events: none; */
   cursor: default;
 }
 
 nav selector.on button,
 nav selector:hover.on button {
+  cursor: default;
   opacity: 1;
   filter: none;
   transform: translateY(0%);
@@ -377,18 +387,24 @@ section intro img {
   overflow: hidden;
 }
 
-section intro button {
+section intro button, section button.action {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
   border-radius: 17px;
-  background-color: hsl(var(--appForeground));
+  background-color: hsl(var(--bannerHS), 50%);
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   color: hsl(var(--appBackgroundWeakest));
   padding: 0 20px;
   margin: calc(2 * var(--defaultGap)) 0 var(--defaultGap) 0;
   transform: translateX(-3px);
+}
+
+
+section button.action {
+  margin-top: var(--defaultGap);
+  background-image: none;
 }
 
 section intro button.light {
@@ -503,6 +519,7 @@ content footer {
 footer a, footer a:visited, footer a:active {
   color: hsl(var(--appBackgroundWeakest));
   text-decoration: none;
+  border: none;
 }
 
 footer a::before {
@@ -513,7 +530,7 @@ footer a::before {
 
 @media only screen and (max-width: 500px) {
   :root {
-    --navHeight: 100px;
+    --navHeight: 120px;
     --footerHeight: 40px;
 
     --defaultGap: 1em;
@@ -535,7 +552,7 @@ footer a::before {
   }
 
   nav {
-    align-items: end;
+    align-items: center;
   }
 
   nav selector {
@@ -592,11 +609,13 @@ footer a::before {
 
 
   footer a, footer a:visited, footer a:active {
-    color: hsl(var(--appForegroundWeakest));
+    color: hsla(var(--appForeground), 0.8);
     text-decoration: none;
   }
 
   content footer {
+    margin-top: calc(2 * var(--defaultGap));
+    border-top: 1px solid hsla(var(--appForeground), 0.1);
     padding: var(--defaultGap) 0 0;
     display: flex;
     width: 100%;
@@ -631,7 +650,7 @@ footer a::before {
     box-shadow: none;
   }
 
-  section intro button {
+  section intro button, section button.action {
     color: hsl(var(--appForegroundWeakest));
     box-shadow: 0px 4px 8px hsla(var(--bodyBackground), 0.4);
   }
