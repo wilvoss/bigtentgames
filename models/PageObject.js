@@ -58,6 +58,11 @@ var Pages = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.088</li>' +
+      '               <ul>' +
+      '                 <li>sw.js now always loads .txt files from server</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.087</li>' +
       '               <ul>' +
       '                 <li>daily challenge bug fixes</li>' +
