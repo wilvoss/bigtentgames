@@ -18,6 +18,7 @@ var app = new Vue({
     onionSkinImageSrc: '',
     currentHash: '',
     expandVersionHistory: false,
+    platform: '',
     r: document.querySelector(':root'),
   },
   methods: {
@@ -120,10 +121,37 @@ var app = new Vue({
       announce('InitializeApp() called');
       this.HandleHashChangeEvent();
     },
+
+    async GetPlatformValue() {
+      let n = navigator;
+      if (n.userAgentData) {
+        const hints = ['platform'];
+        await n.userAgentData.getHighEntropyValues(hints).then((ua) => {
+          this.platform = ua.platform.toLowerCase();
+        });
+      } else {
+        var platform = navigator.platform;
+
+        if (/Mac/.test(platform)) {
+          this.platform = 'mac';
+        } else if (/Win/.test(platform)) {
+          this.platform = 'windows';
+        } else if (/iPhone/.test(platform)) {
+          this.platform = 'ios';
+        } else if (/iPad/.test(platform)) {
+          this.platform = 'ios';
+        } else if (/Linux/.test(platform)) {
+          this.platform = 'android';
+        } else {
+          this.platform = 'unknown';
+        }
+      }
+    },
   },
 
   mounted() {
     window.addEventListener('hashchange', this.HandleHashChangeEvent);
+    this.GetPlatformValue();
     this.InitializeApp();
   },
 
@@ -134,6 +162,10 @@ var app = new Vue({
 
     getPrivacyPageComputed: function () {
       return this.GetCurrentPageByPathName('privacy');
+    },
+
+    getPlatformValueComputed: async function () {
+      return this.platform;
     },
   },
 });

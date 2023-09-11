@@ -3,6 +3,9 @@ class PageObject {
     this.name = spec.name == undefined ? 'name' : spec.name;
     this.description = spec.description == undefined ? 'description' : spec.description;
     this.price = spec.price == undefined ? '$0.00' : spec.price;
+    this.googleplayurl = spec.googleplayurl == undefined ? '' : spec.googleplayurl;
+    this.appleappstoreurl = spec.appleappstoreurl == undefined ? '' : spec.appleappstoreurl;
+    this.msappstore = spec.msappstore == undefined ? '' : spec.msappstore;
     this.about = spec.about == undefined ? '' : spec.about;
     this.versionHistory = spec.versionHistory == undefined ? '' : spec.versionHistory;
     this.version = spec.version == undefined ? '' : spec.version;
@@ -49,6 +52,9 @@ var Pages = [
     path: 'likeme',
     // socialLinks: [{ class: 'discord', name: 'Discord', url: 'https://discord.gg/CuZK8QpK' }],
     url: 'https://likeme.games',
+    googleplayurl: 'https://play.google.com/store/apps/details?id=games.likeme.twa',
+    appleappstoreurl: '',
+    msappstore: '',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
     version: '4.2.105',
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',

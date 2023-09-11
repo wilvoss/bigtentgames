@@ -65,6 +65,10 @@ body {
   opacity: 0.1;
 }
 
+header {
+  width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -422,6 +426,13 @@ screenshots {
   width: calc(100%);
   margin-left: calc(-2 * var(--defaultGap));
   padding: var(--defaultGap) calc(2 * var(--defaultGap)) 0;
+}
+
+installers {
+  display: flex;
+  flex: 1;
+  gap: calc(var(--defaultGap) / 2);
+  width: calc(100%);
 }
 
 screenshots::-webkit-scrollbar {
