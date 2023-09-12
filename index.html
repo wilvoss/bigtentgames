@@ -89,7 +89,7 @@
                     <button v-if="(platform.indexOf('android') != -1 || platform.indexOf('linux') != -1) && getCurrentPageComputed.googleplayurl !==''" class="action" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')">Free on Google Play</button>
                     <button v-if="platform.indexOf('ios') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')">Free on App Store</button>
                     <button v-if="platform.indexOf('mac') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')">Free on App Store</button>
-                    <button v-if="platform.indexOf('win') != -1 && getCurrentPageComputed.msappstore !==''" class="action" @click="window.open(getCurrentPageComputed.msappstore, '_blank')">Free on App Store</button>
+                    <button v-if="platform.indexOf('win') != -1 && getCurrentPageComputed.msappstore !==''" class="action" @click="window.open(getCurrentPageComputed.msappstore, '_blank')">Free on Microsoft Store</button>
                   </installers>
                   <!-- <button class="light" @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.price === '$0.00' ? 'Play for free!' : getCurrentPageComputed.price}}</button> -->
                 </header>
