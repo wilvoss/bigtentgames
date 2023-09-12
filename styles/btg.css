@@ -104,6 +104,16 @@ a:active {
   border-bottom: 1px solid hsl(var(--bannerHS), 70%);
 }
 
+ul {
+  list-style-type: '- ';
+  padding-left: 14px;
+}
+
+li {
+  padding-left: 4px;
+
+}
+
 button {
   font-family: "Display";
   cursor: pointer;
@@ -381,6 +391,11 @@ section h3 {
   letter-spacing: 1px;
 }
 
+section h3 {
+  margin-top: calc(var(--defaultGap));
+  color: hsl(var(--appForeground))
+}
+
 section intro p {
   margin: 10px 0 0 0;
 }
@@ -459,6 +474,42 @@ screenshots screenshot img {
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: var(--defaultGap);
   border: 1px solid white;
+}
+
+communities community {
+  display: block;
+  line-height: 150%;
+  width: auto;
+  margin: var(--defaultGap) 0 0;
+  /* border-radius: var(--borderRadius); */
+  /* background: hsla(var(--appBackgroundWeakest), .15); */
+  /* padding: var(--defaultGap); */
+}
+
+communities community p, communities community p:last-of-type {
+  padding: 0;
+  margin: 0;
+  line-height: 150%;
+}
+
+communities community h3, communities community ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  ;
+}
+
+
+communities community li {
+  list-style-type: '↳ ';
+  margin-left: 14px;
+  line-height: 200%;
+  color: hsl(var(--appForegroundWeakest));
+}
+
+communities community h3 {
+  margin-bottom: var(--defaultGap);
 }
 
 logo:hover {

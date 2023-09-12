@@ -68,7 +68,7 @@
               <h2>Community</h2>
               <p>
                 Join on us on Discord:
-                <a href="https://discord.gg/gaBqXQDf" target="_blank">Big Tent Games</a>
+                <a href="discord://discord.gg/wHXD524D4H" target="_blank">Big Tent Games</a>
               </p>
               <h2>How can you help?</h2>
               <p>Currently, Big Tent Games doesn't earn money on any of these games. The games are free and we don't use ads or any 3rd party (or 1st party) trackers on any of our games or this site. Any donation you make goes towards creating and improving these games.</p>
@@ -108,11 +108,17 @@
               <h3 v-if="!getCurrentPageComputed.isMobileFirst">Best on desktop</h3>
               <p>The online version of {{getCurrentPageComputed.name}} can be installed on almost any device as if it was an application. Most operating systems will help you install this page when you first visit the website with a simple banner notification. Once you've opened the game in your browser on iOS, open the Share menu from your browser and then choose Save to your Home Screen.</p>
             </section>
-            <section v-if="getCurrentPageComputed.socialLinks.length>0">
-              <h2>Community</h2>
-              <ul>
-                <li :class="[link.class]" v-for="link in getCurrentPageComputed.socialLinks"><a :href="link.url" target="_blank">{{link.name}}</a></li>
-              </ul>
+            <section v-if="getCurrentPageComputed.communities.length>0">
+              <h2>Discord</h2>
+              <communities v-for="service in getCurrentPageComputed.communities">
+                <community>
+                  <!-- <h3>{{service.service}}</h3> -->
+                  <p><a :href="service.url" target="_blank">{{service.name}}</a></p>
+                  <ul>
+                    <li v-for="link in service.links"><a :href="link.url" target="_blank">{{link.name}}</a></li>
+                  </ul>
+                </community>
+              </communities>
             </section>
             <section id="versionHistory" :class="{expanded: expandVersionHistory, collapsed: !expandVersionHistory}" v-if="getCurrentPageComputed.versionHistory != ''" v-html="getCurrentPageComputed.versionHistory"></section>
             <sectionToggle v-if="getCurrentPageComputed.versionHistory != '' && !expandVersionHistory" @click="ToggleExpandVersionHistory"> ...click to see more history </sectionToggle>

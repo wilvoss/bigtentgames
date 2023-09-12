@@ -21,7 +21,7 @@ class PageObject {
     this.bannerType = spec.bannerType === undefined ? 'beta' : spec.bannerType;
     this.screenshots = spec.screenshots === undefined ? [] : spec.screenshots;
     this.isMobileFirst = spec.isMobileFirst === undefined ? true : spec.isMobileFirst;
-    this.socialLinks = spec.socialLinks === undefined ? [] : spec.socialLinks;
+    this.communities = spec.communities === undefined ? [] : spec.communities;
   }
 }
 
@@ -50,7 +50,6 @@ var Pages = [
     name: 'Like Me?',
     description: 'A game of matching likenesses',
     path: 'likeme',
-    // socialLinks: [{ class: 'discord', name: 'Discord', url: 'https://discord.gg/CuZK8QpK' }],
     url: 'https://likeme.games',
     googleplayurl: 'https://play.google.com/store/apps/details?id=games.likeme.twa',
     appleappstoreurl: '',
@@ -61,6 +60,19 @@ var Pages = [
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
     bannerText: 'free!',
     bannerType: 'free',
+    communities: [
+      {
+        service: 'Discord',
+        name: 'Big Tent Games Server',
+        url: 'https://discord.gg/wHXD524D4H',
+        links: [
+          { name: '#likeme-general', url: 'https://discord.com/channels/1148025462598139934/1148026844562604063' },
+          { name: '#likeme-scores', url: 'https://discord.com/channels/1148025462598139934/1148345172304867450' },
+          { name: '#likeme-feedback', url: 'https://discord.com/channels/1148025462598139934/1149745093604020364' },
+          { name: '#likeme-bug-reports', url: 'https://discord.com/channels/1148025462598139934/1149745122624413836' },
+        ],
+      },
+    ],
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +

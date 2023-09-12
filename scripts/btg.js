@@ -167,5 +167,16 @@ var app = new Vue({
     getPlatformValueComputed: async function () {
       return this.platform;
     },
+
+    groupedByService() {
+      return this.getCurrentPageComputed.socialLinks.reduce((grouped, item) => {
+        const key = item.service;
+        if (!grouped[key]) {
+          grouped[key] = [];
+        }
+        grouped[key].push(item);
+        return grouped;
+      }, {});
+    },
   },
 });
