@@ -76,6 +76,12 @@ var Pages = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.111</li>' +
+      '               <ul>' +
+      '                 <li>prep work for apple store</li>' +
+      '                 <li>some buttons become anchors</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.109</li>' +
       '               <ul>' +
       '                 <li>improved tutorial</li>' +
