@@ -55,7 +55,6 @@ var Pages = [
     appleappstoreurl: '',
     msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
-    version: '4.2.109',
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
     bannerText: 'free!',
@@ -73,6 +72,7 @@ var Pages = [
         ],
       },
     ],
+    version: '4.2.111',
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
