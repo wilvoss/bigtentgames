@@ -319,7 +319,7 @@ content {
   height: 100%;
   max-height: calc(100% - var(--navHeight) - var(--footerHeight) - 4 * var(--defaultGap));
   overflow: auto;
-  background-color: hsla(var(--appBackgroundWeakest), 0.85);
+  background-color: hsla(var(--appBackgroundWeakest), 0.88);
   background-size: cover;
   background-position: 0px -100px;
   background-repeat: no-repeat;
