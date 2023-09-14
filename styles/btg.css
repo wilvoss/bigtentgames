@@ -128,6 +128,36 @@ button {
   -webkit-transform-style: preserve-3d;
 }
 
+button.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: baseline;
+  align-content: baseline;
+  align-items: center;
+  column-gap: 8px;
+  white-space: nowrap;
+}
+
+icon {
+  display: block;
+  mask-size: 20px 20px;
+  -webkit-mask-size: 20px 20px;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  background-color: white;
+  width: 15px;
+  height: 20px;
+  pointer-events: none;
+}
+
+icon.bmc {
+  mask-image: url(../images/icon_bmc.svg);
+  -webkit-mask-image: url(../images/icon_bmc.svg);
+}
+
 app {
   display: flex;
   justify-content: center;
