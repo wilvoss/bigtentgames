@@ -432,7 +432,14 @@ section intro button.light {
   color: hsla(var(--appBackgroundWeakest), 1);
 }
 
-screenshots {
+section h4 {
+  font-weight: 600;
+  margin-top: var(--defaultGap);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+screenshots, features ul {
   display: flex;
   flex: 1;
   gap: calc(2 * var(--defaultGap));
@@ -441,6 +448,26 @@ screenshots {
   width: calc(100%);
   margin-left: calc(-2 * var(--defaultGap));
   padding: var(--defaultGap) calc(2 * var(--defaultGap)) 0;
+}
+
+features ul {
+  gap: calc(var(--defaultGap) / 2);
+  flex-wrap: wrap;
+  margin-top: 0;
+  /* flex-direction: column; */
+  /* max-height: 8em; */
+}
+
+features ul li {
+  list-style-type: none;
+  padding: calc(var(--defaultGap) /2) var(--defaultGap);
+  margin: 0;
+  border-radius: var(--borderRadius);
+  background: hsla(var(--bannerHS), 100%, 1);
+  color: hsl(var(--bannerHS), 50%);
+  /* width: calc(25% - var(--defaultGap) * 2); */
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
 installers {
@@ -732,4 +759,19 @@ footer a::before {
   selector button banner {
     box-shadow: 0px 2px 2px hsla(var(--bodyBackground), 0.2);
   }
+
+  features ul {
+    gap: 4px;
+  }
+
+  features ul li {
+    background: hsla(var(--bannerHS), 96%, 1);
+    font-size: .9em;
+    /* color: hsl(var(--bannerHS), 50%); */
+    padding: calc(var(--defaultGap) / 4) calc(var(--defaultGap));
+    /* width: calc(25% - var(--defaultGap) / 2); */
+    /* display: flex; */
+    /* justify-content: center; */
+  }
+
 }

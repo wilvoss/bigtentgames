@@ -19,6 +19,7 @@ class PageObject {
     this.useBanner = spec.useBanner === undefined ? true : spec.useBanner;
     this.bannerText = spec.bannerText === undefined ? 'beta' : spec.bannerText;
     this.bannerType = spec.bannerType === undefined ? 'beta' : spec.bannerType;
+    this.features = spec.features === undefined ? [] : spec.features;
     this.screenshots = spec.screenshots === undefined ? [] : spec.screenshots;
     this.isMobileFirst = spec.isMobileFirst === undefined ? true : spec.isMobileFirst;
     this.communities = spec.communities === undefined ? [] : spec.communities;
@@ -53,10 +54,11 @@ var Pages = [
     url: 'https://likeme.games',
     googleplayurl: 'https://play.google.com/store/apps/details?id=games.likeme.twa',
     appleappstoreurl: '',
+    features: ['Daily Challenges!', 'Brain training', '3 different game modes', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Pausing', 'Score sharing', 'High scores'],
     msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
-    screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
+    screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
     bannerText: 'free!',
     bannerType: 'free',
     communities: [
