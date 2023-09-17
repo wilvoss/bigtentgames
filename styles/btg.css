@@ -469,15 +469,58 @@ section h4 {
   padding-bottom: 0;
 }
 
-screenshots, features ul {
+screenshots, features ul, quotes {
   display: flex;
   flex: 1;
   gap: calc(2 * var(--defaultGap));
   overflow-x: auto;
   overflow-y: hidden;
   width: calc(100%);
-  margin-left: calc(-2 * var(--defaultGap));
+  padding: var(--defaultGap) 0 0;
+
+}
+
+screenshots {
   padding: var(--defaultGap) calc(2 * var(--defaultGap)) 0;
+  margin-left: calc(-2 * var(--defaultGap));
+}
+
+quotes {
+  flex-wrap: wrap;
+  column-gap: calc(2 * var(--defaultGap));
+  row-gap: calc(var(--defaultGap));
+  padding: 0;
+  margin: var(--defaultGap) 0;
+}
+
+quotes quote {
+  display: block;
+  line-height: 150%;
+  width: calc(100% - var(--defaultGap) * 5);
+  max-width: calc(50% - var(--defaultGap) * 5);
+  margin: 0;
+  color: hsl(var(--appForegroundWeaker));
+  /* border-radius: var(--borderRadius);
+  background: hsla(var(--appBackgroundWeakest), .6);
+  */
+  padding: 0;
+}
+
+quote statement {
+  display: block;
+  font-style: italic;
+  /* text-align: center; */
+}
+
+quote attribution {
+  display: block;
+  text-align: left;
+
+  color: hsl(var(--bannerHS), 58%);
+}
+
+quote attribution::before {
+  content: ' – '
 }
 
 features ul {
@@ -788,6 +831,22 @@ footer a::before {
 
   selector button banner {
     box-shadow: 0px 2px 2px hsla(var(--bodyBackground), 0.2);
+  }
+
+  quotes {
+    gap: 4px;
+  }
+
+  quotes quote {
+    max-width: unset;
+    width: calc(100%);
+    background: hsla(var(--appBackgroundWeakest), .4);
+    padding: var(--defaultGap);
+    border-radius: var(--borderRadius);
+  }
+
+  quotes attribution {
+    color: hsla(var(--appForeground), 0.8);
   }
 
   features ul {

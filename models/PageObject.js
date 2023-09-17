@@ -23,6 +23,7 @@ class PageObject {
     this.screenshots = spec.screenshots === undefined ? [] : spec.screenshots;
     this.isMobileFirst = spec.isMobileFirst === undefined ? true : spec.isMobileFirst;
     this.communities = spec.communities === undefined ? [] : spec.communities;
+    this.quotes = spec.quotes === undefined ? [] : spec.quotes;
   }
 }
 
@@ -52,7 +53,7 @@ var Pages = [
     description: 'A game of matching likenesses',
     path: 'likeme',
     url: 'https://likeme.games',
-    features: ['Daily Challenges!', 'Brain training', '3 different game modes', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Pausing', 'Score sharing', 'High scores'],
+    features: ['Daily challenges', 'Three game modes', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Pausing', 'Score sharing', 'High scores'],
     googleplayurl: 'https://play.google.com/store/apps/details?id=games.likeme.twa',
     appleappstoreurl: '',
     msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
@@ -61,6 +62,15 @@ var Pages = [
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
     bannerText: 'free!',
     bannerType: 'free',
+    quotes: [
+      { statement: 'A nice take on set. Much less stressful.', attribution: 'Paul H.' },
+      { statement: "It's elegant.", attribution: 'Betsy H.' },
+      { statement: '...very addictive...', attribution: 'Cole B.' },
+      { statement: 'I like it!', attribution: 'Janel L.' },
+      { statement: 'That was fun! Nice lightweight game but puts your brain to work!', attribution: 'Shon D.' },
+      { statement: 'I had to stop otherwise it was going to be a deep rabbit hole...', attribution: 'Jason B.' },
+      { statement: 'I like it!', attribution: 'MD Donahue' },
+    ],
     communities: [
       {
         service: 'Discord',

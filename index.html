@@ -115,6 +115,15 @@
                 </screenshot>
               </screenshots>
             </section>
+            <section v-if="getCurrentPageComputed.quotes.length > 0">
+              <h2>What do players say?</h2>
+              <quotes>
+                <quote v-for="quote in getCurrentPageComputed.quotes">
+                  <statement> "<span v-html="quote.statement"></span>" </statement>
+                  <attribution>{{quote.attribution}}</attribution>
+                </quote>
+              </quotes>
+            </section>
             <section>
               <h2>Did you know?</h2>
               <p>The online version of {{getCurrentPageComputed.name}} can be installed on almost any device as if it was an application. Most operating systems will help you install this page when you first visit the website with a simple banner notification. Once you've opened the game in your browser on iOS, open the Share menu from your browser and then choose Save to your Home Screen.</p>
