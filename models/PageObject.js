@@ -75,7 +75,7 @@ var Pages = [
       {
         service: 'Discord',
         name: 'Big Tent Games Server',
-        url: 'https://discord.gg/wHXD524D4H',
+        url: 'https://discord.gg/sJ3vG3RHZd',
         links: [
           { name: '#likeme-general', url: 'https://discord.com/channels/1148025462598139934/1148026844562604063' },
           { name: '#likeme-scores', url: 'https://discord.com/channels/1148025462598139934/1148345172304867450' },
