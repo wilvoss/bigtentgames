@@ -84,9 +84,15 @@ var Pages = [
         ],
       },
     ],
-    version: '4.2.112',
+    version: '4.2.114',
     versionHistory:
       '<h2>Version History</h2>' +
+      '             <ul>' +
+      '               <li>4.2.114</li>' +
+      '               <ul>' +
+      '                 <li>minor improvements</li>' +
+      '               </ul>' +
+      '' +
       '             <ul>' +
       '               <li>4.2.112</li>' +
       '               <ul>' +
