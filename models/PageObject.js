@@ -84,10 +84,15 @@ var Pages = [
         ],
       },
     ],
-    version: '4.2.111',
+    version: '4.2.112',
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.112</li>' +
+      '               <ul>' +
+      '                 <li>much faster daily challenge fetch</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.111</li>' +
       '               <ul>' +
       '                 <li>prep work for apple store</li>' +
