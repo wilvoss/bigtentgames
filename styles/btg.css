@@ -139,6 +139,12 @@ button.inline {
   white-space: nowrap;
 }
 
+section button.inert, section button.inline.inert {
+  background-color: hsla(var(--bannerHS), 39%, 1);
+  box-shadow: none;
+  pointer-events: none;
+}
+
 icon {
   display: block;
   mask-size: 20px 20px;
@@ -164,6 +170,15 @@ icon.apple {
   -webkit-mask-size: 17px 19px;
   mask-image: url(../images/icon_apple.svg);
   -webkit-mask-image: url(../images/icon_apple.svg);
+  margin-bottom: 1px;
+}
+
+icon.googleplay {
+  width: 17px;
+  mask-size: 17px 19px;
+  -webkit-mask-size: 17px 19px;
+  mask-image: url(../images/icon_google_play.svg);
+  -webkit-mask-image: url(../images/icon_google_play.svg);
   margin-bottom: 1px;
 }
 

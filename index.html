@@ -89,8 +89,9 @@
                   <h2>{{getCurrentPageComputed.description}}</h2>
                   <installers>
                     <button v-if="getCurrentPageComputed.price === 0" class="action" @click="window.open(getCurrentPageComputed.url, '_blank')">Free Online</button>
-                    <button v-if="(platform.indexOf('android') != -1 || platform.indexOf('linux') != -1) && getCurrentPageComputed.googleplayurl !==''" class="action" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')">Get it on Google Play</button>
-                    <button v-if="platform.indexOf('ios') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> Get it on Apple App Store</button>
+                    <button v-if="(platform.indexOf('android') != -1 || platform.indexOf('linux') != -1) && getCurrentPageComputed.googleplayurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')"><icon class="googleplay"></icon>Get it on Google Play</button>
+                    <button v-if="(platform.indexOf('android') != -1 || platform.indexOf('linux') != -1) && getCurrentPageComputed.googleplayurl ==='' && getCurrentPageComputed.price != 0" class="action inline inert">Coming soon to Google Play<icon class="googleplay"></icon></button>
+                    <button v-if="platform.indexOf('ios') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> Get it on App Store</button>
                     <button v-if="platform.indexOf('mac') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> Get it on the App Store</button>
                     <button v-if="platform.indexOf('win') != -1 && getCurrentPageComputed.msappstore !==''" class="action" @click="window.open(getCurrentPageComputed.msappstore, '_blank')">Get it on Microsoft Store</button>
                   </installers>
@@ -124,7 +125,7 @@
                 </quote>
               </quotes>
             </section>
-            <section>
+            <section v-if="getCurrentPageComputed.price === 0">
               <h2>Did you know?</h2>
               <p>The online version of {{getCurrentPageComputed.name}} can be installed on almost any device as if it was an application. Most operating systems will help you install this page when you first visit the website with a simple banner notification. Once you've opened the game in your browser on iOS, open the Share menu from your browser and then choose Save to your Home Screen.</p>
             </section>
