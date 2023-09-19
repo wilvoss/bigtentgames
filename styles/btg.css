@@ -158,6 +158,15 @@ icon.bmc {
   -webkit-mask-image: url(../images/icon_bmc.svg);
 }
 
+icon.apple {
+  width: 17px;
+  mask-size: 17px 19px;
+  -webkit-mask-size: 17px 19px;
+  mask-image: url(../images/icon_apple.svg);
+  -webkit-mask-image: url(../images/icon_apple.svg);
+  margin-bottom: 1px;
+}
+
 app {
   display: flex;
   justify-content: center;
@@ -307,7 +316,7 @@ selector.on button banner {
   transform: translate(-29px, -18px);
 }
 
-selector button banner.free {
+selector button banner.free, selector button banner.paid {
   background-color: hsl(var(--bannerHS), 39%);
   color: rgb(255, 255, 255);
 }

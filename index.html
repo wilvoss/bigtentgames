@@ -71,7 +71,7 @@
                 <a href="https://discord.gg/sJ3vG3RHZd" target="_blank">Big Tent Games</a>
               </p>
               <h2>How can you help?</h2>
-              <p>Currently, Big Tent Games doesn't earn money on any of these games. The games are free and we don't use ads or any 3rd party (or 1st party) trackers on any of our games or this site. Any donation you make goes towards creating and improving these games.</p>
+              <p>Currently, Big Tent Games doesn't earn much money on any of these games. Many of the games are free and we don't use ads or any 3rd party (or 1st party) trackers on any of our games or this site. Any donation you make goes towards creating and improving these games.</p>
               <button class="action inline" @click="window.open('https://www.buymeacoffee.com/wilvoss')">
                 <icon class="bmc"></icon>
                 Buy me a coffee!
@@ -88,11 +88,11 @@
                   </h1>
                   <h2>{{getCurrentPageComputed.description}}</h2>
                   <installers>
-                    <button class="action" @click="window.open(getCurrentPageComputed.url, '_blank')">Free Online</button>
-                    <button v-if="(platform.indexOf('android') != -1 || platform.indexOf('linux') != -1) && getCurrentPageComputed.googleplayurl !==''" class="action" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')">Free on Google Play</button>
-                    <button v-if="platform.indexOf('ios') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')">Free on App Store</button>
-                    <button v-if="platform.indexOf('mac') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')">Free on App Store</button>
-                    <button v-if="platform.indexOf('win') != -1 && getCurrentPageComputed.msappstore !==''" class="action" @click="window.open(getCurrentPageComputed.msappstore, '_blank')">Free on Microsoft Store</button>
+                    <button v-if="getCurrentPageComputed.price === 0" class="action" @click="window.open(getCurrentPageComputed.url, '_blank')">Free Online</button>
+                    <button v-if="(platform.indexOf('android') != -1 || platform.indexOf('linux') != -1) && getCurrentPageComputed.googleplayurl !==''" class="action" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')">Get it on Google Play</button>
+                    <button v-if="platform.indexOf('ios') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> Get it on Apple App Store</button>
+                    <button v-if="platform.indexOf('mac') != -1 && getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> Get it on the App Store</button>
+                    <button v-if="platform.indexOf('win') != -1 && getCurrentPageComputed.msappstore !==''" class="action" @click="window.open(getCurrentPageComputed.msappstore, '_blank')">Get it on Microsoft Store</button>
                   </installers>
                   <!-- <button class="light" @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.price === '$0.00' ? 'Play for free!' : getCurrentPageComputed.price}}</button> -->
                 </header>

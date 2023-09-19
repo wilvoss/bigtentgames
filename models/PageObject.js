@@ -2,7 +2,8 @@ class PageObject {
   constructor(spec) {
     this.name = spec.name == undefined ? 'name' : spec.name;
     this.description = spec.description == undefined ? 'description' : spec.description;
-    this.price = spec.price == undefined ? '$0.00' : spec.price;
+    this.price = spec.price == undefined ? 0 : spec.price;
+    this.priceText = spec.priceText === undefined ? 'Free' : spec.priceText;
     this.googleplayurl = spec.googleplayurl == undefined ? '' : spec.googleplayurl;
     this.appleappstoreurl = spec.appleappstoreurl == undefined ? '' : spec.appleappstoreurl;
     this.msappstore = spec.msappstore == undefined ? '' : spec.msappstore;
@@ -55,13 +56,15 @@ var Pages = [
     url: 'https://likeme.games',
     features: ['Daily challenges', 'Three game modes', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Pausing', 'Score sharing', 'High scores'],
     googleplayurl: 'https://play.google.com/store/apps/details?id=games.likeme.twa',
-    appleappstoreurl: '',
+    appleappstoreurl: 'https://apps.apple.com/us/app/like-me/id6466331042',
     msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
-    bannerText: 'free!',
-    bannerType: 'free',
+    priceText: '$0.99',
+    bannerText: '$0.99',
+    bannerType: 'paid',
+    price: '$0.99',
     quotes: [
       { statement: 'A nice take on set. Much less stressful.', attribution: 'Paul H.' },
       { statement: "It's elegant.", attribution: 'Betsy H.' },
