@@ -55,7 +55,7 @@ var Pages = [
     path: 'likeme',
     url: 'https://likeme.games',
     features: ['Daily challenges', 'Three game modes', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Pausing', 'Score sharing', 'High scores'],
-    googleplayurl: '',
+    googleplayurl: 'https://play.google.com/store/apps/details?id=games.likeme.twa',
     appleappstoreurl: 'https://apps.apple.com/us/app/like-me/id6466331042',
     msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
     about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
