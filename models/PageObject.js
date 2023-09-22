@@ -87,10 +87,15 @@ var Pages = [
         ],
       },
     ],
-    version: '4.2.130',
+    version: '4.2.132',
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.132</li>' +
+      '               <ul>' +
+      '                 <li>better sudden death feedback</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.130</li>' +
       '               <ul>' +
       '                 <li>bug fix</li>' +
