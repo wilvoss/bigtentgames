@@ -8,6 +8,8 @@ class PageObject {
     this.appleappstoreurl = spec.appleappstoreurl == undefined ? '' : spec.appleappstoreurl;
     this.msappstore = spec.msappstore == undefined ? '' : spec.msappstore;
     this.about = spec.about == undefined ? '' : spec.about;
+    this.aboutExtra = spec.aboutExtra == undefined ? '' : spec.aboutExtra;
+    this.showMore = spec.showMore === undefined ? false : spec.showMore;
     this.versionHistory = spec.versionHistory == undefined ? '' : spec.versionHistory;
     this.version = spec.version == undefined ? '' : spec.version;
     this.path = spec.path == undefined ? 'path' : spec.path;
@@ -54,11 +56,18 @@ var Pages = [
     description: 'A game of matching likenesses',
     path: 'likeme',
     url: 'https://likeme.games',
-    features: ['Daily challenges', 'Three game modes', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Pausing', 'Score sharing', 'High scores'],
-    googleplayurl: 'https://play.google.com/store/apps/details?id=games.likeme.twa',
+    features: ['Brain training', 'Casual gameplay', 'Competitive gameplay', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Score sharing', 'High scores'],
+    googleplayurl: '',
     appleappstoreurl: 'https://apps.apple.com/us/app/like-me/id6466331042',
     msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
-    about: 'Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern.',
+    about: '<p>Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern. There are 4 unique games modes for all types of players!</p>',
+    aboutExtra: [
+      '<h2>Game Modes</h2>',
+      '<p><b>Basic Mode</b><br />This is the default mode. Your game starts with a one minute countdown. Clear as many levels as possible. Getting a level right on your first guess adds 3 seconds to the countdown. At first, players typically only clear a few levels per game. Eventually, players start clearing 100s of levels per game!</p>',
+      '<p><b>Zen Mode</b><br />No timer and no stress. Think of this as a flow enabling, fidget-spinning brain trainer.</p>',
+      '<p><b>Sudden Death</b><br />A rogue-like game mode that challenges you to clear levels without making a single mistake. Every game starts with the score from your previous mistake-free game and a fixed one minute countdown. No bonus time is ever rewarded. Be careful, one mistake resets everything and all progress is lost!</p>',
+      '<p><b>Daily Challenge</b><br />Compete with your friends in Basic Mode but with 150 pre-generated levels that are the same for everyone. At the end of your game, share your score and see how you match up!<p>',
+    ],
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
     priceText: '$0.99',
@@ -87,10 +96,16 @@ var Pages = [
         ],
       },
     ],
-    version: '4.2.132',
+    version: '4.2.162',
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.162</li>' +
+      '               <ul>' +
+      '                 <li>Sudden Death impovements</li>' +
+      '                 <li>UX improvements</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.132</li>' +
       '               <ul>' +
       '                 <li>better sudden death feedback</li>' +

@@ -100,14 +100,16 @@
               </intro>
             </section>
             <section v-if="getCurrentPageComputed.about != ''" v-html="getCurrentPageComputed.about"></section>
-            <section v-if="getCurrentPageComputed.features.length > 0">
-              <h3>Features</h3>
+            <section v-if="getCurrentPageComputed.showMore"><extra v-for="extra in getCurrentPageComputed.aboutExtra" v-html="extra"></extra></section>
+            <section v-if="getCurrentPageComputed.features.length > 0 && getCurrentPageComputed.showMore">
+              <h2>Features</h2>
               <features>
                 <ul>
                   <li v-for="feature in getCurrentPageComputed.features">{{feature}}</li>
                 </ul>
               </features>
             </section>
+            <section class="showmore" v-if="getCurrentPageComputed.aboutExtra !== '' || getCurrentPageComputed.features.length > 0" @click="getCurrentPageComputed.showMore = !getCurrentPageComputed.showMore"><p>{{getCurrentPageComputed.showMore ? '...show less' : 'show more...'}}</section></p></section>
             <section v-if="getCurrentPageComputed.screenshots.length > 0">
               <!-- <h4>Screenshots</h> -->
               <screenshots>
