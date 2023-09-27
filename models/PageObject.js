@@ -38,7 +38,6 @@ var Pages = [
     url: '',
     showAsGame: false,
     useBanner: false,
-    // contentBackgroundColor: 'rgba(100, 100, 100, 0.8)',
   }),
   new PageObject({
     name: 'Privacy Policy',
@@ -49,7 +48,6 @@ var Pages = [
     useBanner: false,
     showInNav: false,
     backgroundColor: 'hsl(var(--bannerHS), 25%)',
-    // contentBackgroundColor: 'rgba(100, 100, 100, 0.8)',
   }),
   new PageObject({
     name: 'Like Me?',
@@ -57,7 +55,7 @@ var Pages = [
     path: 'likeme',
     url: 'https://likeme.games',
     features: ['Brain training', 'Casual gameplay', 'Competitive gameplay', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Score sharing', 'High scores'],
-    googleplayurl: '',
+    googleplayurl: 'https://play.google.com/store/apps/details?id=game.likeme.twa',
     appleappstoreurl: 'https://apps.apple.com/us/app/like-me/id6466331042',
     msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
     about: '<p>Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern. There are 4 unique games modes for all types of players!</p>',
@@ -75,13 +73,13 @@ var Pages = [
     bannerType: 'paid',
     price: '$0.99',
     quotes: [
-      { statement: 'A nice take on set. Much less stressful.', attribution: 'Paul H.' },
-      { statement: "It's elegant.", attribution: 'Betsy H.' },
-      { statement: '...very addictive...', attribution: 'Cole B.' },
-      { statement: 'I like it!', attribution: 'Janel L.' },
-      { statement: 'That was fun! Nice lightweight game but puts your brain to work!', attribution: 'Shon D.' },
-      { statement: 'I had to stop otherwise it was going to be a deep rabbit hole...', attribution: 'Jason B.' },
-      { statement: 'I like it!', attribution: 'MD Donahue' },
+      { statement: 'This has all the speed of a game like Piano Tiles mixed with some tricksy pattern matching logic. Very fun!', attribution: 'godswearhats', rating: 5 },
+      { statement: 'Love it! I thought it was going to be simple, but it is deceptively challenging!', attribution: 'fg6jgddgue', rating: 5 },
+      { statement: 'Endless fun! This game is so hard to put down. I love pattern matching!', attribution: 'MsSparkyCat', rating: 5 },
+      { statement: 'That was fun! Nice lightweight game but puts your brain to work!', attribution: 'Shon D.', rating: 5 },
+      { statement: 'Simple, elegant, and FUN!', attribution: 'TheRealJunipurr', rating: 5 },
+      { statement: 'Me Like! What a fun and elegant game!', attribution: 'domosquawk', rating: 5 },
+      { statement: 'Fun game! The more I play it, the more I like it! ', attribution: 'Checksov', rating: 5 },
     ],
     communities: [
       {
@@ -96,10 +94,15 @@ var Pages = [
         ],
       },
     ],
-    version: '4.2.164',
+    version: '4.2.202',
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.202</li>' +
+      '               <ul>' +
+      '                 <li>Theme song!</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.164</li>' +
       '               <ul>' +
       '                 <li>Bug fix</li>' +
@@ -729,7 +732,7 @@ var Pages = [
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '7.png'],
     bannerText: 'alpha',
     bannerType: 'alpha',
-    backgroundColor: 'hsl(157.86, 100%, 40.59%)',
+    backgroundColor: 'rgb(22, 130, 152)',
   }),
   new PageObject({
     name: 'Path',

@@ -13,7 +13,7 @@
     <title>Big Tent Games</title>
 
     <meta name="description" content="This is Big Tent Games, a gaming company that dreams big and creates fun video games for everyone! Most of the games here are designed for mobile devices first, but all of them work on regular computers too. Let's go!" />
-    <meta name="keywords" content="Big Tent Games, Casual, Video, Games, Casual Games, Casual Gaming, Video Games, Gaming, Wil Voss." />
+    <meta name="keywords" content="Big Tent Games, Casual, Video, Games, Casual Games, Casual Gaming, Video Games, Gaming, Mobile gaming, Wil Voss" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:title" content="Big Tent Games" />
@@ -120,8 +120,9 @@
             </section>
             <section v-if="getCurrentPageComputed.quotes.length > 0">
               <h2>What do players say?</h2>
-              <quotes>
+              <quotes @click="window.open('https://apps.apple.com/us/app/like-me/id6466331042?see-all=reviews')">
                 <quote v-for="quote in getCurrentPageComputed.quotes">
+                  <rating>⭐⭐⭐⭐⭐</rating>
                   <statement> "<span v-html="quote.statement"></span>" </statement>
                   <attribution>{{quote.attribution}}</attribution>
                 </quote>

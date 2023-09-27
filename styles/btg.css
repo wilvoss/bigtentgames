@@ -350,7 +350,6 @@ selector.banner button banner {
 }
 
 nav selector.on {
-  /* pointer-events: none; */
   cursor: default;
 }
 
@@ -364,7 +363,6 @@ nav selector:hover.on button {
 
 nav selector:hover button {
   opacity: 1;
-  /* transform: translateY(20%); */
 }
 
 content {
@@ -476,7 +474,6 @@ section intro button, section button.action {
 
 .showmore {
   color: hsla(var(--appForegroundWeakest), 100%);
-  /* text-align: center; */
   cursor: pointer;
 }
 
@@ -529,20 +526,21 @@ quotes quote {
   max-width: calc(50% - var(--defaultGap) * 3);
   margin: 0;
   color: hsl(var(--appForegroundWeaker));
-  /* border-radius: var(--borderRadius);
-  background: hsla(var(--appBackgroundWeakest), .6);
-  */
   padding: 0;
+  cursor: pointer;
+}
+
+quote rating {
+  display: block;
 }
 
 quote statement {
-  display: inline-block;
+  display: inline;
   font-style: italic;
-  /* text-align: center; */
 }
 
 quote attribution {
-  display: inline-block;
+  display: inline;
   text-align: left;
   white-space: nowrap;
   color: hsla(var(--appForeground), 0.6);
@@ -557,8 +555,6 @@ features ul {
   gap: calc(var(--defaultGap) / 2);
   flex-wrap: wrap;
   margin-top: 0;
-  /* flex-direction: column; */
-  /* max-height: 8em; */
 }
 
 features ul li {
@@ -568,9 +564,6 @@ features ul li {
   border-radius: var(--borderRadius);
   background: hsla(var(--bannerHS), 100%, 1);
   color: hsl(var(--bannerHS), 50%);
-  /* width: calc(25% - var(--defaultGap) * 2); */
-  /* display: flex; */
-  /* justify-content: center; */
 }
 
 installers {
@@ -592,14 +585,13 @@ screenshots::-webkit-scrollbar {
 
 screenshots screenshot {
   cursor: pointer;
-  /* flex-basis: 300px; */
   height: 440px;
 }
 
 screenshots screenshot img {
   min-width: 194px;
   height: 420px;
-  border-radius: var(--borderRadius);
+  border-radius: calc(var(--borderRadius) / 2);
   overflow: hidden;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: var(--defaultGap);
@@ -611,9 +603,6 @@ communities community {
   line-height: 150%;
   width: auto;
   margin: var(--defaultGap) 0 0;
-  /* border-radius: var(--borderRadius); */
-  /* background: hsla(var(--appBackgroundWeakest), .15); */
-  /* padding: var(--defaultGap); */
 }
 
 communities community p, communities community p:last-of-type {
@@ -828,6 +817,7 @@ footer a::before {
     --appForeground: 0, 0%, 100%;
     --appForegroundStronger: 0, 0%, 100%;
     --appForegroundStrongest: 0, 0%, 100%;
+
   }
 
   section intro h1 span,
@@ -840,6 +830,7 @@ footer a::before {
     max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
     background-color: transparent;
     box-shadow: none;
+    width: calc(100% - 3 * var(--defaultGap));
   }
 
   section intro button, section button.action {
@@ -886,11 +877,7 @@ footer a::before {
   features ul li {
     background: hsla(var(--bannerHS), 96%, 1);
     font-size: .9em;
-    /* color: hsl(var(--bannerHS), 50%); */
     padding: calc(var(--defaultGap) / 4) calc(var(--defaultGap));
-    /* width: calc(25% - var(--defaultGap) / 2); */
-    /* display: flex; */
-    /* justify-content: center; */
   }
 
 }
