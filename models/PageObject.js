@@ -98,6 +98,11 @@ var Pages = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.205</li>' +
+      '               <ul>' +
+      '                 <li>"In-App Update"</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.202</li>' +
       '               <ul>' +
       '                 <li>Theme song!</li>' +
