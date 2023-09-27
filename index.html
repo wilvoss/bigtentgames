@@ -114,7 +114,7 @@
               <!-- <h4>Screenshots</h> -->
               <screenshots>
                 <screenshot @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)" v-for="screenshot in getCurrentPageComputed.screenshots">
-                  <img :src="'images/' + getCurrentPageComputed.path + '/' + screenshot" />
+                  <img :key="getCurrentPageComputed.path + '/' + screenshot" :src="'images/' + getCurrentPageComputed.path + '/' + screenshot" />
                 </screenshot>
               </screenshots>
             </section>
