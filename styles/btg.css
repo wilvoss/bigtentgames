@@ -216,7 +216,7 @@ onionskin.show {
   pointer-events: all;
 }
 
-onionskin img {
+onionskin img, onionskin video {
   max-height: 700px;
   height: 90%;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
@@ -583,12 +583,12 @@ screenshots::-webkit-scrollbar {
   scroll-behavior: smooth;
 }
 
-screenshots screenshot {
+screenshots screenshot, screenshots video {
   cursor: pointer;
   height: 440px;
 }
 
-screenshots screenshot img {
+screenshots screenshot img, screenshots video {
   min-width: 194px;
   height: 420px;
   border-radius: calc(var(--borderRadius) / 2);

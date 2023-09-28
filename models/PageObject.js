@@ -67,7 +67,7 @@ var Pages = [
       '<p><b>Daily Challenge</b><br />Compete with your friends in Basic Mode but with 150 pre-generated levels that are the same for everyone. At the end of your game, share your score and see how you match up!<p>',
     ],
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
-    screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
+    screenshots: ['video.mp4', '1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
     priceText: '$0.99',
     bannerText: '$0.99',
     bannerType: 'paid',

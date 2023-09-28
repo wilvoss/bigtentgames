@@ -64,6 +64,11 @@ var app = new Vue({
     ToggleShowOnionSkin() {
       log('ToggleShowOnionSkin() called');
       this.showOnionskin = !this.showOnionskin;
+      if (!this.showOnionskin && document.getElementById('onionvideo') != undefined) {
+        document.getElementById('onionvideo').pause();
+      } else if (document.getElementById('onionvideo') != undefined) {
+        document.getElementById('onionvideo').play();
+      }
     },
 
     ZoomImage(_screenshot) {

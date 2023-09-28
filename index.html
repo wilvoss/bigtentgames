@@ -36,7 +36,8 @@
   <body>
     <app v-cloak :style="{backgroundColor: getCurrentPageComputed.backgroundColor === '' ? 'hsl(var(--bannerHS), 45%)' : getCurrentPageComputed.backgroundColor}" id="app">
       <onionskin :class="{show: showOnionskin}" @click="ToggleShowOnionSkin">
-        <img :src="onionSkinImageSrc" />
+        <img :key="onionSkinImageSrc" v-if="onionSkinImageSrc.indexOf('mp4') === -1" :src="onionSkinImageSrc" />
+        <video :key="onionSkinImageSrc" id="onionvideo" volume=".35" v-if="onionSkinImageSrc.indexOf('mp4') != -1" autoplay :src="onionSkinImageSrc" />
       </onionskin>
       <stage>
         <nav>
@@ -113,7 +114,9 @@
             <section v-if="getCurrentPageComputed.screenshots.length > 0">
               <!-- <h4>Screenshots</h> -->
               <screenshots>
-                <screenshot @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)" v-for="screenshot in getCurrentPageComputed.screenshots">
+                <video :key="getCurrentPageComputed.path + '/' + screenshot" :src="'images/' + getCurrentPageComputed.path + '/' + screenshot"  v-if="screenshot.indexOf('mp4') != -1" @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)" v-for="screenshot in getCurrentPageComputed.screenshots">
+                </video>
+                <screenshot  v-if="screenshot.indexOf('mp4') === -1" @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)" v-for="screenshot in getCurrentPageComputed.screenshots">
                   <img :key="getCurrentPageComputed.path + '/' + screenshot" :src="'images/' + getCurrentPageComputed.path + '/' + screenshot" />
                 </screenshot>
               </screenshots>
