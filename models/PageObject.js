@@ -98,6 +98,11 @@ var Pages = [
     versionHistory:
       '<h2>Version History</h2>' +
       '             <ul>' +
+      '               <li>4.2.207</li>' +
+      '               <ul>' +
+      '                 <li>Bug fixes</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.206</li>' +
       '               <ul>' +
       '                 <li>Bug fixes</li>' +
