@@ -605,6 +605,8 @@ screenshots container {
   border: 1px solid white;
   min-width: 194px;
   height: 420px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 screenshots screenshot, screenshots video {
@@ -612,13 +614,13 @@ screenshots screenshot, screenshots video {
   height: 440px;
 }
 
-screenshots container.video screenshot {
+screenshots container screenshot {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-screenshots container.video screenshot button {
+screenshots container screenshot button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -631,7 +633,7 @@ screenshots container.video screenshot button {
   padding: 0;
 }
 
-screenshots container:hover.video screenshot button {
+screenshots container:hover screenshot button {
   background: hsla(0, 0%, 0%, .7);
 
 }
@@ -645,12 +647,13 @@ screenshots container:hover.video screenshot button {
   border: 1px solid red;
 } */
 
-screenshots container.video {
-  background-repeat: none;
-  background-size: 100%;
+screenshots container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-screenshots container.video img {
+screenshots container img {
   opacity: 0;
 }
 

@@ -160,17 +160,19 @@
               <!-- <h4>Screenshots</h> -->
               <screenshots>
                 <container class="video" v-if="getCurrentPageComputed.video !== ''"
+                  @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.url)"
                   :style="{backgroundImage: 'url(images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.thumbnail+ ')'}">
-                  <screenshot
-                    @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.url)">
+                  <screenshot>
                     <button>
                       <icon class="play"></icon>
                     </button>
                   </screenshot>
                 </container>
-                <container v-for="screenshot in getCurrentPageComputed.screenshots">
-                  <screenshot v-if="screenshot.indexOf('mp4') === -1"
-                    @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)">
+                <container v-for="screenshot in getCurrentPageComputed.screenshots"
+                  v-if="screenshot.indexOf('mp4') === -1"
+                  @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)"
+                  :style="{backgroundImage: 'url(images/' + getCurrentPageComputed.path + '/' + screenshot+ ')'}">
+                  <screenshot>
                     <img :key="getCurrentPageComputed.path + '/' + screenshot"
                       :src="'images/' + getCurrentPageComputed.path + '/' + screenshot" />
                   </screenshot>
