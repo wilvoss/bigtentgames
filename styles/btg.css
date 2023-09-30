@@ -52,6 +52,7 @@ body {
 body {
   margin: 0px auto;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 [v-cloak] {
@@ -162,6 +163,15 @@ icon {
 icon.bmc {
   mask-image: url(../images/icon_bmc.svg);
   -webkit-mask-image: url(../images/icon_bmc.svg);
+}
+
+
+icon.play {
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  mask-image: url(../images/icon_play.svg);
+  -webkit-mask-image: url(../images/icon_play.svg);
 }
 
 icon.apple {
@@ -378,6 +388,9 @@ content {
   padding: calc(2 * var(--defaultGap));
   border-radius: var(--borderRadius);
   box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
+  /* max-width: var(--maxWidth);
+  margin-top: var(--navHeight);
+  position: absolute; */
 }
 
 content::-webkit-scrollbar {
@@ -583,19 +596,67 @@ screenshots::-webkit-scrollbar {
   scroll-behavior: smooth;
 }
 
-screenshots screenshot, screenshots video {
-  cursor: pointer;
-  height: 440px;
-}
-
-screenshots screenshot img, screenshots video {
-  min-width: 194px;
-  height: 420px;
+screenshots container {
+  display: block;
   border-radius: calc(var(--borderRadius) / 2);
   overflow: hidden;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: var(--defaultGap);
   border: 1px solid white;
+  min-width: 194px;
+  height: 420px;
+}
+
+screenshots screenshot, screenshots video {
+  cursor: pointer;
+  height: 440px;
+}
+
+screenshots container.video screenshot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+screenshots container.video screenshot button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: hsla(0, 0%, 0%, .4);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: 200ms ease-out all;
+  padding: 0;
+}
+
+screenshots container:hover.video screenshot button {
+  background: hsla(0, 0%, 0%, .7);
+
+}
+
+/* screenshots container:before {
+  content: '';
+  display: block;
+  position: absolute;
+  min-width: 196px;
+  height: 422px;
+  border: 1px solid red;
+} */
+
+screenshots container.video {
+  background-repeat: none;
+  background-size: 100%;
+}
+
+screenshots container.video img {
+  opacity: 0;
+}
+
+screenshots screenshot img, screenshots video {
+  min-width: 194px;
+  height: 420px;
 }
 
 communities community {

@@ -10,6 +10,7 @@ class PageObject {
     this.about = spec.about == undefined ? '' : spec.about;
     this.aboutExtra = spec.aboutExtra == undefined ? '' : spec.aboutExtra;
     this.showMore = spec.showMore === undefined ? false : spec.showMore;
+    this.video = spec.video === undefined ? '' : spec.video;
     this.versionHistory = spec.versionHistory == undefined ? '' : spec.versionHistory;
     this.version = spec.version == undefined ? '' : spec.version;
     this.path = spec.path == undefined ? 'path' : spec.path;
@@ -67,7 +68,8 @@ var Pages = [
       '<p><b>Daily Challenge</b><br />Compete with your friends in Basic Mode but with 150 pre-generated levels that are the same for everyone. At the end of your game, share your score and see how you match up!<p>',
     ],
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
-    screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', 'video.mp4'],
+    screenshots: ['2.png', '3.png', '4.png', '5.png', '6.png'],
+    video: { url: 'video.mp4', thumbnail: '1.png' },
     priceText: '$0.99',
     bannerText: '$0.99',
     bannerType: 'paid',

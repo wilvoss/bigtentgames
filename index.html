@@ -159,12 +159,16 @@
             <section v-if="getCurrentPageComputed.screenshots.length > 0">
               <!-- <h4>Screenshots</h> -->
               <screenshots>
+                <container class="video" v-if="getCurrentPageComputed.video !== ''"
+                  :style="{backgroundImage: 'url(images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.thumbnail+ ')'}">
+                  <screenshot
+                    @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.url)">
+                    <button>
+                      <icon class="play"></icon>
+                    </button>
+                  </screenshot>
+                </container>
                 <container v-for="screenshot in getCurrentPageComputed.screenshots">
-                  <video :key="getCurrentPageComputed.path + '/' + screenshot"
-                    :src="'images/' + getCurrentPageComputed.path + '/' + screenshot"
-                    v-if="screenshot.indexOf('mp4') != -1"
-                    @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)">
-                  </video>
                   <screenshot v-if="screenshot.indexOf('mp4') === -1"
                     @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)">
                     <img :key="getCurrentPageComputed.path + '/' + screenshot"
