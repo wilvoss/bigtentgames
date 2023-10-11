@@ -100,6 +100,11 @@ var Pages = [
     versionHistory:
       '<h2>In-App Updates</h2>' +
       '             <ul>' +
+      '               <li>4.2.213</li>' +
+      '               <ul>' +
+      '                 <li>UI improvements</li>' +
+      '               </ul>' +
+      '' +
       '               <li>4.2.211</li>' +
       '               <ul>' +
       '                 <li>Bug fixes</li>' +
