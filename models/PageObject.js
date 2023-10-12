@@ -79,6 +79,7 @@ var Pages = [
       { statement: 'Love it! I thought it was going to be simple, but it is deceptively challenging!', attribution: 'fg6jgddgue', rating: 5 },
       { statement: 'Endless fun! This game is so hard to put down. I love pattern matching!', attribution: 'MsSparkyCat', rating: 5 },
       { statement: 'That was fun! Nice lightweight game but puts your brain to work!', attribution: 'Shon D.', rating: 5 },
+      { statement: 'A great matching game for all!', attribution: 'RayaL08', rating: 5 },
       { statement: 'Simple, elegant, and FUN!', attribution: 'TheRealJunipurr', rating: 5 },
       { statement: 'Me Like! What a fun and elegant game!', attribution: 'domosquawk', rating: 5 },
       { statement: 'Fun game! The more I play it, the more I like it! ', attribution: 'Checksov', rating: 5 },

@@ -296,6 +296,11 @@ selector.on {
   scale: 1;
 }
 
+selector.game.on {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .4);
+}
+
+
 selector button img {
   opacity: 0;
   width: 100%;
@@ -386,7 +391,7 @@ content {
   background-position: 0px -100px;
   background-repeat: no-repeat;
   padding: calc(2 * var(--defaultGap));
-  border-radius: var(--borderRadius);
+  border-radius: calc(var(--borderRadius) / 4);
   box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
   /* max-width: var(--maxWidth);
   margin-top: var(--navHeight);
@@ -545,6 +550,7 @@ quotes quote {
 
 quote rating {
   display: block;
+  padding: 4px 0px;
 }
 
 quote statement {
@@ -572,7 +578,7 @@ features ul {
 
 features ul li {
   list-style-type: none;
-  padding: calc(var(--defaultGap) /2) var(--defaultGap);
+  padding: calc(var(--defaultGap) / 3) var(--defaultGap);
   margin: 0;
   border-radius: var(--borderRadius);
   background: hsla(var(--bannerHS), 100%, 1);
@@ -618,6 +624,10 @@ screenshots container screenshot {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+screenshots container.video screenshot {
+  background: hsla(0, 0%, 0%, .2)
 }
 
 screenshots container screenshot button {
@@ -834,6 +844,11 @@ footer a::before {
     display: none;
   }
 
+  quote rating {
+    display: block;
+    padding: 2px 0px 6px;
+  }
+
   games {
     margin-top: var(--defaultGap);
     margin-bottom: var(--defaultGap);
@@ -919,7 +934,7 @@ footer a::before {
   }
 
   quotes {
-    gap: 4px;
+    gap: 8px;
   }
 
   quotes quote {
@@ -927,7 +942,7 @@ footer a::before {
     width: calc(100%);
     background: hsla(var(--appBackgroundWeakest), .4);
     padding: var(--defaultGap);
-    border-radius: var(--borderRadius);
+    border-radius: calc(var(--borderRadius) / 2);
   }
 
   quotes attribution {
