@@ -97,18 +97,18 @@ var Pages = [
         ],
       },
     ],
-    version: '4.2.211',
+    version: '4.2.215',
     versionHistory:
       '<h2>In-App Updates</h2>' +
       '             <ul>' +
-      '               <li>4.2.213</li>' +
+      '               <li>4.2.215</li>' +
       '               <ul>' +
-      '                 <li>UI improvements</li>' +
+      '                 <li>Bug fixes</li>' +
       '               </ul>' +
       '' +
       '               <li>4.2.211</li>' +
       '               <ul>' +
-      '                 <li>Bug fixes</li>' +
+      '                 <li>UI improvements</li>' +
       '               </ul>' +
       '' +
       '               <li>4.2.210</li>' +
