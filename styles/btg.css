@@ -313,6 +313,7 @@ nav selector:first-of-type {
 nav selector button {
   color: hsl(var(--appForeground));
   background-blend-mode: luminosity;
+  background-size: contain;
   /* filter: grayscale(); */
   /* -webkit-filter: grayscale(); */
   opacity: 0.8;
@@ -329,7 +330,8 @@ selector button banner {
   padding: 3px 40px;
   border-radius: calc(var(--borderRadius) / 4);
   rotate: -38deg;
-  transform: translate(-29px, -18px);
+  scale: 1.2;
+  transform: translate(-23px, -8px);
   text-transform: capitalize;
   box-shadow: 0 2px 2px hsla(var(--appForeground), 0.2);
   font-family: "Display";
@@ -343,6 +345,7 @@ nav selector button banner {
 
 selector.on button banner {
   opacity: 1;
+  scale: 1;
   transform: translate(-29px, -18px);
 }
 
