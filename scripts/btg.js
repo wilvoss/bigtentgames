@@ -152,10 +152,17 @@ var app = new Vue({
         }
       }
     },
+
+    HandleKeyUp(e) {
+      if (e.key === 'Escape' && this.getCurrentPageComputed.name === 'Privacy Policy') {
+        this.ChangeHashToPagePath(this.pages[0].path);
+      }
+    },
   },
 
   mounted() {
     window.addEventListener('hashchange', this.HandleHashChangeEvent);
+    window.addEventListener('keyup', this.HandleKeyUp);
     this.GetPlatformValue();
     this.InitializeApp();
   },
