@@ -42,7 +42,7 @@
       <stage>
         <nav>
           <selector :class="{game: page.showAsGame, on: page.isSelected, banner: page.useBanner}" v-for="page in pages" @click="ChangeHashToPagePath(page.path)" v-if="page.showInNav">
-            <button :style="{backgroundImage: 'url(' + page.url + './images/icon512.png)'}"><banner :class="[page.bannerType]">{{page.bannerText}}</banner><img :src="page.url + './images/icon512.png'" :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" /></button>
+            <button :style="{backgroundImage: 'url(' + page.url + '/images/icon512.png)'}"><banner :class="[page.bannerType]">{{page.bannerText}}</banner><img :src="page.url + '/images/icon512.png'" :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" /></button>
           </selector>
         </nav>
         <content>
