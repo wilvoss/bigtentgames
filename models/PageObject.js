@@ -66,7 +66,7 @@ var Pages = [
       '<p><b>Basic Mode</b><br />This is the default mode. Your game starts with a one minute countdown. Clear as many levels as possible. Getting a level right on your first guess adds 3 seconds to the countdown. At first, players typically only clear a few levels per game. Eventually, players start clearing 100s of levels per game!</p>',
       '<p><b>Zen Mode</b><br />No timer and no stress. Think of this as a flow enabling, fidget-spinning brain trainer.</p>',
       '<p><b>Sudden Death</b><br />A rogue-like game mode that challenges you to clear levels without making a single mistake. Every game starts with the score from your previous mistake-free game and a fixed one minute countdown. No bonus time is ever rewarded. Be careful, one mistake resets everything and all progress is lost!</p>',
-      '<p><b>Daily Challenge</b><br />Compete with your friends in Basic Mode but with 150 pre-generated levels that are the same for everyone. At the end of your game, share your score and see how you match up!<p>',
+      '<p><b>Daily Challenge</b><br />Compete with your friends in Basic Mode but with 10 pre-generated levels that are the same for everyone. At the end of your game, share your score and see how you match up!<p>',
     ],
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
     screenshots: ['2.png', '3.png', '4.png', '5.png', '6.png'],
