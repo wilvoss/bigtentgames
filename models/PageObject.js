@@ -70,7 +70,7 @@ var Pages = [
       '<p><b>Zen Mode</b><br />No timer and no stress. Think of this as a flow enabling, fidget-spinning brain trainer.</p>',
     ],
     backgroundColor: 'hsla(187.2, 42.74%, 45.88%, 1)',
-    screenshots: ['2.png', '3.png', '4.png', '5.png', '6.png'],
+    screenshots: ['2.png', '3.png', '4.png', '5.png', '6.png', '7.png'],
     video: { url: 'video.mp4', thumbnail: '1.png' },
     priceText: '$0.99',
     bannerText: '$0.99',
