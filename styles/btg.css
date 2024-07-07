@@ -595,6 +595,21 @@ installers {
   width: calc(100%);
 }
 
+installers button.inline {
+  text-wrap: nowrap;
+  gap: .25em;
+}
+
+installers button.inline icon {
+  margin-right: .25em;
+}
+
+installers button getit {
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+
 screenshots::-webkit-scrollbar {
   display: none;
 
@@ -934,6 +949,23 @@ footer a::before {
 
   selector button banner {
     box-shadow: 0px 2px 2px hsla(var(--bodyBackground), 0.2);
+  }
+
+  installers {
+    padding-top: var(--defaultGap);
+    flex: auto;
+    flex-wrap: wrap;
+    align-items: start;
+    /* gap: 0; */
+    /* flex-direction: column; */
+  }
+
+  installers button getit {
+    display: none;
+  }
+
+  section intro installers button, section intro installers button.action {
+    margin: 0;
   }
 
   quotes {

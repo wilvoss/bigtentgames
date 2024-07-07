@@ -90,9 +90,9 @@
                   <h2>{{getCurrentPageComputed.description}}</h2>
                   <installers>
                     <button v-if="getCurrentPageComputed.appleappstoreurl ===''" class="action" @click="window.open(getCurrentPageComputed.url, '_blank')">Free Online</button>
-                    <button v-if="getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> Get it on the App Store</button>
-                    <button v-if="getCurrentPageComputed.googleplayurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')"><icon class="googleplay"></icon>Get it on Google Play</button>
-                    <button v-if="getCurrentPageComputed.msappstore !==''" class="action" @click="window.open(getCurrentPageComputed.msappstore, '_blank')">Get it on Microsoft Store</button>
+                    <button v-if="getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> <getit>Get it on the </getit>App Store</button>
+                    <button v-if="getCurrentPageComputed.googleplayurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')"><icon class="googleplay"></icon><getit>Get it on </getit>Google Play</button>
+                    <button v-if="getCurrentPageComputed.msappstore !==''" class="action inline" @click="window.open(getCurrentPageComputed.msappstore, '_blank')"><getit>Get it on </getit> Microsoft Store</button>
                   </installers>
                   <!-- <button class="light" @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.price === '$0.00' ? 'Play for free!' : getCurrentPageComputed.price}}</button> -->
                 </header>
