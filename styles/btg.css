@@ -316,7 +316,7 @@ nav selector button {
   background-size: contain;
   /* filter: grayscale(); */
   /* -webkit-filter: grayscale(); */
-  opacity: 0.8;
+  opacity: 1;
   /* transform: translateY(30%); */
 }
 
@@ -367,20 +367,24 @@ selector.banner button banner {
   display: block;
 }
 
-nav selector.on {
+nav selector.on, nav selector:hover.on {
   cursor: default;
+  scale: 1;
 }
 
 nav selector.on button,
 nav selector:hover.on button {
   cursor: default;
   opacity: 1;
+  scale: 1;
   filter: none;
   transform: translateY(0%);
 }
 
-nav selector:hover button {
+nav selector:hover {
   opacity: 1;
+  scale: .9;
+
 }
 
 content {
