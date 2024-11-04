@@ -112,7 +112,7 @@ var Pages = [
     aboutExtra: [
       '<h2>About</h2>',
       '<p>The challenge of "Facets" is to connect different words that may or may not be easily connected. Players take turns guessing and giving puzzles over social media, text, messages, or other chat apps.</p>',
-      '<p>Choose words in different languages (English, Spanish, French, and Japanese so far) from a growing catalog of word categories like "Archeology," "Civilization," "Entertainment," "Science," and "Seasons." Each category provides a unique window into how you and your friends think or don\'t think alike!</p>',
+      '<p>Choose words in different languages (English, Spanish, French, and Japanese so far) from a growing catalog of word categories like "Civilization," "Entertainment," "Science," and "Seasons." Each category provides a unique window into how you and your friends think or don\'t think alike!</p>',
       "<ul><li>When the gem is a sapphire, you are creating a puzzle.</li><li>When the gem is an emerald, you are guessing a puzzle a friend sent you.</li><li>When the gem is a ruby, you are reviewing a friend's guess.</li></ul>",
       '<p>Because the game is entirely URL based, no other information is stored on a server or in the cloud. URL based turns also means you can revisit any guess or challenge any time, as long as you have the original message your friend sent you.',
     ],
