@@ -60,7 +60,7 @@ var Pages = [
     // googleplayurl: 'https://play.google.com/store/apps/details?id=game.likeme.twa',
     // appleappstoreurl: 'https://apps.apple.com/us/app/like-me/id6466331042',
     // msappstore: 'https://apps.microsoft.com/store/detail/like-me/9NRLDSV9R06P',
-    about: '<p>Reminiscent of the card game "Set," the object of this fast-paced, casual video game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern. There are 4 unique games modes for all types of players!</p>',
+    about: '<p>Reminiscent of the card game "Set," the object of this fast-paced, casual mobile game is to observe the "Me" piece and then select all other pieces on the board that share <b>at least 2</b> of the following 3 attributes: color, shape, and pattern. There are 4 unique games modes for all types of players!</p>',
     aboutExtra: [
       '<h2>Ranks</h2>',
       '<p>There are 7 ranks that you can unlock as you improve over time. Each rank increases the number of levels per game. In order to unlock the next higher rank, you have to clear 3 perfect levels at the current rank. Are you a "Super Selector"?<p>',
