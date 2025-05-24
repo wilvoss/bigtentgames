@@ -73,6 +73,18 @@ var Pages = [
     features: ['Word play', 'Low stakes', 'Fast paced', 'Turn based', 'Casual game play', 'Brain training'],
     screenshots: ['6.png', '1.png', '2.png', '3.png', '4.png', '5.png'],
     backgroundColor: 'rgb(46, 106, 149)',
+    communities: [
+      {
+        service: 'Discord',
+        name: 'Big Tent Games Server',
+        url: 'https://discord.gg/sJ3vG3RHZd',
+        links: [
+          { name: 'Facets! - General', url: 'https://discord.com/channels/1148025462598139934/1339449000633569292' },
+          { name: 'Facets! - Feedback', url: 'https://discord.com/channels/1148025462598139934/1339449108901007462' },
+          { name: 'Facets! - Bug Reports', url: 'https://discord.com/channels/1148025462598139934/1339449140228390992' },
+        ],
+      },
+    ],
   }),
   new PageObject({
     name: 'Like Me?',
@@ -115,10 +127,10 @@ var Pages = [
         name: 'Big Tent Games Server',
         url: 'https://discord.gg/sJ3vG3RHZd',
         links: [
-          { name: '#likeme-general', url: 'https://discord.com/channels/1148025462598139934/1148026844562604063' },
-          { name: '#likeme-scores', url: 'https://discord.com/channels/1148025462598139934/1148345172304867450' },
-          { name: '#likeme-feedback', url: 'https://discord.com/channels/1148025462598139934/1149745093604020364' },
-          { name: '#likeme-bug-reports', url: 'https://discord.com/channels/1148025462598139934/1149745122624413836' },
+          { name: 'Likeme? - General', url: 'https://discord.com/channels/1148025462598139934/1148026844562604063' },
+          { name: 'Likeme? - Scores', url: 'https://discord.com/channels/1148025462598139934/1148345172304867450' },
+          { name: 'Likeme? - Feedback', url: 'https://discord.com/channels/1148025462598139934/1149745093604020364' },
+          { name: 'Likeme? - Bug Reports', url: 'https://discord.com/channels/1148025462598139934/1149745122624413836' },
         ],
       },
     ],
