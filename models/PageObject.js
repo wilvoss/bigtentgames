@@ -67,7 +67,7 @@ var Pages = [
       '<p>Because the game is entirely URL based, no other information is stored on a server or in the cloud. URL based turns also means you can revisit any guess or challenge any time, as long as you have the original message your friend sent you.',
     ],
     path: 'facets',
-    url: 'https://facets.bigtentgames.com',
+    url: 'https://facets.bigtentgames.com/open',
     features: ['Word play', 'Low stakes', 'Fast paced', 'Turn based', 'Casual game play', 'Brain training'],
     screenshots: ['6.png', '1.png', '2.png', '3.png', '4.png', '5.png'],
     backgroundColor: 'rgb(46, 106, 149)',
