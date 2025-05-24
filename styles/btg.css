@@ -12,7 +12,6 @@
 
 :root {
   --bodyBackground: 0, 0%, 0%;
-
   --appForegroundWeakest: 0, 0%, 46%;
   --appForegroundWeaker: 0, 0%, 25%;
   --appForeground: 0, 0%, 7%;
@@ -24,46 +23,44 @@
   --appBackgroundStronger: 0, 0%, 57%;
   --appBackgroundStrongest: 0, 0%, 55%;
   --bannerHS: 329, 78%;
-
   --navHeight: 150px;
   --maxWidth: 1024px;
   --footerHeight: 60px;
   --defaultGap: 1em;
   --borderRadius: 18px;
   --targetX: 50%;
-
   --pieceSize: 110px;
   --gridSize: 110;
 }
 
 html,
 body {
-  padding: 0px;
-  margin: 0px;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  line-height: 150%;
-  overflow: hidden;
-  color: hsl(var(--appForeground));
+  margin: 0px;
+  padding: 0px;
   font-family: 'Text', Arial, Helvetica, sans-serif;
+  line-height: 150%;
+  color: hsl(var(--appForeground));
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  margin: 0px auto;
   overflow: auto;
+  margin: 0px auto;
   overflow-x: hidden;
 }
 
 [v-cloak] {
-  transition: 250ms ease-out opacity;
   opacity: 0;
+  transition: 250ms ease-out opacity;
 }
 
 .disabled,
 :disabled {
-  pointer-events: none;
   opacity: 0.1;
+  pointer-events: none;
 }
 
 header {
@@ -75,21 +72,21 @@ h2,
 h3,
 h4,
 h5 {
+  font-family: 'Text';
+  font-weight: 400;
+  line-height: 100%;
   margin-bottom: 0;
   margin-top: calc(var(--defaultGap) / 2);
-  line-height: 100%;
-  font-weight: 400;
-  font-family: "Text";
 }
 
 h1 {
-  font-family: "Display";
+  font-family: 'Display';
   font-size: normal;
 }
 
 p {
-  padding: 0;
   margin: var(--defaultGap) 0;
+  padding: 0;
 }
 
 p:last-of-type {
@@ -100,8 +97,8 @@ a,
 a:visited,
 a:focus,
 a:active {
-  color: hsl(var(--appForeground));
   text-decoration: none;
+  color: hsl(var(--appForeground));
   border-bottom: 1px solid hsl(var(--bannerHS), 70%);
 }
 
@@ -112,15 +109,14 @@ ul {
 
 li {
   padding-left: 4px;
-
 }
 
 button {
-  font-family: "Display";
-  cursor: pointer;
   border: none;
-  background: none;
+  font-family: 'Display';
   line-height: 100%;
+  cursor: pointer;
+  background: none;
   user-select: none;
   -webkit-user-select: none;
   backface-visibility: hidden;
@@ -133,14 +129,15 @@ button.inline {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  justify-items: baseline;
-  align-content: baseline;
   align-items: center;
+  align-content: baseline;
+  justify-items: baseline;
   column-gap: 8px;
   white-space: nowrap;
 }
 
-section button.inert, section button.inline.inert {
+section button.inert,
+section button.inline.inert {
   background-color: hsla(var(--bannerHS), 39%, 1);
   box-shadow: none;
   pointer-events: none;
@@ -148,15 +145,15 @@ section button.inert, section button.inline.inert {
 
 icon {
   display: block;
+  width: 15px;
+  height: 20px;
+  background-color: white;
   mask-size: 20px 20px;
   -webkit-mask-size: 20px 20px;
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
   -webkit-mask-position: center;
-  background-color: white;
-  width: 15px;
-  height: 20px;
   pointer-events: none;
 }
 
@@ -164,7 +161,6 @@ icon.bmc {
   mask-image: url(../images/icon_bmc.svg);
   -webkit-mask-image: url(../images/icon_bmc.svg);
 }
-
 
 icon.play {
   width: 20px;
@@ -194,31 +190,31 @@ icon.googleplay {
 
 app {
   display: flex;
-  justify-content: center;
-  align-items: top;
   width: 100%;
   height: 100%;
   background-image: repeating-linear-gradient(45deg, hsla(var(--bodyBackground), 0.4) 0px, hsla(var(--bodyBackground), 0.4) 40px, hsla(var(--bodyBackground), 0.45) 40px, hsla(var(--bodyBackground), 0.45) 80px);
-  background-attachment: scroll;
   background-repeat: no-repeat, repeat;
+  background-attachment: scroll;
+  justify-content: center;
+  align-items: top;
   transition: 250ms ease-in-out all;
 }
 
 onionskin {
   display: flex;
-  opacity: 0;
-  pointer-events: none;
   position: absolute;
+  z-index: 200;
+  overflow: scroll;
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  opacity: 0;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
   background: rgba(0, 0, 0, 0.8);
   transition: 250ms ease-out all;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  z-index: 200;
 }
 
 onionskin.show {
@@ -226,53 +222,54 @@ onionskin.show {
   pointer-events: all;
 }
 
-onionskin img, onionskin video {
-  max-height: 700px;
+onionskin img,
+onionskin video {
   height: 90%;
+  max-height: 700px;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   border-radius: var(--borderRadius);
 }
 
 stage {
   display: flex;
-  margin: 0px var(--defaultGap);
   width: calc(100% - 2 * var(--defaultGap));
   height: 100%;
-  max-width: var(--maxWidth);
+  margin: 0px var(--defaultGap);
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   align-content: center;
+  max-width: var(--maxWidth);
 }
 
 nav,
 subnav,
 footer {
   display: flex;
-  flex-direction: row;
-  height: var(--navHeight);
   width: calc(100% - 2 * var(--defaultGap));
-  gap: var(--defaultGap);
+  height: var(--navHeight);
   padding: 0 var(--defaultGap);
+  flex-direction: row;
   align-items: center;
+  gap: var(--defaultGap);
 }
 
 selector {
   display: block;
-  padding: 0;
   height: auto;
   margin: 0;
+  padding: 0;
 }
 
 nav selector {
   overflow: hidden;
-  color: hsl(var(--appForeground));
   width: 80px;
   height: 80px;
-  border: 0 solid transparent;
-  cursor: pointer;
   padding: 0;
+  border: 0 solid transparent;
+  color: hsl(var(--appForeground));
   background-color: transparent;
+  cursor: pointer;
   border-radius: var(--borderRadius);
   transition: 200ms ease-in-out all;
   scale: 0.8;
@@ -280,15 +277,15 @@ nav selector {
 
 selector button {
   display: block;
-  border-radius: var(--borderRadius);
-  background-size: cover;
-  white-space: nowrap;
-  background-repeat: no-repeat;
+  overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: var(--borderRadius);
+  white-space: nowrap;
   transition: 200ms ease-in-out all;
 }
 
@@ -297,13 +294,12 @@ selector.on {
 }
 
 selector.game.on {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, .4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-
 selector button img {
-  opacity: 0;
   width: 100%;
+  opacity: 0;
 }
 
 nav selector:first-of-type {
@@ -312,46 +308,47 @@ nav selector:first-of-type {
 
 nav selector button {
   color: hsl(var(--appForeground));
-  background-blend-mode: luminosity;
+  opacity: 1;
   background-size: contain;
+  background-blend-mode: luminosity;
   /* filter: grayscale(); */
   /* -webkit-filter: grayscale(); */
-  opacity: 1;
   /* transform: translateY(30%); */
 }
 
 selector button banner {
   display: none;
   position: absolute;
-  font-size: 11px;
-  background: black;
   z-index: 1;
-  color: white;
   padding: 3px 40px;
+  font-family: 'Display';
+  font-size: 11px;
+  text-transform: capitalize;
+  color: white;
+  transform: translate(-23px, -8px);
+  background: black;
   border-radius: calc(var(--borderRadius) / 4);
   rotate: -38deg;
   scale: 1.2;
-  transform: translate(-23px, -8px);
-  text-transform: capitalize;
   box-shadow: 0 2px 2px hsla(var(--appForeground), 0.2);
-  font-family: "Display";
   transition: 200ms ease-in-out all;
 }
 
 nav selector button banner {
-  transform: translate(-29px, -58px);
   opacity: 0;
+  transform: translate(-29px, -58px);
 }
 
 selector.on button banner {
   opacity: 1;
-  scale: 1;
   transform: translate(-29px, -18px);
+  scale: 1;
 }
 
-selector button banner.free, selector button banner.paid {
-  background-color: hsl(var(--bannerHS), 39%);
+selector button banner.free,
+selector button banner.paid {
   color: rgb(255, 255, 255);
+  background-color: hsl(var(--bannerHS), 39%);
 }
 
 selector button banner.beta {
@@ -359,45 +356,45 @@ selector button banner.beta {
 }
 
 selector button banner.alpha {
-  background: hsl(var(--bannerHS), 91%);
   color: hsl(var(--bannerHS), 39%);
+  background: hsl(var(--bannerHS), 91%);
 }
 
 selector.banner button banner {
   display: block;
 }
 
-nav selector.on, nav selector:hover.on {
+nav selector.on,
+nav selector:hover.on {
   cursor: default;
   scale: 1;
 }
 
 nav selector.on button,
 nav selector:hover.on button {
-  cursor: default;
   opacity: 1;
+  transform: translateY(0%);
+  cursor: default;
   scale: 1;
   filter: none;
-  transform: translateY(0%);
 }
 
 nav selector:hover {
   opacity: 1;
-  scale: .9;
-
+  scale: 0.9;
 }
 
 content {
   display: block;
+  overflow: auto;
   width: calc(100% - 4 * var(--defaultGap));
   height: 100%;
-  max-height: calc(100% - var(--navHeight) - var(--footerHeight) - 4 * var(--defaultGap));
-  overflow: auto;
-  background-color: hsla(var(--appBackgroundWeakest), 1);
-  background-size: cover;
-  background-position: 0px -100px;
-  background-repeat: no-repeat;
   padding: calc(2 * var(--defaultGap));
+  background-color: hsla(var(--appBackgroundWeakest), 1);
+  background-repeat: no-repeat;
+  background-position: 0px -100px;
+  background-size: cover;
+  max-height: calc(100% - var(--navHeight) - var(--footerHeight) - 4 * var(--defaultGap));
   border-radius: calc(var(--borderRadius) / 4);
   box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
   /* max-width: var(--maxWidth);
@@ -407,32 +404,30 @@ content {
 
 content::-webkit-scrollbar {
   display: none;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
-
   touch-action: auto;
   scroll-behavior: smooth;
 }
 
 section.collapsed {
-  max-height: 318px;
   overflow: hidden;
+  max-height: 318px;
   margin-bottom: calc(2 * var(--defaultGap));
 }
 
 sectionToggle {
-  cursor: pointer;
   display: block;
   color: hsl(var(--bannerHS), 21%);
+  transform: translateY(-50px);
+  cursor: pointer;
   padding-top: 30px;
   -webkit-backdrop-filter: blur(4px);
-  transform: translateY(-50px);
 }
 
 section.expanded {
-  max-height: 112000px;
   overflow: hidden;
+  max-height: 112000px;
 }
 
 section h2 {
@@ -442,35 +437,35 @@ section h2 {
 }
 
 section intro {
-  width: 100%;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   margin-bottom: var(--defaultGap);
 }
 
 section intro h1 span {
-  font-weight: 400;
-  font-family: "Text";
+  font-family: 'Text';
   font-size: 0.5em;
+  font-weight: 400;
   color: hsl(var(--appForegroundWeakest));
 }
 
 section intro h2,
 section h3 {
-  font-family: "Text";
+  border: none;
+  font-family: 'Text';
+  font-size: 1em;
   font-weight: 400;
+  text-transform: uppercase;
+  color: hsl(var(--appForegroundWeakest));
   padding-top: 0;
   margin-top: calc(var(--defaultGap) / 3);
-  border: none;
-  color: hsl(var(--appForegroundWeakest));
-  text-transform: uppercase;
-  font-size: 1em;
   letter-spacing: 1px;
 }
 
 section h3 {
+  color: hsl(var(--appForeground));
   margin-top: calc(var(--defaultGap));
-  color: hsl(var(--appForeground))
 }
 
 section intro p {
@@ -478,23 +473,24 @@ section intro p {
 }
 
 section intro img {
+  overflow: hidden;
   max-width: 300px;
   border-radius: calc(var(--borderRadius) / 2);
-  overflow: hidden;
 }
 
-section intro button, section button.action {
+section intro button,
+section button.action {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 34px;
-  border-radius: 17px;
+  margin: calc(2 * var(--defaultGap)) 0 var(--defaultGap) 0;
+  padding: 0 20px;
+  color: hsl(var(--appBackgroundWeakest));
   background-color: hsl(var(--bannerHS), 50%);
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  color: hsl(var(--appBackgroundWeakest));
-  padding: 0 20px;
-  margin: calc(2 * var(--defaultGap)) 0 var(--defaultGap) 0;
   transform: translateX(-3px);
+  justify-content: center;
+  align-items: center;
+  border-radius: 17px;
 }
 
 .showmore {
@@ -503,14 +499,14 @@ section intro button, section button.action {
 }
 
 section button.action {
-  margin-top: var(--defaultGap);
   background-image: none;
+  margin-top: var(--defaultGap);
 }
 
 section intro button.light {
   display: none;
-  background: hsl(var(--appForegroundWeakest));
   color: hsla(var(--appBackgroundWeakest), 1);
+  background: hsl(var(--appForegroundWeakest));
 }
 
 section h4 {
@@ -520,15 +516,16 @@ section h4 {
   padding-bottom: 0;
 }
 
-screenshots, features ul, quotes {
+screenshots,
+features ul,
+quotes {
   display: flex;
+  width: calc(100%);
+  padding: var(--defaultGap) 0 0;
   flex: 1;
   gap: calc(var(--defaultGap));
   overflow-x: auto;
   overflow-y: hidden;
-  width: calc(100%);
-  padding: var(--defaultGap) 0 0;
-
 }
 
 screenshots {
@@ -537,21 +534,21 @@ screenshots {
 }
 
 quotes {
+  margin: var(--defaultGap) 0;
+  padding: 0;
   flex-wrap: wrap;
   column-gap: calc(var(--defaultGap));
   row-gap: calc(var(--defaultGap));
-  padding: 0;
-  margin: var(--defaultGap) 0;
 }
 
 quotes quote {
   display: block;
-  line-height: 150%;
   width: calc(100% - var(--defaultGap) * 3);
-  max-width: calc(50% - var(--defaultGap) * 3);
   margin: 0;
-  color: hsl(var(--appForegroundWeaker));
   padding: 0;
+  line-height: 150%;
+  color: hsl(var(--appForegroundWeaker));
+  max-width: calc(50% - var(--defaultGap) * 3);
   cursor: pointer;
 }
 
@@ -568,8 +565,8 @@ quote statement {
 quote attribution {
   display: inline;
   text-align: left;
-  white-space: nowrap;
   color: hsla(var(--appForeground), 0.6);
+  white-space: nowrap;
 }
 
 quote attribution::before {
@@ -578,34 +575,34 @@ quote attribution::before {
 }
 
 features ul {
-  gap: calc(var(--defaultGap) / 2);
   flex-wrap: wrap;
+  gap: calc(var(--defaultGap) / 2);
   margin-top: 0;
 }
 
 features ul li {
-  list-style-type: none;
-  padding: calc(var(--defaultGap) / 3) var(--defaultGap);
   margin: 0;
+  padding: calc(var(--defaultGap) / 3) var(--defaultGap);
+  color: hsl(var(--bannerHS), 50%);
+  list-style-type: none;
   border-radius: var(--borderRadius);
   background: hsla(var(--bannerHS), 100%, 1);
-  color: hsl(var(--bannerHS), 50%);
 }
 
 installers {
   display: flex;
+  width: calc(100%);
   flex: 1;
   gap: calc(var(--defaultGap) / 2);
-  width: calc(100%);
 }
 
 installers button.inline {
   text-wrap: nowrap;
-  gap: .25em;
+  gap: 0.25em;
 }
 
 installers button.inline icon {
-  margin-right: .25em;
+  margin-right: 0.25em;
 }
 
 installers button getit {
@@ -616,30 +613,29 @@ installers button getit {
 
 screenshots::-webkit-scrollbar {
   display: none;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
-
   touch-action: auto;
   scroll-behavior: smooth;
 }
 
 screenshots container {
   display: block;
-  border-radius: calc(var(--borderRadius) / 2);
   overflow: hidden;
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: var(--defaultGap);
-  border: 1px solid white;
-  min-width: 194px;
   height: 420px;
+  border: 1px solid white;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: calc(var(--borderRadius) / 2);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: var(--defaultGap);
+  min-width: 194px;
 }
 
-screenshots screenshot, screenshots video {
-  cursor: pointer;
+screenshots screenshot,
+screenshots video {
   height: 440px;
+  cursor: pointer;
 }
 
 screenshots container screenshot {
@@ -649,25 +645,24 @@ screenshots container screenshot {
 }
 
 screenshots container.video screenshot {
-  background: hsla(0, 0%, 0%, .2)
+  background: hsla(0, 0%, 0%, 0.2);
 }
 
 screenshots container screenshot button {
+  display: flex;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  padding: 0;
   border: 2px solid white;
-  background: hsla(0, 0%, 0%, .4);
   justify-content: center;
   align-items: center;
-  display: flex;
+  border-radius: 50%;
+  background: hsla(0, 0%, 0%, 0.4);
   transition: 200ms ease-out all;
-  padding: 0;
 }
 
 screenshots container:hover screenshot button {
-  background: hsla(0, 0%, 0%, .7);
-
+  background: hsla(0, 0%, 0%, 0.7);
 }
 
 /* screenshots container:before {
@@ -681,46 +676,47 @@ screenshots container:hover screenshot button {
 
 screenshots container {
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 screenshots container img {
   opacity: 0;
 }
 
-screenshots screenshot img, screenshots video {
-  min-width: 194px;
+screenshots screenshot img,
+screenshots video {
   height: 420px;
+  min-width: 194px;
 }
 
 communities community {
   display: block;
-  line-height: 150%;
   width: auto;
   margin: var(--defaultGap) 0 0;
-}
-
-communities community p, communities community p:last-of-type {
-  padding: 0;
-  margin: 0;
   line-height: 150%;
 }
 
-communities community h3, communities community ul {
+communities community p,
+communities community p:last-of-type {
+  margin: 0;
+  padding: 0;
+  line-height: 150%;
+}
+
+communities community h3,
+communities community ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
-  ;
 }
 
-
 communities community li {
-  list-style-type: '↳ ';
-  margin-left: 14px;
   line-height: 200%;
   color: hsl(var(--appForegroundWeakest));
+  list-style-type: '↳ ';
+  margin-left: 14px;
 }
 
 communities community h3 {
@@ -728,9 +724,9 @@ communities community h3 {
 }
 
 logo:hover {
-  transition: 30s ease-out all;
   opacity: 0.6;
   transform: scale(0.9);
+  transition: 30s ease-out all;
 }
 
 logo img {
@@ -743,14 +739,14 @@ credit {
 }
 
 games {
-  width: 100%;
-  margin-top: calc(2 * var(--defaultGap));
-  margin-bottom: calc(2 * var(--defaultGap));
   display: flex;
+  width: 100%;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: row;
   align-items: center;
+  margin-top: calc(2 * var(--defaultGap));
+  margin-bottom: calc(2 * var(--defaultGap));
   gap: 20px;
 }
 
@@ -759,49 +755,51 @@ games selector {
 }
 
 games selector button {
-  border-radius: 4px;
   display: flex;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 4px;
+  cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 games selector button img {
-  opacity: 0;
   width: 100%;
+  opacity: 0;
 }
 
 footer {
-  max-width: var(--maxWidth);
+  position: absolute;
+  height: var(--footerHeight);
   margin: 0 auto;
   font-size: 0.8em;
   text-align: left;
-  align-items: center;
-  height: var(--footerHeight);
   color: hsla(var(--appBackgroundWeakest), 0.9);
-  position: absolute;
+  align-items: center;
+  max-width: var(--maxWidth);
   bottom: 0px;
 }
 
 content footer {
   display: none;
+  position: relative;
   height: auto;
   color: hsla(var(--appForeground), 0.9);
-  position: relative;
 }
 
-footer a, footer a:visited, footer a:active {
-  color: hsl(var(--appBackgroundWeakest));
-  text-decoration: none;
+footer a,
+footer a:visited,
+footer a:active {
   border: none;
+  text-decoration: none;
+  color: hsl(var(--appBackgroundWeakest));
 }
 
 footer a::before {
-  content: ' | ';
   display: inline-block;
+  content: ' | ';
   padding-right: var(--defaultGap);
 }
 
@@ -809,7 +807,6 @@ footer a::before {
   :root {
     --navHeight: 120px;
     --footerHeight: 40px;
-
     --defaultGap: 1em;
   }
 
@@ -889,8 +886,9 @@ footer a::before {
     display: none;
   }
 
-
-  footer a, footer a:visited, footer a:active {
+  footer a,
+  footer a:visited,
+  footer a:active {
     color: hsla(var(--appForeground), 0.8);
     text-decoration: none;
   }
@@ -918,7 +916,6 @@ footer a::before {
     --appForeground: 0, 0%, 100%;
     --appForegroundStronger: 0, 0%, 100%;
     --appForegroundStrongest: 0, 0%, 100%;
-
   }
 
   section intro h1 span,
@@ -934,7 +931,8 @@ footer a::before {
     width: calc(100% - 3 * var(--defaultGap));
   }
 
-  section intro button, section button.action {
+  section intro button,
+  section button.action {
     color: hsl(var(--appForegroundWeakest));
     box-shadow: 0px 4px 8px hsla(var(--bodyBackground), 0.4);
   }
@@ -968,7 +966,8 @@ footer a::before {
     display: none;
   }
 
-  section intro installers button, section intro installers button.action {
+  section intro installers button,
+  section intro installers button.action {
     margin: 0;
   }
 
@@ -979,7 +978,7 @@ footer a::before {
   quotes quote {
     max-width: unset;
     width: calc(100%);
-    background: hsla(var(--appBackgroundWeakest), .4);
+    background: hsla(var(--appBackgroundWeakest), 0.4);
     padding: var(--defaultGap);
     border-radius: calc(var(--borderRadius) / 2);
   }
@@ -994,8 +993,7 @@ footer a::before {
 
   features ul li {
     background: hsla(var(--bannerHS), 96%, 1);
-    font-size: .9em;
+    font-size: 0.9em;
     padding: calc(var(--defaultGap) / 4) calc(var(--defaultGap));
   }
-
 }

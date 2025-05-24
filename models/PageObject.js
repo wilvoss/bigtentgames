@@ -15,6 +15,7 @@ class PageObject {
     this.version = spec.version == undefined ? '' : spec.version;
     this.path = spec.path == undefined ? 'path' : spec.path;
     this.url = spec.url == undefined ? 'url' : spec.url;
+    this.iconUrl = spec.iconUrl === undefined ? './images/icon512.png' : spec.iconUrl;
     this.isSelected = spec.isSelected == undefined ? false : spec.isSelected;
     this.showInNav = spec.showInNav == undefined ? true : spec.showInNav;
     this.showAsGame = spec.showAsGame == undefined ? true : spec.showAsGame;
@@ -68,6 +69,7 @@ var Pages = [
     ],
     path: 'facets',
     url: 'https://facets.bigtentgames.com/open',
+    iconUrl: 'https://facets.bigtentgames.com/images/icon512.png',
     features: ['Word play', 'Low stakes', 'Fast paced', 'Turn based', 'Casual game play', 'Brain training'],
     screenshots: ['6.png', '1.png', '2.png', '3.png', '4.png', '5.png'],
     backgroundColor: 'rgb(46, 106, 149)',
@@ -77,6 +79,7 @@ var Pages = [
     description: 'A game of matching likenesses',
     path: 'likeme',
     url: 'https://likeme.games',
+    iconUrl: 'https://likeme.games/images/icon512.png',
     features: ['Brain training', 'Casual gameplay', 'Competitive gameplay', 'Alternate patterns', 'Color themes', 'Dark mode', 'Cat mode!', 'Score sharing', 'High scores'],
     // googleplayurl: 'https://play.google.com/store/apps/details?id=game.likeme.twa',
     // appleappstoreurl: 'https://apps.apple.com/us/app/like-me/id6466331042',
@@ -127,6 +130,7 @@ var Pages = [
     about: 'Fast and fun, the object of this game is to test your reaction time. Hold the drop button and release when the puck hits the dropzone.',
     path: 'dropnstop',
     url: 'https://dropnstop.bigtentgames.com',
+    iconUrl: 'https://dropnstop.bigtentgames.com/images/icon512.png',
     features: ['Fast paced', 'Casual game play', 'Brain training', 'Reaction training', 'Different difficulty levels', 'Color themes', 'Score sharing'],
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png'],
     backgroundColor: 'rgb(49, 121, 76)',
@@ -137,6 +141,7 @@ var Pages = [
     about: 'If you ever played "Dope Wars" on a Palm Pilot back in the day, then you have an idea how this game plays. Basically you have 365 "days" to buy/sell for as much profit as possible. Your moral compass will be tested!',
     path: 'commoddities',
     url: 'https://commoddities.bigtentgames.com',
+    iconUrl: 'https://commoddities.bigtentgames.com/images/icon512.png',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '7.png'],
     bannerText: 'alpha',
     bannerType: 'alpha',
@@ -148,6 +153,7 @@ var Pages = [
     about: 'Not ready for mobile play at all. Proof of concept at best. Play at your own risk :).',
     path: 'path',
     url: 'https://path.bigtentgames.com',
+    iconUrl: 'https://path.bigtentgames.com/images/icon512.png',
     backgroundColor: 'color(display-p3 0.3608 0.7882 0.9804)',
     screenshots: ['1.png', '2.png', '3.png'],
     bannerText: 'alpha',

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8" />
     <meta content="x-content-type-options=nosniff" />
@@ -7,13 +8,16 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="theme-color" id="themeColor" content="#111111" />
 
     <title>Big Tent Games</title>
 
-    <meta name="description" content="This is Big Tent Games, a gaming company that dreams big and creates fun video games for everyone! Most of the games here are designed for mobile devices first, but all of them work on regular computers too. Let's go!" />
-    <meta name="keywords" content="Big Tent Games, Casual, Video, Games, Casual Games, Casual Gaming, Video Games, Gaming, Mobile gaming, Wil Voss" />
+    <meta name="description"
+      content="This is Big Tent Games, a gaming company that dreams big and creates fun video games for everyone! Most of the games here are designed for mobile devices first, but all of them work on regular computers too. Let's go!" />
+    <meta name="keywords"
+      content="Big Tent Games, Casual, Video, Games, Casual Games, Casual Gaming, Video Games, Gaming, Mobile gaming, Wil Voss" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:title" content="Big Tent Games" />
@@ -34,15 +38,22 @@
   </head>
 
   <body>
-    <app v-cloak :style="{backgroundColor: getCurrentPageComputed.backgroundColor === '' ? 'hsl(var(--bannerHS), 45%)' : getCurrentPageComputed.backgroundColor}" id="app">
+    <app v-cloak
+      :style="{backgroundColor: getCurrentPageComputed.backgroundColor === '' ? 'hsl(var(--bannerHS), 45%)' : getCurrentPageComputed.backgroundColor}"
+      id="app">
       <onionskin :class="{show: showOnionskin}" @click="ToggleShowOnionSkin">
         <img :key="onionSkinImageSrc" v-if="onionSkinImageSrc.indexOf('mp4') === -1" :src="onionSkinImageSrc" />
-        <video :key="onionSkinImageSrc" id="onionvideo" volume=".35" v-if="onionSkinImageSrc.indexOf('mp4') != -1" autoplay :src="onionSkinImageSrc" />
+        <video :key="onionSkinImageSrc" id="onionvideo" volume=".35" v-if="onionSkinImageSrc.indexOf('mp4') != -1"
+          autoplay :src="onionSkinImageSrc" />
       </onionskin>
       <stage>
         <nav>
-          <selector :class="{game: page.showAsGame, on: page.isSelected, banner: page.useBanner}" v-for="page in pages" @click="ChangeHashToPagePath(page.path)" v-if="page.showInNav">
-            <button :style="{backgroundImage: 'url(' + page.url + '/images/icon512.png)'}"><banner :class="[page.bannerType]">{{page.bannerText}}</banner><img :src="page.url + '/images/icon512.png'" :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" /></button>
+          <selector :class="{game: page.showAsGame, on: page.isSelected, banner: page.useBanner}" v-for="page in pages"
+            @click="ChangeHashToPagePath(page.path)" v-if="page.showInNav">
+            <button :style="{backgroundImage: 'url(' + page.iconUrl + ')'}">
+              <banner :class="[page.bannerType]">{{page.bannerText}}</banner><img :src="page.iconUrl"
+                :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" />
+            </button>
           </selector>
         </nav>
         <content>
@@ -51,28 +62,39 @@
               <intro>
                 <header>
                   <h1>Welcome!</h1>
-                  <p>This is Big Tent Games, a gaming company that dreams big and runs small while creating fun video games for everyone! Most of the games here are designed for mobile devices first, but all of them work on regular computers too. Let's go!</p>
+                  <p>This is Big Tent Games, a gaming company that dreams big and runs small while creating fun video
+                    games for everyone! Most of the games here are designed for mobile devices first, but all of them
+                    work on regular computers too. Let's go!</p>
                 </header>
               </intro>
               <h2>Available games</h2>
               <games>
                 <selector v-for="page in pages" v-if="page.showAsGame" :class="{banner: page.useBanner}">
-                  <button :title="'Open the page for the game ' + page.name + '.'" @click="ChangeHashToPagePath(page.path)" :style="{backgroundImage: 'url(./images/' + page.path + '/' + page.path + '_og.png)'}">
+                  <button :title="'Open the page for the game ' + page.name + '.'"
+                    @click="ChangeHashToPagePath(page.path)"
+                    :style="{backgroundImage: 'url(./images/' + page.path + '/' + page.path + '_og.png)'}">
                     <banner :class="[page.bannerType]">{{page.bannerText}}</banner>
-                    <img :src="'./images/' + page.path + '/' + page.path + '_og.png'" :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" />
+                    <img :src="'./images/' + page.path + '/' + page.path + '_og.png'"
+                      :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" />
                   </button>
                 </selector>
               </games>
               <h2>About</h2>
-              <p>Big Tent Games is the brainchild of <a href="http://portfolio.wilvoss.com" target="_blank">Wil Voss</a>, game player, game designer, product designer, UX designer, coder, and prototyper. The big dream is to create and publish games here that are so captivating and addictive that folks play not just one game once but multiple games all of the time!</p>
-              <p>If any of the games here intrigue, excite, confound, or confuse you, <a href="mailto:bigtentgames@icloud.com">please let us know</a>!</p>
+              <p>Big Tent Games is the brainchild of <a href="http://portfolio.wilvoss.com" target="_blank">Wil
+                  Voss</a>, game player, game designer, product designer, UX designer, coder, and prototyper. The big
+                dream is to create and publish games here that are so captivating and addictive that folks play not just
+                one game once but multiple games all of the time!</p>
+              <p>If any of the games here intrigue, excite, confound, or confuse you, <a
+                  href="mailto:bigtentgames@icloud.com">please let us know</a>!</p>
               <h2>Community</h2>
               <p>
                 Join on us on Discord:
                 <a href="https://discord.gg/sJ3vG3RHZd" target="_blank">Big Tent Games</a>
               </p>
               <h2>How can you help?</h2>
-              <p>Currently, Big Tent Games doesn't earn much money on any of these games. Many of the games are free and we don't use ads or any 3rd party trackers on any of our games or this site. Any donation you make goes towards creating and improving these games.</p>
+              <p>Currently, Big Tent Games doesn't earn much money on any of these games. Many of the games are free and
+                we don't use ads or any 3rd party trackers on any of our games or this site. Any donation you make goes
+                towards creating and improving these games.</p>
               <button class="action inline" @click="window.open('https://www.buymeacoffee.com/wilvoss')">
                 <icon class="bmc"></icon>
                 Buy me a coffee!
@@ -89,10 +111,22 @@
                   </h1>
                   <h2>{{getCurrentPageComputed.description}}</h2>
                   <installers>
-                    <button v-if="getCurrentPageComputed.appleappstoreurl ===''" class="action" @click="window.open(getCurrentPageComputed.url, '_blank')">Free Online</button>
-                    <button v-if="getCurrentPageComputed.appleappstoreurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')"><icon class="apple"></icon> <getit>Get it on the </getit>App Store</button>
-                    <button v-if="getCurrentPageComputed.googleplayurl !==''" class="action inline" @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')"><icon class="googleplay"></icon><getit>Get it on </getit>Google Play</button>
-                    <button v-if="getCurrentPageComputed.msappstore !==''" class="action inline" @click="window.open(getCurrentPageComputed.msappstore, '_blank')"><getit>Get it on </getit> Microsoft Store</button>
+                    <button v-if="getCurrentPageComputed.appleappstoreurl ===''" class="action"
+                      @click="window.open(getCurrentPageComputed.url, '_blank')">Free Online</button>
+                    <button v-if="getCurrentPageComputed.appleappstoreurl !==''" class="action inline"
+                      @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')">
+                      <icon class="apple"></icon>
+                      <getit>Get it on the </getit>App Store
+                    </button>
+                    <button v-if="getCurrentPageComputed.googleplayurl !==''" class="action inline"
+                      @click="window.open(getCurrentPageComputed.googleplayurl, '_blank')">
+                      <icon class="googleplay"></icon>
+                      <getit>Get it on </getit>Google Play
+                    </button>
+                    <button v-if="getCurrentPageComputed.msappstore !==''" class="action inline"
+                      @click="window.open(getCurrentPageComputed.msappstore, '_blank')">
+                      <getit>Get it on </getit> Microsoft Store
+                    </button>
                   </installers>
                   <!-- <button class="light" @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.price === '$0.00' ? 'Play for free!' : getCurrentPageComputed.price}}</button> -->
                 </header>
@@ -110,22 +144,30 @@
                 </ul>
               </features>
             </section>
-            <section class="showmore" v-if="getCurrentPageComputed.aboutExtra !== '' || getCurrentPageComputed.features.length > 0" @click="getCurrentPageComputed.showMore = !getCurrentPageComputed.showMore">
+            <section class="showmore"
+              v-if="getCurrentPageComputed.aboutExtra !== '' || getCurrentPageComputed.features.length > 0"
+              @click="getCurrentPageComputed.showMore = !getCurrentPageComputed.showMore">
               <p>{{getCurrentPageComputed.showMore ? '...show less' : 'show more...'}}</p>
             </section>
             <section v-if="getCurrentPageComputed.screenshots.length > 0">
               <!-- <h4>Screenshots</h> -->
               <screenshots>
-                <container class="video" v-if="getCurrentPageComputed.video !== ''" @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.url)" :style="{backgroundImage: 'url(images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.thumbnail+ ')'}">
+                <container class="video" v-if="getCurrentPageComputed.video !== ''"
+                  @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.url)"
+                  :style="{backgroundImage: 'url(images/' + getCurrentPageComputed.path + '/' + getCurrentPageComputed.video.thumbnail+ ')'}">
                   <screenshot>
                     <button>
                       <icon class="play"></icon>
                     </button>
                   </screenshot>
                 </container>
-                <container v-for="screenshot in getCurrentPageComputed.screenshots" v-if="screenshot.indexOf('mp4') === -1" @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)" :style="{backgroundImage: 'url(images/' + getCurrentPageComputed.path + '/' + screenshot+ ')'}">
+                <container v-for="screenshot in getCurrentPageComputed.screenshots"
+                  v-if="screenshot.indexOf('mp4') === -1"
+                  @click="ZoomImage('images/' + getCurrentPageComputed.path + '/' + screenshot)"
+                  :style="{backgroundImage: 'url(images/' + getCurrentPageComputed.path + '/' + screenshot+ ')'}">
                   <screenshot>
-                    <img :key="getCurrentPageComputed.path + '/' + screenshot" :src="'images/' + getCurrentPageComputed.path + '/' + screenshot" />
+                    <img :key="getCurrentPageComputed.path + '/' + screenshot"
+                      :src="'images/' + getCurrentPageComputed.path + '/' + screenshot" />
                   </screenshot>
                 </container>
               </screenshots>
@@ -134,7 +176,9 @@
               <h2>What do players say?</h2>
               <quotes @click="window.open('https://apps.apple.com/us/app/like-me/id6466331042?see-all=reviews')">
                 <quote v-for="quote in getCurrentPageComputed.quotes">
-                  <rating><star v-for="n in quote.rating">⭐</star></rating>
+                  <rating>
+                    <star v-for="n in quote.rating">⭐</star>
+                  </rating>
                   <statement> "<span v-html="quote.statement"></span>" </statement>
                   <attribution>{{quote.attribution}}</attribution>
                 </quote>
@@ -142,7 +186,10 @@
             </section>
             <section v-if="getCurrentPageComputed.price === 0 && getCurrentPageComputed.isPWA">
               <h2>Did you know?</h2>
-              <p>The online version of {{getCurrentPageComputed.name}} can be installed on almost any device as if it was an application. Most operating systems will help you install this page when you first visit the website with a simple banner notification. Once you've opened the game in your browser on iOS, open the Share menu from your browser and then choose Save to your Home Screen.</p>
+              <p>The online version of {{getCurrentPageComputed.name}} can be installed on almost any device as if it
+                was an application. Most operating systems will help you install this page when you first visit the
+                website with a simple banner notification. Once you've opened the game in your browser on iOS, open the
+                Share menu from your browser and then choose Save to your Home Screen.</p>
             </section>
             <section v-if="getCurrentPageComputed.communities.length>0">
               <h2>Discord</h2>
@@ -156,8 +203,11 @@
                 </community>
               </communities>
             </section>
-            <section id="versionHistory" :class="{expanded: expandVersionHistory, collapsed: !expandVersionHistory}" v-if="getCurrentPageComputed.versionHistory != ''" v-html="getCurrentPageComputed.versionHistory"></section>
-            <sectionToggle v-if="getCurrentPageComputed.versionHistory != '' && !expandVersionHistory" @click="ToggleExpandVersionHistory"> ...click to see more history </sectionToggle>
+            <section id="versionHistory" :class="{expanded: expandVersionHistory, collapsed: !expandVersionHistory}"
+              v-if="getCurrentPageComputed.versionHistory != ''" v-html="getCurrentPageComputed.versionHistory">
+            </section>
+            <sectionToggle v-if="getCurrentPageComputed.versionHistory != '' && !expandVersionHistory"
+              @click="ToggleExpandVersionHistory"> ...click to see more history </sectionToggle>
           </article>
           <article v-if="getCurrentPageComputed.path === 'privacy'">
             <section>
@@ -168,25 +218,41 @@
               </intro>
               <h2>Introduction</h2>
               <p>Welcome to Big Tent Games.</p>
-              <p>Big Tent Games (“us”, “we”, or “our”) operates the domains bigtentgames.com, likeme.games, and any related subdomains (collectively referred to as “Services”). These subdomains include, but are not limited to, facets.bigtentgames.com, likeme.games, dropnstop.bigtentgames.com, path.bigtentgames.com, and commoddities.bigtentgames.com.</p>
-              <p>Our Privacy Policy governs your visit to any page, subdomain, or site on any of the aforementioned domains and any online page owned and operated by Big Tent Games. By using our Services, you agree to the collection and use of information in accordance with this policy.</p>
+              <p>Big Tent Games (“us”, “we”, or “our”) operates the domains bigtentgames.com, likeme.games, and any
+                related subdomains (collectively referred to as “Services”). These subdomains include, but are not
+                limited to, facets.bigtentgames.com, likeme.games, dropnstop.bigtentgames.com, path.bigtentgames.com,
+                and commoddities.bigtentgames.com.</p>
+              <p>Our Privacy Policy governs your visit to any page, subdomain, or site on any of the aforementioned
+                domains and any online page owned and operated by Big Tent Games. By using our Services, you agree to
+                the collection and use of information in accordance with this policy.</p>
               <h2>Information Collection and Use</h2>
-              <p>We may collect and store certain information, such as user names and temporary IDs, to provide and improve our Services. These are solely used for preserving game states and allowing users to share their game progress with friends. We do not collect any other information such as machine addresses, browser information, or any other personal data.</p>
+              <p>We may collect and store certain information, such as user names and temporary IDs, to provide and
+                improve our Services. These are solely used for preserving game states and allowing users to share their
+                game progress with friends. We do not collect any other information such as machine addresses, browser
+                information, or any other personal data.</p>
               <h2>Data Security</h2>
-              <p>We take measures to protect user data and ensure it is kept secure. However, we cannot guarantee absolute security due to the inherent risks associated with data transmission over the internet.</p>
+              <p>We take measures to protect user data and ensure it is kept secure. However, we cannot guarantee
+                absolute security due to the inherent risks associated with data transmission over the internet.</p>
               <h2>User Rights</h2>
-              <p>You have the right to access, modify, or delete your data upon request. Should you wish to exercise these rights, please contact us at <a href="mailto:bigtentgames@icloud.com?subject=Privacy Policy">bigtentgames@icloud.com</a>.</p>
+              <p>You have the right to access, modify, or delete your data upon request. Should you wish to exercise
+                these rights, please contact us at <a
+                  href="mailto:bigtentgames@icloud.com?subject=Privacy Policy">bigtentgames@icloud.com</a>.</p>
               <h2>Changes to This Policy</h2>
-              <p>We may update our Privacy Policy from time to time. We will notify users of any significant changes via email or a notice on our website.</p>
+              <p>We may update our Privacy Policy from time to time. We will notify users of any significant changes via
+                email or a notice on our website.</p>
               <h2>Contact Us</h2>
-              <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:bigtentgames@icloud.com?subject=Privacy Policy">bigtentgames@icloud.com</a>.</p>
+              <p>If you have any questions about this Privacy Policy, please contact us at <a
+                  href="mailto:bigtentgames@icloud.com?subject=Privacy Policy">bigtentgames@icloud.com</a>.</p>
               <h2>Our Pledge</h2>
-              <p>We are committed to creating enjoyable games without compromising the privacy and security of our users.</p>
+              <p>We are committed to creating enjoyable games without compromising the privacy and security of our
+                users.</p>
             </section>
           </article>
-          <footer>&copy; {{year}} Big Tent Games <a href="#privacy">Privacy Policy</a><a href="mailto:bigtentgames@icloud.com">Contact</a></footer>
+          <footer>&copy; {{year}} Big Tent Games <a href="#privacy">Privacy Policy</a><a
+              href="mailto:bigtentgames@icloud.com">Contact</a></footer>
         </content>
-        <footer>&copy; {{year}} Big Tent Games <a href="#privacy">Privacy Policy</a><a href="mailto:bigtentgames@icloud.com">Contact</a></footer>
+        <footer>&copy; {{year}} Big Tent Games <a href="#privacy">Privacy Policy</a><a
+            href="mailto:bigtentgames@icloud.com">Contact</a></footer>
       </stage>
     </app>
     <script src="helpers/console-enhancer.js" type="text/javascript"></script>
@@ -194,4 +260,5 @@
     <script src="models/PageObject.js" type="text/javascript"></script>
     <script src="scripts/btg.js" type="text/javascript"></script>
   </body>
+
 </html>
