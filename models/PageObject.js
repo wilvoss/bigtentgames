@@ -59,7 +59,7 @@ var Pages = [
     bannerType: 'free',
     isPWA: false,
     description: 'A game of words and wits!',
-    about: 'If you\'ve played "Connections," "CodeNames," or "So Clover," you\'ll be right at home with Facets! This quick online game challenges you to create or guess word puzzles that can bring you and your friends closer to each other.',
+    about: '<p>If you\'ve played "Connections," "CodeNames," or "So Clover," you\'ll be right at home with Facets! This quick online game challenges you to create or guess word puzzles that can bring you and your friends closer to each other.</p>',
     aboutExtra: [
       '<h2>About</h2>',
       '<p>The challenge of "Facets" is to connect different words that may or may not be easily connected. Players take turns guessing and giving puzzles over social media, text, messages, or other chat apps.</p>',

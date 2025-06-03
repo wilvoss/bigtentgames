@@ -225,6 +225,7 @@ onionskin.show {
 onionskin img,
 onionskin video {
   height: 90%;
+  border: 1px solid white;
   max-height: 700px;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   border-radius: var(--borderRadius);
