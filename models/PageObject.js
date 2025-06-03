@@ -58,7 +58,7 @@ var Pages = [
     bannerText: 'free',
     bannerType: 'free',
     isPWA: false,
-    description: 'Craft word puzzles, send each other solutions, and discover how you and your friends connect!',
+    description: 'A game of words and wits!',
     about: 'If you\'ve played "Connections," "CodeNames," or "So Clover," you\'ll be right at home with Facets! This quick online game challenges you to create or guess word puzzles that can bring you and your friends closer to each other.',
     aboutExtra: [
       '<h2>About</h2>',
