@@ -79,9 +79,9 @@ var Pages = [
         name: 'Big Tent Games Server',
         url: 'https://discord.gg/sJ3vG3RHZd',
         links: [
-          { name: 'Facets! - General', url: 'https://discord.com/channels/1148025462598139934/1339449000633569292' },
-          { name: 'Facets! - Feedback', url: 'https://discord.com/channels/1148025462598139934/1339449108901007462' },
-          { name: 'Facets! - Bug Reports', url: 'https://discord.com/channels/1148025462598139934/1339449140228390992' },
+          { name: 'Facets - General', url: 'https://discord.com/channels/1148025462598139934/1339449000633569292' },
+          { name: 'Facets - Feedback', url: 'https://discord.com/channels/1148025462598139934/1339449108901007462' },
+          { name: 'Facets - Bug Reports', url: 'https://discord.com/channels/1148025462598139934/1339449140228390992' },
         ],
       },
     ],
