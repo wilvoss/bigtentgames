@@ -783,6 +783,10 @@ footer {
   bottom: 0px;
 }
 
+footer a {
+  cursor: pointer;
+}
+
 content footer {
   display: none;
   position: relative;

@@ -249,10 +249,12 @@
                 users.</p>
             </section>
           </article>
-          <footer>&copy; {{year}} Big Tent Games <a href="#home">Home</a><a href="#privacy">Privacy</a><a
-              href="mailto:bigtentgames@icloud.com">Contact</a></footer>
+          <footer>&copy; {{year}} Big Tent Games <a @click="ChangeHashToPagePath('home')">Home</a><a
+              @click="ChangeHashToPagePath('privacy')">Privacy</a><a href="mailto:bigtentgames@icloud.com">Contact</a>
+          </footer>
         </content>
-        <footer>&copy; {{year}} Big Tent Games <a href="#home">Home</a><a href="#privacy">Privacy Policy</a><a
+        <footer>&copy; {{year}} Big Tent Games <a @click="ChangeHashToPagePath('home')">Home</a><a
+            @click="ChangeHashToPagePath('privacy')">Privacy Policy</a><a
             href="mailto:bigtentgames@icloud.com">Contact</a></footer>
       </stage>
     </app>

@@ -25,6 +25,7 @@ var app = new Vue({
     ChangeHashToPagePath(_path) {
       log('ChangeHashToPagePath(_path) called');
       this.ResetScrollPositions();
+
       window.location.hash = _path;
     },
 
@@ -79,21 +80,23 @@ var app = new Vue({
 
     ResetScrollPositions() {
       log('ResetScrollPositions() called');
-      if (document.getElementsByTagName('content')[0] != undefined) {
-        document.getElementsByTagName('content')[0].scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth',
-        });
-      }
-      if (document.getElementsByTagName('screenshots')[0] != undefined) {
-        document.getElementsByTagName('screenshots')[0].scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'smooth',
-        });
-      }
-      this.expandVersionHistory = false;
+      requestAnimationFrame(() => {
+        if (document.getElementsByTagName('content')[0] != undefined) {
+          document.getElementsByTagName('content')[0].scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
+        }
+        if (document.getElementsByTagName('screenshots')[0] != undefined) {
+          document.getElementsByTagName('screenshots')[0].scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
+        }
+        this.expandVersionHistory = false;
+      });
     },
 
     HandleHashChangeEvent() {
