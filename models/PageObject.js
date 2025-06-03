@@ -53,7 +53,7 @@ var Pages = [
     backgroundColor: 'hsl(var(--bannerHS), 25%)',
   }),
   new PageObject({
-    name: 'Facets!',
+    name: 'Facets',
     priceText: 'free',
     bannerText: 'free',
     bannerType: 'free',
@@ -71,7 +71,7 @@ var Pages = [
     url: 'https://facets.bigtentgames.com/open',
     iconUrl: 'https://facets.bigtentgames.com/images/icon512.png',
     features: ['Word play', 'Low stakes', 'Fast paced', 'Turn based', 'Casual game play', 'Brain training'],
-    screenshots: ['6.png', '1.png', '2.png', '3.png', '4.png', '5.png'],
+    screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
     backgroundColor: 'rgb(46, 106, 149)',
     communities: [
       {

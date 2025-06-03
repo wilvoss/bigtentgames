@@ -294,7 +294,7 @@ selector.on {
 }
 
 selector.game.on {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); */
 }
 
 selector button img {
@@ -924,7 +924,7 @@ footer a::before {
   }
 
   content {
-    padding-top: var(--defaultGap);
+    padding-top: 0;
     max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
     background-color: transparent;
     box-shadow: none;
