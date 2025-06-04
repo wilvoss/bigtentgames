@@ -303,10 +303,6 @@ selector button img {
   opacity: 0;
 }
 
-nav selector:first-of-type {
-  margin-right: 20px;
-}
-
 nav selector button {
   color: hsl(var(--appForeground));
   opacity: 1;
