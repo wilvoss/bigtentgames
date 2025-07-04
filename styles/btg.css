@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Display';
-  src: url('../fonts/ArchivoNarrow-VariableFont_wght.ttf');
   font-weight: 700;
+  src: url('../fonts/ArchivoNarrow-VariableFont_wght.ttf');
+  font-family: 'Display';
 }
 
 @font-face {
-  font-family: 'Text';
-  src: url('../fonts/ArchivoNarrow-VariableFont_wght.ttf');
   font-weight: 400;
+  src: url('../fonts/ArchivoNarrow-VariableFont_wght.ttf');
+  font-family: 'Text';
 }
 
 :root {
@@ -22,7 +22,7 @@
   --appBackground: 0, 0%, 70%;
   --appBackgroundStronger: 0, 0%, 57%;
   --appBackgroundStrongest: 0, 0%, 55%;
-  --bannerHS: 329, 78%;
+  --bannerHS: 329, 74%;
   --navHeight: 150px;
   --maxWidth: 1024px;
   --footerHeight: 60px;
@@ -35,20 +35,20 @@
 
 html,
 body {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
   margin: 0px;
   padding: 0px;
-  font-family: 'Text', Arial, Helvetica, sans-serif;
-  line-height: 150%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   color: hsl(var(--appForeground));
+  line-height: 150%;
+  font-family: 'Text', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  overflow: auto;
   margin: 0px auto;
+  overflow: auto;
   overflow-x: hidden;
 }
 
@@ -72,16 +72,16 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Text';
+  margin-top: calc(var(--defaultGap) / 2);
+  margin-bottom: 0;
   font-weight: 400;
   line-height: 100%;
-  margin-bottom: 0;
-  margin-top: calc(var(--defaultGap) / 2);
+  font-family: 'Text';
 }
 
 h1 {
-  font-family: 'Display';
   font-size: normal;
+  font-family: 'Display';
 }
 
 p {
@@ -97,14 +97,14 @@ a,
 a:visited,
 a:focus,
 a:active {
-  text-decoration: none;
-  color: hsl(var(--appForeground));
   border-bottom: 1px solid hsl(var(--bannerHS), 70%);
+  color: hsl(var(--appForeground));
+  text-decoration: none;
 }
 
 ul {
-  list-style-type: '- ';
   padding-left: 14px;
+  list-style-type: '- ';
 }
 
 li {
@@ -112,11 +112,11 @@ li {
 }
 
 button {
-  border: none;
-  font-family: 'Display';
-  line-height: 100%;
   cursor: pointer;
+  border: none;
   background: none;
+  line-height: 100%;
+  font-family: 'Display';
   user-select: none;
   -webkit-user-select: none;
   backface-visibility: hidden;
@@ -127,28 +127,28 @@ button {
 
 button.inline {
   display: flex;
+  column-gap: 8px;
   flex-direction: row;
+  align-content: baseline;
   justify-content: center;
   align-items: center;
-  align-content: baseline;
   justify-items: baseline;
-  column-gap: 8px;
   white-space: nowrap;
 }
 
 section button.inert,
 section button.inline.inert {
-  background-color: hsla(var(--bannerHS), 39%, 1);
   box-shadow: none;
+  background-color: hsla(var(--bannerHS), 39%, 1);
   pointer-events: none;
 }
 
 icon {
   display: block;
+  mask-size: 20px 20px;
+  background-color: white;
   width: 15px;
   height: 20px;
-  background-color: white;
-  mask-size: 20px 20px;
   -webkit-mask-size: 20px 20px;
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
@@ -163,16 +163,16 @@ icon.bmc {
 }
 
 icon.play {
+  mask-image: url(../images/icon_play.svg);
+  margin-left: 4px;
   width: 20px;
   height: 20px;
-  margin-left: 4px;
-  mask-image: url(../images/icon_play.svg);
   -webkit-mask-image: url(../images/icon_play.svg);
 }
 
 icon.apple {
-  width: 17px;
   mask-size: 17px 19px;
+  width: 17px;
   -webkit-mask-size: 17px 19px;
   mask-image: url(../images/icon_apple.svg);
   -webkit-mask-image: url(../images/icon_apple.svg);
@@ -180,8 +180,8 @@ icon.apple {
 }
 
 icon.googleplay {
-  width: 17px;
   mask-size: 17px 19px;
+  width: 17px;
   -webkit-mask-size: 17px 19px;
   mask-image: url(../images/icon_google_play.svg);
   -webkit-mask-image: url(../images/icon_google_play.svg);
@@ -190,30 +190,30 @@ icon.googleplay {
 
 app {
   display: flex;
-  width: 100%;
-  height: 100%;
-  background-image: repeating-linear-gradient(45deg, hsla(var(--bodyBackground), 0.4) 0px, hsla(var(--bodyBackground), 0.4) 40px, hsla(var(--bodyBackground), 0.45) 40px, hsla(var(--bodyBackground), 0.45) 80px);
-  background-repeat: no-repeat, repeat;
-  background-attachment: scroll;
   justify-content: center;
   align-items: top;
   transition: 250ms ease-in-out all;
+  background-image: repeating-linear-gradient(45deg, hsla(var(--bodyBackground), 0) 0px, hsla(var(--bodyBackground), 0) 40px, hsla(var(--bodyBackground), 0.08) 40px, hsla(var(--bodyBackground), 0.08) 80px);
+  background-repeat: no-repeat, repeat;
+  background-attachment: scroll;
+  width: 100%;
+  height: 100%;
 }
 
 onionskin {
   display: flex;
   position: absolute;
-  z-index: 200;
-  overflow: scroll;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
   justify-content: center;
   align-items: center;
-  pointer-events: none;
-  background: rgba(0, 0, 0, 0.8);
-  transition: 250ms ease-out all;
+  opacity: 0;
+  z-index: 200;
   backdrop-filter: blur(5px);
+  transition: 250ms ease-out all;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  pointer-events: none;
   -webkit-backdrop-filter: blur(5px);
 }
 
@@ -224,91 +224,103 @@ onionskin.show {
 
 onionskin img,
 onionskin video {
-  height: 90%;
-  border: 1px solid white;
-  max-height: 700px;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
   border-radius: var(--borderRadius);
+  height: 90%;
+  max-height: 700px;
 }
 
 stage {
   display: flex;
-  width: calc(100% - 2 * var(--defaultGap));
-  height: 100%;
-  margin: 0px var(--defaultGap);
   flex-direction: column;
+  align-content: center;
   justify-content: flex-start;
   align-items: center;
-  align-content: center;
+  margin: 0px var(--defaultGap);
+  width: calc(100% - 2 * var(--defaultGap));
   max-width: var(--maxWidth);
+  height: 100%;
 }
 
 nav,
 subnav,
 footer {
   display: flex;
-  width: calc(100% - 2 * var(--defaultGap));
-  height: var(--navHeight);
-  padding: 0 var(--defaultGap);
   flex-direction: row;
   align-items: center;
   gap: var(--defaultGap);
+  padding: 0 var(--defaultGap);
+  width: calc(100% - 2 * var(--defaultGap));
+  height: var(--navHeight);
 }
 
 selector {
   display: block;
-  height: auto;
   margin: 0;
   padding: 0;
+  height: auto;
 }
 
 nav selector {
-  overflow: hidden;
+  scale: 0.8;
+  transition: 200ms ease-in-out all;
+  cursor: pointer;
+  border: 1px solid hlsa(0, 100%, 100%, 0.2);
+  border-radius: var(--borderRadius);
+  background-color: transparent;
+  padding: 0;
   width: 80px;
   height: 80px;
-  padding: 0;
-  border: 0 solid transparent;
+  overflow: hidden;
   color: hsl(var(--appForeground));
-  background-color: transparent;
-  cursor: pointer;
-  border-radius: var(--borderRadius);
-  transition: 200ms ease-in-out all;
-  scale: 0.8;
+}
+
+nav selector:first-of-type {
+  border-color: rgba(255, 255, 255, .0)
 }
 
 selector button {
   display: block;
-  overflow: hidden;
+  transition: 200ms ease-in-out all;
+  margin: 0;
+  border-radius: var(--borderRadius);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: var(--borderRadius);
+  overflow: hidden;
   white-space: nowrap;
-  transition: 200ms ease-in-out all;
+}
+
+selector:first-of-type button {
+  box-shadow: initial;
 }
 
 selector.on {
   scale: 1;
 }
 
-selector.game.on {
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); */
+selector.on button {
+  opacity: 1;
 }
 
 selector button img {
-  width: 100%;
   opacity: 0;
+  width: 100%;
 }
 
 nav selector button {
-  color: hsl(var(--appForeground));
+  display: flex;
   opacity: 1;
+  mix-blend-mode: luminosity;
+  box-shadow: inset 1px 1px 4px white;
+  border-radius: calc(var(--borderRadius) - 1px);
+  /* filter: grayscale(); */
   background-size: contain;
   background-blend-mode: luminosity;
-  /* filter: grayscale(); */
+  color: hsl(var(--appForeground));
   /* -webkit-filter: grayscale(); */
   /* transform: translateY(30%); */
 }
@@ -316,36 +328,36 @@ nav selector button {
 selector button banner {
   display: none;
   position: absolute;
-  z-index: 1;
-  padding: 3px 40px;
-  font-family: 'Display';
-  font-size: 11px;
-  text-transform: capitalize;
-  color: white;
   transform: translate(-23px, -8px);
-  background: black;
-  border-radius: calc(var(--borderRadius) / 4);
   rotate: -38deg;
   scale: 1.2;
-  box-shadow: 0 2px 2px hsla(var(--appForeground), 0.2);
+  z-index: 1;
   transition: 200ms ease-in-out all;
+  box-shadow: 0 2px 2px hsla(var(--appForeground), 0.2);
+  border-radius: calc(var(--borderRadius) / 4);
+  background: black;
+  padding: 3px 40px;
+  color: white;
+  font-size: 11px;
+  font-family: 'Display';
+  text-transform: capitalize;
 }
 
 nav selector button banner {
-  opacity: 0;
   transform: translate(-29px, -58px);
+  opacity: 0;
 }
 
 selector.on button banner {
-  opacity: 1;
   transform: translate(-29px, -18px);
   scale: 1;
+  opacity: 1;
 }
 
 selector button banner.free,
 selector button banner.paid {
-  color: rgb(255, 255, 255);
   background-color: hsl(var(--bannerHS), 39%);
+  color: rgb(255, 255, 255);
 }
 
 selector button banner.beta {
@@ -353,8 +365,8 @@ selector button banner.beta {
 }
 
 selector button banner.alpha {
-  color: hsl(var(--bannerHS), 39%);
   background: hsl(var(--bannerHS), 91%);
+  color: hsl(var(--bannerHS), 39%);
 }
 
 selector.banner button banner {
@@ -363,37 +375,37 @@ selector.banner button banner {
 
 nav selector.on,
 nav selector:hover.on {
-  cursor: default;
   scale: 1;
+  cursor: default;
 }
 
 nav selector.on button,
 nav selector:hover.on button {
-  opacity: 1;
   transform: translateY(0%);
-  cursor: default;
   scale: 1;
+  opacity: 1;
   filter: none;
+  cursor: default;
 }
 
 nav selector:hover {
-  opacity: 1;
   scale: 0.9;
+  opacity: 1;
 }
 
 content {
   display: block;
-  overflow: auto;
-  width: calc(100% - 4 * var(--defaultGap));
-  height: 100%;
-  padding: calc(2 * var(--defaultGap));
-  background-color: hsla(var(--appBackgroundWeakest), 1);
-  background-repeat: no-repeat;
+  box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
+  border-radius: calc(var(--borderRadius) / 4);
   background-position: 0px -100px;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsla(var(--appBackgroundWeakest), 1);
+  padding: calc(2 * var(--defaultGap));
+  width: calc(100% - 4 * var(--defaultGap));
+  height: 100%;
   max-height: calc(100% - var(--navHeight) - var(--footerHeight) - 4 * var(--defaultGap));
-  border-radius: calc(var(--borderRadius) / 4);
-  box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
+  overflow: auto;
   /* max-width: var(--maxWidth);
   margin-top: var(--navHeight);
   position: absolute; */
@@ -402,67 +414,67 @@ content {
 content::-webkit-scrollbar {
   display: none;
   -ms-overflow-style: none;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   touch-action: auto;
-  scroll-behavior: smooth;
 }
 
 section.collapsed {
-  overflow: hidden;
-  max-height: 318px;
   margin-bottom: calc(2 * var(--defaultGap));
+  max-height: 318px;
+  overflow: hidden;
 }
 
 sectionToggle {
   display: block;
-  color: hsl(var(--bannerHS), 21%);
   transform: translateY(-50px);
   cursor: pointer;
   padding-top: 30px;
+  color: hsl(var(--bannerHS), 21%);
   -webkit-backdrop-filter: blur(4px);
 }
 
 section.expanded {
-  overflow: hidden;
   max-height: 112000px;
+  overflow: hidden;
 }
 
 section h2 {
   margin-top: var(--defaultGap);
-  padding-top: var(--defaultGap);
   border-top: 1px solid hsla(var(--appForeground), 0.1);
+  padding-top: var(--defaultGap);
 }
 
 section intro {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   margin-bottom: var(--defaultGap);
+  width: 100%;
 }
 
 section intro h1 span {
-  font-family: 'Text';
-  font-size: 0.5em;
-  font-weight: 400;
   color: hsl(var(--appForegroundWeakest));
+  font-weight: 400;
+  font-size: 0.5em;
+  font-family: 'Text';
 }
 
 section intro h2,
 section h3 {
-  border: none;
-  font-family: 'Text';
-  font-size: 1em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: hsl(var(--appForegroundWeakest));
-  padding-top: 0;
   margin-top: calc(var(--defaultGap) / 3);
+  border: none;
+  padding-top: 0;
+  color: hsl(var(--appForegroundWeakest));
+  font-weight: 400;
+  font-size: 1em;
+  font-family: 'Text';
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 section h3 {
-  color: hsl(var(--appForeground));
   margin-top: calc(var(--defaultGap));
+  color: hsl(var(--appForeground));
 }
 
 section intro p {
@@ -470,83 +482,83 @@ section intro p {
 }
 
 section intro img {
-  overflow: hidden;
-  max-width: 300px;
   border-radius: calc(var(--borderRadius) / 2);
+  max-width: 300px;
+  overflow: hidden;
 }
 
 section intro button,
 section button.action {
   display: flex;
-  height: 34px;
-  margin: calc(2 * var(--defaultGap)) 0 var(--defaultGap) 0;
-  padding: 0 20px;
-  color: hsl(var(--appBackgroundWeakest));
-  background-color: hsl(var(--bannerHS), 50%);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  transform: translateX(-3px);
   justify-content: center;
   align-items: center;
+  transform: translateX(-3px);
+  margin: calc(2 * var(--defaultGap)) 0 var(--defaultGap) 0;
   border-radius: 17px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  background-color: hsl(var(--bannerHS), 50%);
+  padding: 0 20px;
+  height: 34px;
+  color: hsl(var(--appBackgroundWeakest));
 }
 
 .showmore {
-  color: hsla(var(--appForegroundWeakest), 100%);
   cursor: pointer;
+  color: hsla(var(--appForegroundWeakest), 100%);
 }
 
 section button.action {
-  background-image: none;
   margin-top: var(--defaultGap);
+  background-image: none;
 }
 
 section intro button.light {
   display: none;
-  color: hsla(var(--appBackgroundWeakest), 1);
   background: hsl(var(--appForegroundWeakest));
+  color: hsla(var(--appBackgroundWeakest), 1);
 }
 
 section h4 {
-  font-weight: 600;
   margin-top: var(--defaultGap);
   margin-bottom: 0;
   padding-bottom: 0;
+  font-weight: 600;
 }
 
 screenshots,
 features ul,
 quotes {
   display: flex;
-  width: calc(100%);
-  padding: var(--defaultGap) 0 0;
   flex: 1;
   gap: calc(var(--defaultGap));
+  padding: var(--defaultGap) 0 0;
+  width: calc(100%);
   overflow-x: auto;
   overflow-y: hidden;
 }
 
 screenshots {
-  padding: var(--defaultGap) calc(2 * var(--defaultGap)) 0;
   margin-left: calc(-2 * var(--defaultGap));
+  padding: var(--defaultGap) calc(2 * var(--defaultGap)) 0;
 }
 
 quotes {
-  margin: var(--defaultGap) 0;
-  padding: 0;
-  flex-wrap: wrap;
   column-gap: calc(var(--defaultGap));
   row-gap: calc(var(--defaultGap));
+  flex-wrap: wrap;
+  margin: var(--defaultGap) 0;
+  padding: 0;
 }
 
 quotes quote {
   display: block;
-  width: calc(100% - var(--defaultGap) * 3);
+  cursor: pointer;
   margin: 0;
   padding: 0;
-  line-height: 150%;
-  color: hsl(var(--appForegroundWeaker));
+  width: calc(100% - var(--defaultGap) * 3);
   max-width: calc(50% - var(--defaultGap) * 3);
-  cursor: pointer;
+  color: hsl(var(--appForegroundWeaker));
+  line-height: 150%;
 }
 
 quote rating {
@@ -561,14 +573,14 @@ quote statement {
 
 quote attribution {
   display: inline;
-  text-align: left;
   color: hsla(var(--appForeground), 0.6);
+  text-align: left;
   white-space: nowrap;
 }
 
 quote attribution::before {
-  content: ' – ';
   padding-left: 4px;
+  content: ' – ';
 }
 
 features ul {
@@ -579,23 +591,23 @@ features ul {
 
 features ul li {
   margin: 0;
+  border-radius: var(--borderRadius);
+  background: hsla(var(--bannerHS), 100%, 1);
   padding: calc(var(--defaultGap) / 3) var(--defaultGap);
   color: hsl(var(--bannerHS), 50%);
   list-style-type: none;
-  border-radius: var(--borderRadius);
-  background: hsla(var(--bannerHS), 100%, 1);
 }
 
 installers {
   display: flex;
-  width: calc(100%);
   flex: 1;
   gap: calc(var(--defaultGap) / 2);
+  width: calc(100%);
 }
 
 installers button.inline {
-  text-wrap: nowrap;
   gap: 0.25em;
+  text-wrap: nowrap;
 }
 
 installers button.inline icon {
@@ -611,28 +623,28 @@ installers button getit {
 screenshots::-webkit-scrollbar {
   display: none;
   -ms-overflow-style: none;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   touch-action: auto;
-  scroll-behavior: smooth;
 }
 
 screenshots container {
   display: block;
-  overflow: hidden;
-  height: 420px;
-  border: 1px solid white;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: calc(var(--borderRadius) / 2);
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: var(--defaultGap);
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  border-radius: calc(var(--borderRadius) / 2);
+  background-size: cover;
+  background-repeat: no-repeat;
   min-width: 194px;
+  height: 420px;
+  overflow: hidden;
 }
 
 screenshots screenshot,
 screenshots video {
-  height: 440px;
   cursor: pointer;
+  height: 440px;
 }
 
 screenshots container screenshot {
@@ -647,15 +659,15 @@ screenshots container.video screenshot {
 
 screenshots container screenshot button {
   display: flex;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  border: 2px solid white;
   justify-content: center;
   align-items: center;
+  transition: 200ms ease-out all;
+  border: 2px solid white;
   border-radius: 50%;
   background: hsla(0, 0%, 0%, 0.4);
-  transition: 200ms ease-out all;
+  padding: 0;
+  width: 50px;
+  height: 50px;
 }
 
 screenshots container:hover screenshot button {
@@ -672,9 +684,9 @@ screenshots container:hover screenshot button {
 } */
 
 screenshots container {
-  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 screenshots container img {
@@ -683,14 +695,14 @@ screenshots container img {
 
 screenshots screenshot img,
 screenshots video {
-  height: 420px;
   min-width: 194px;
+  height: 420px;
 }
 
 communities community {
   display: block;
-  width: auto;
   margin: var(--defaultGap) 0 0;
+  width: auto;
   line-height: 150%;
 }
 
@@ -710,10 +722,10 @@ communities community ul {
 }
 
 communities community li {
-  line-height: 200%;
-  color: hsl(var(--appForegroundWeakest));
-  list-style-type: '↳ ';
   margin-left: 14px;
+  color: hsl(var(--appForegroundWeakest));
+  line-height: 200%;
+  list-style-type: '↳ ';
 }
 
 communities community h3 {
@@ -721,8 +733,8 @@ communities community h3 {
 }
 
 logo:hover {
-  opacity: 0.6;
   transform: scale(0.9);
+  opacity: 0.6;
   transition: 30s ease-out all;
 }
 
@@ -737,14 +749,14 @@ credit {
 
 games {
   display: flex;
-  width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   margin-top: calc(2 * var(--defaultGap));
   margin-bottom: calc(2 * var(--defaultGap));
-  gap: 20px;
+  width: 100%;
 }
 
 games selector {
@@ -753,30 +765,30 @@ games selector {
 
 games selector button {
   display: flex;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border-radius: 4px;
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 games selector button img {
-  width: 100%;
   opacity: 0;
+  width: 100%;
 }
 
 footer {
   position: absolute;
-  height: var(--footerHeight);
+  bottom: 0px;
+  align-items: center;
   margin: 0 auto;
+  max-width: var(--maxWidth);
+  height: var(--footerHeight);
+  color: hsla(var(--appBackgroundWeakest), 0.9);
   font-size: 0.8em;
   text-align: left;
-  color: hsla(var(--appBackgroundWeakest), 0.9);
-  align-items: center;
-  max-width: var(--maxWidth);
-  bottom: 0px;
 }
 
 footer a {
@@ -794,14 +806,14 @@ footer a,
 footer a:visited,
 footer a:active {
   border: none;
-  text-decoration: none;
   color: hsl(var(--appBackgroundWeakest));
+  text-decoration: none;
 }
 
 footer a::before {
   display: inline-block;
-  content: ' | ';
   padding-right: var(--defaultGap);
+  content: ' | ';
 }
 
 @media only screen and (max-width: 500px) {
@@ -831,32 +843,32 @@ footer a::before {
   }
 
   nav selector {
-    width: 80px;
     display: none;
     opacity: 1;
+    width: 80px;
   }
 
   nav selector:first-child,
   nav selector.on:first-child {
     display: block;
-    margin: 0px;
     scale: 1;
+    margin: 0px;
   }
 
   nav selector button,
   nav selector:hover button {
-    opacity: 1;
     transform: translateY(0%);
+    opacity: 1;
   }
 
   stage {
-    width: 100%;
     margin: 0;
+    width: 100%;
   }
 
   content {
-    border-radius: 0;
     box-shadow: none;
+    border-radius: 0;
     max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
   }
 
@@ -870,12 +882,12 @@ footer a::before {
   }
 
   games {
-    margin-top: var(--defaultGap);
-    margin-bottom: var(--defaultGap);
-    justify-content: center;
-    align-items: center;
     column-gap: 0;
     row-gap: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--defaultGap);
+    margin-bottom: var(--defaultGap);
   }
 
   games selector {
@@ -895,12 +907,12 @@ footer a::before {
   }
 
   content footer {
+    display: flex;
+    justify-content: start;
     margin-top: calc(2 * var(--defaultGap));
     border-top: 1px solid hsla(var(--appForeground), 0.1);
     padding: var(--defaultGap) 0 0;
-    display: flex;
     width: 100%;
-    justify-content: start;
     color: hsla(var(--appForeground), 0.7);
   }
 }
@@ -925,17 +937,17 @@ footer a::before {
   }
 
   content {
-    padding-top: 0;
-    max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
-    background-color: transparent;
     box-shadow: none;
+    background-color: transparent;
+    padding-top: 0;
     width: calc(100% - 3 * var(--defaultGap));
+    max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
   }
 
   section intro button,
   section button.action {
-    color: hsl(var(--appForegroundWeakest));
     box-shadow: 0px 4px 8px hsla(var(--bodyBackground), 0.4);
+    color: hsl(var(--appForegroundWeakest));
   }
 
   section intro button.light {
@@ -955,10 +967,10 @@ footer a::before {
   }
 
   installers {
-    padding-top: var(--defaultGap);
     flex: auto;
     flex-wrap: wrap;
     align-items: start;
+    padding-top: var(--defaultGap);
     /* gap: 0; */
     /* flex-direction: column; */
   }
@@ -977,11 +989,11 @@ footer a::before {
   }
 
   quotes quote {
-    max-width: unset;
-    width: calc(100%);
+    border-radius: calc(var(--borderRadius) / 2);
     background: hsla(var(--appBackgroundWeakest), 0.4);
     padding: var(--defaultGap);
-    border-radius: calc(var(--borderRadius) / 2);
+    width: calc(100%);
+    max-width: unset;
   }
 
   quotes attribution {
@@ -994,7 +1006,7 @@ footer a::before {
 
   features ul li {
     background: hsla(var(--bannerHS), 96%, 1);
-    font-size: 0.9em;
     padding: calc(var(--defaultGap) / 4) calc(var(--defaultGap));
+    font-size: 0.9em;
   }
 }

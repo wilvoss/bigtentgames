@@ -30,17 +30,17 @@
     <meta property="og:image:height" content="630" />
 
     <link id="appleicon" rel="apple-touch-icon" sizes="180x180" href="images/icon180.png" />
-    
+
     <link rel="icon" type="image/png" href="favicon-alt.png" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
+
     <link rel="stylesheet" href="styles/normalize.css" media="screen" />
     <link rel="stylesheet" href="styles/btg.css" media="screen" />
   </head>
 
   <body>
     <app v-cloak
-      :style="{backgroundColor: getCurrentPageComputed.backgroundColor === '' ? 'hsl(var(--bannerHS), 45%)' : getCurrentPageComputed.backgroundColor}"
+      :style="{backgroundColor: getCurrentPageComputed.backgroundColor === '' ? 'hsl(var(--bannerHS), 27%)' : getCurrentPageComputed.backgroundColor}"
       id="app">
       <onionskin :class="{show: showOnionskin}" @click="ToggleShowOnionSkin">
         <img :key="onionSkinImageSrc" v-if="onionSkinImageSrc.indexOf('mp4') === -1" :src="onionSkinImageSrc" />
@@ -52,8 +52,7 @@
           <selector :class="{game: page.showAsGame, on: page.isSelected, banner: page.useBanner}" v-for="page in pages"
             @click="ChangeHashToPagePath(page.path)" v-if="page.showInNav">
             <button :style="{backgroundImage: 'url(' + page.iconUrl + ')'}">
-              <banner :class="[page.bannerType]">{{page.bannerText}}</banner><img :src="page.iconUrl"
-                :alt="'This is an image of the game elements and the title for the game ' + page.name +'.'" />
+              <banner :class="[page.bannerType]">{{page.bannerText}}</banner>
             </button>
           </selector>
         </nav>
