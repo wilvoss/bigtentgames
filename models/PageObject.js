@@ -148,7 +148,7 @@ var Pages = [
     path: 'dropnstop',
     url: 'https://dropnstop.bigtentgames.com',
     iconUrl: 'https://dropnstop.bigtentgames.com/images/icon512.png',
-    features: ['Fast paced', 'Casual game play', 'Brain training', 'Reaction training', 'Different difficulty levels', 'Color themes'],
+    features: ['Fast paced', 'Casual game play', 'Reaction training', 'Campaigns', 'Color themes'],
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
     backgroundColor: 'rgb(49, 121, 76)',
     priceText: 'free',
