@@ -767,7 +767,7 @@ games selector button {
   display: flex;
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 14px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
