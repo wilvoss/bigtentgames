@@ -68,7 +68,7 @@ var Pages = [
       '<p><b>Daily Challenge</b><br />Compete with your friends with daily, pre-generated levels. The number of levels in your daily challenge is dependant on your current rank.<p>',
       '<p><b>Zen Mode</b><br />No timer and no stress. Think of this as a flow enabling, fidget-spinning brain trainer.</p>',
     ],
-    backgroundColor: 'rgb(84, 184, 0)',
+    backgroundColor: 'rgb(37, 194, 46)',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'],
     priceText: 'free',
     bannerText: 'free',
