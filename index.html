@@ -111,7 +111,9 @@
                   <h1>{{getCurrentPageComputed.name}}</h1>
                   <installers>
                     <button v-if="getCurrentPageComputed.appleappstoreurl ===''" class="action"
-                      @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.bannerText}}</button>
+                      @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.buttonText}}
+                      <icon class="chevron-right"></icon>
+                    </button>
                     <button v-if="getCurrentPageComputed.appleappstoreurl !==''" class="action inline"
                       @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')">
                       <icon class="apple"></icon>
@@ -263,8 +265,8 @@
     </app>
     <script src="helpers/console-enhancer.js" type="text/javascript"></script>
     <script id="vue-framework" src="helpers/vue.min.js" type="text/javascript"></script>
-    <script src="models/PageObject.js" type="text/javascript"></script>
-    <script src="scripts/btg.js" type="text/javascript"></script>
+    <script src="models/PageObject.min.js?1.0.000" type="text/javascript"></script>
+    <script src="scripts/btg.js?1.0.000" type="text/javascript"></script>
   </body>
 
 </html>

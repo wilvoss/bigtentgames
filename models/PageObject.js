@@ -24,6 +24,7 @@ class PageObject {
     this.useBanner = spec.useBanner === undefined ? true : spec.useBanner;
     this.bannerText = spec.bannerText === undefined ? 'beta' : spec.bannerText;
     this.bannerType = spec.bannerType === undefined ? 'beta' : spec.bannerType;
+    this.buttonText = spec.buttonText === undefined ? 'Play Now!' : spec.buttonText;
     this.features = spec.features === undefined ? [] : spec.features;
     this.screenshots = spec.screenshots === undefined ? [] : spec.screenshots;
     this.isMobileFirst = spec.isMobileFirst === undefined ? true : spec.isMobileFirst;
@@ -72,6 +73,7 @@ var Pages = [
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png'],
     priceText: 'free',
     bannerText: 'Free!',
+    buttonText: 'Play for free!',
     bannerType: 'free',
     version: '1.0.006',
   }),
@@ -92,12 +94,14 @@ var Pages = [
     backgroundColor: 'rgb(200, 100, 156)',
     priceText: 'free',
     bannerText: 'Free!',
+    buttonText: 'Play for free!',
     bannerType: 'free',
   }),
   new PageObject({
     name: 'Facets',
     priceText: 'free',
     bannerText: 'Free!',
+    buttonText: 'Play for free!',
     bannerType: 'free',
     isPWA: false,
     description: 'A game of words and wits!',
@@ -137,6 +141,7 @@ var Pages = [
     iconUrl: 'images/commoddities/icon512-btg.svg',
     screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '7.png'],
     bannerText: 'Alpha',
+    buttonText: 'Alpha Build',
     bannerType: 'alpha',
     backgroundColor: 'rgb(43, 135, 101)',
   }),
@@ -150,6 +155,7 @@ var Pages = [
     backgroundColor: 'color(display-p3 0.3608 0.7882 0.9804)',
     screenshots: ['1.png', '2.png', '3.png'],
     bannerText: 'Alpha',
+    buttonText: 'Alpha Build',
     bannerType: 'alpha',
     isMobileFirst: false,
   }),
