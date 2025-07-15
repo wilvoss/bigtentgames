@@ -64,7 +64,7 @@ body {
 }
 
 header {
-  width: 100%;
+  /* width: 100%; */
 }
 
 h1,
@@ -84,6 +84,10 @@ h1 {
   font-family: 'Display';
 }
 
+h2 {
+  margin-bottom: var(--defaultGap);
+}
+
 p {
   margin: var(--defaultGap) 0;
   padding: 0;
@@ -91,6 +95,14 @@ p {
 
 p:last-of-type {
   margin: var(--defaultGap) 0 0;
+}
+
+buildquality {
+  display: block;
+  margin-bottom: calc(.5 * var(--defaultGap));
+  color: hsla(var(--appForeground), .7);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 a,
@@ -396,7 +408,7 @@ nav selector:hover {
 content {
   display: block;
   box-shadow: 0px 10px 20px hsla(var(--appForeground), 0.6);
-  border-radius: calc(var(--borderRadius) / 4);
+  border-radius: calc(var(--borderRadius) - 1px);
   background-position: 0px -100px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -441,15 +453,33 @@ section.expanded {
 
 section h2 {
   margin-top: var(--defaultGap);
+  margin-bottom: calc(.5 * var(--defaultGap));
   border-top: 1px solid hsla(var(--appForeground), 0.1);
   padding-top: var(--defaultGap);
 }
 
 section intro {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: start;
+  gap: calc(1.25 * var(--defaultGap));
   margin-bottom: var(--defaultGap);
   width: 100%;
+}
+
+section intro img {
+  --imgsize: 80px;
+  display: block;
+  margin-top: var(--defaultGap);
+  box-shadow: 0px 4px 8px hsla(var(--appForeground), 0.2);
+  border-radius: calc(var(--borderRadius) - 1px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: var(--imgsize);
+  max-width: var(--imgsize);
+  height: var(--imgsize);
+  max-height: var(--imgsize);
+  overflow: hidden;
 }
 
 section intro h1 span {
@@ -481,12 +511,6 @@ section intro p {
   margin: 10px 0 0 0;
 }
 
-section intro img {
-  border-radius: calc(var(--borderRadius) / 2);
-  max-width: 300px;
-  overflow: hidden;
-}
-
 section intro button,
 section button.action {
   display: flex;
@@ -500,6 +524,7 @@ section button.action {
   padding: 0 20px;
   height: 34px;
   color: hsl(var(--appBackgroundWeakest));
+  text-transform: capitalize;
 }
 
 .showmore {
@@ -508,7 +533,7 @@ section button.action {
 }
 
 section button.action {
-  margin-top: var(--defaultGap);
+  margin-top: 8px;
   background-image: none;
 }
 
@@ -872,10 +897,6 @@ footer a::before {
     max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
   }
 
-  section intro img {
-    display: none;
-  }
-
   quote rating {
     display: block;
     padding: 2px 0px 6px;
@@ -941,7 +962,8 @@ footer a::before {
     background-color: transparent;
     padding-top: 0;
     width: calc(100% - 3 * var(--defaultGap));
-    max-height: calc(100% - var(--navHeight) - 3 * var(--defaultGap));
+    height: 100%;
+    max-height: calc(100% - 3 * var(--defaultGap));
   }
 
   section intro button,
@@ -970,7 +992,7 @@ footer a::before {
     flex: auto;
     flex-wrap: wrap;
     align-items: start;
-    padding-top: var(--defaultGap);
+    /* padding-top: var(--defaultGap); */
     /* gap: 0; */
     /* flex-direction: column; */
   }
@@ -981,7 +1003,8 @@ footer a::before {
 
   section intro installers button,
   section intro installers button.action {
-    margin: 0;
+    margin: 8px 0 0;
+    ;
   }
 
   quotes {

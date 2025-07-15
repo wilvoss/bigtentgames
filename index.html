@@ -105,15 +105,13 @@
           <article v-if="getCurrentPageComputed.showAsGame">
             <section>
               <intro>
+                <img :src="'https://' + getCurrentPageComputed.path + '.bigtentgames.com/images/icon512.png'"
+                  :alt="'This is the icon for the game ' + getCurrentPageComputed.name" />
                 <header>
-                  <h1>
-                    {{getCurrentPageComputed.name}}
-                    <span>{{ getCurrentPageComputed.bannerText !== 'free!' ? '(' + getCurrentPageComputed.bannerText + ')' : 'v' + getCurrentPageComputed.version}}</span>
-                  </h1>
-                  <h2>{{getCurrentPageComputed.description}}</h2>
+                  <h1>{{getCurrentPageComputed.name}}</h1>
                   <installers>
                     <button v-if="getCurrentPageComputed.appleappstoreurl ===''" class="action"
-                      @click="window.open(getCurrentPageComputed.url, '_blank')">Free Online</button>
+                      @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.bannerText}}</button>
                     <button v-if="getCurrentPageComputed.appleappstoreurl !==''" class="action inline"
                       @click="window.open(getCurrentPageComputed.appleappstoreurl, '_blank')">
                       <icon class="apple"></icon>
@@ -132,6 +130,11 @@
                   <!-- <button class="light" @click="window.open(getCurrentPageComputed.url, '_blank')">{{getCurrentPageComputed.price === '$0.00' ? 'Play for free!' : getCurrentPageComputed.price}}</button> -->
                 </header>
               </intro>
+            </section>
+            <section>
+              <buildquality v-if="getCurrentPageComputed.bannerText !== 'Free!'">Unstable build, be careful :)
+              </buildquality>
+              <h2>{{getCurrentPageComputed.description}}</h2>
             </section>
             <section v-if="getCurrentPageComputed.about != ''" v-html="getCurrentPageComputed.about"></section>
             <section v-if="getCurrentPageComputed.showMore">
