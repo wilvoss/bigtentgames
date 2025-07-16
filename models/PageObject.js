@@ -117,7 +117,7 @@ var Pages = [
     url: 'https://facets.bigtentgames.com/open',
     iconUrl: 'images/facets/icon512-btg.svg',
     features: ['Word play', 'Low stakes', 'Fast paced', 'Turn based', 'Casual game play', 'Brain training'],
-    screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
+    screenshots: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png'],
     backgroundColor: 'rgb(46, 106, 149)',
     communities: [
       {
